@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -20,8 +21,10 @@ class SignupForm extends React.Component {
         }
     } 
 
-    handle() {
+    handle(e) {
+        e.preventDefault();
         this.props.signupForm(this.state)
+            .then(() => this.props.history.push('/')); 
         // maybe later create a then 
     }
 
@@ -40,6 +43,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handle}>
+                <Link to={'/login'}>Log In</Link>
                 <h1>{this.props.formType}</h1>
                 <label>Username
                     <input 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
@@ -13,8 +14,10 @@ class LoginForm extends React.Component {
         this.update = this.update.bind(this)
     }
 
-    handle() {
-        this.props.loginForm(this.state) 
+    handle(e) {
+        e.preventDefault();
+        this.props.loginForm(this.state)
+            .then(() => this.props.history.push('/')); 
         //then direct them somewhere else
     }
 
@@ -24,9 +27,22 @@ class LoginForm extends React.Component {
         }
     }
 
+    renderErrors() {
+        if (this.props.errors.length === 0) {
+            return null;
+        } else {
+            return <ul>
+                {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)} 
+                </ul>
+        }
+    }
+
     render() {
         return (
             <form onSubmit={this.handle}>
+                <div>
+                    <Link to={'/signup'}>Sign up</Link>
+                </div>
                 <h1>{this.props.formType}</h1>
                 <label>Username
                     <input 
@@ -35,7 +51,7 @@ class LoginForm extends React.Component {
                     onChange={this.update('username')}
                     />
                 </label>
-
+           
                 <label>Password
                     <input
                         type="password"
@@ -43,8 +59,10 @@ class LoginForm extends React.Component {
                         onChange={this.update('password')}
                     />
                 </label>
+                {this.renderErrors()}
                     <input type="submit" value={this.props.formType}/>
             </form>
+            
         )
     } 
 }
