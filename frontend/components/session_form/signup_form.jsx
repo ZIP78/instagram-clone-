@@ -10,8 +10,8 @@ class SignupForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             password: ''
         };
         this.handle = this.handle.bind(this)
@@ -99,8 +99,8 @@ class SignupForm extends React.Component {
                                                 <input className="fname"
                                                     placeholder="First Name"
                                                     type="text"
-                                                    value={this.state.firstName}
-                                                    onChange={this.update('firstName')}
+                                                    value={this.state.first_name}
+                                                    onChange={this.update('first_name')}
                                                     required={true}
                                                 />
                                                 <label className="divide-fname-box">First Name</label>
@@ -112,8 +112,8 @@ class SignupForm extends React.Component {
                                                 <input className="lname"
                                                     placeholder="Last Name"
                                                     type="text"
-                                                    value={this.state.lastName}
-                                                    onChange={this.update('lastName')}
+                                                    value={this.state.last_name}
+                                                    onChange={this.update('last_name')}
                                                     required={true}
                                                 />
                                                 <label className="divide-lname-box">Last Name</label>
