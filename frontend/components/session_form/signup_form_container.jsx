@@ -4,9 +4,9 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import SignupForm from './signup_form';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({errors}) => {
     return {
-        // errors: errors.session,
+        errors: errors.session,
         formType: 'Sign Up'
         // nav link
 

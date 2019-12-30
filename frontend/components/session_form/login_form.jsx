@@ -1,70 +1,121 @@
-import React from 'react';
-import {Link} from 'react-router-dom'
+    import React from 'react';
+    import {Link} from 'react-router-dom'
+    import sad from '../../../app/assets/images/cry.jpg'
+    import average from '../../../app/assets/images/avg.png'
+    import happy from '../../../app/assets/images/happy.png'
 
-class LoginForm extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            username: '',
-            password: ''
-        };
+    class LoginForm extends React.Component {
 
-        this.handle = this.handle.bind(this)
-        this.update = this.update.bind(this)
-    }
+        constructor(props) {
+            super(props)
+            this.state = {
+                username: '',
+                password: ''
+            };
 
-    handle(e) {
-        e.preventDefault();
-        this.props.loginForm(this.state)
-            .then(() => this.props.history.push('/')); 
-        //then direct them somewhere else
-    }
-
-    update(field) {
-        return e => {
-            this.setState({[field]: e.currentTarget.value})
+            this.handle = this.handle.bind(this)
+            this.update = this.update.bind(this)
         }
-    }
 
-    renderErrors() {
-        if (this.props.errors.length === 0) {
-            return null;
-        } else {
-            return <ul>
-                {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)} 
-                </ul>
+        handle(e) {
+            e.preventDefault();
+            this.props.loginForm(this.state)
+                .then(() => this.props.history.push('/')); 
+            //then direct them somewhere else
         }
-    }
 
-    render() {
-        return (
-            <form onSubmit={this.handle}>
-                <div>
-                    <Link to={'/signup'}>Sign up</Link>
-                </div>
-                <h1>{this.props.formType}</h1>
-                <label>Username
-                    <input 
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.update('username')}
-                    />
-                </label>
-           
-                <label>Password
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                    />
-                </label>
-                {this.renderErrors()}
-                    <input type="submit" value={this.props.formType}/>
-            </form>
+        update(field) {
+            return e => {
+                this.setState({[field]: e.currentTarget.value})
+            }
+        }
+
+        renderErrors() {
+            if (this.props.errors.length === 0) {
+                return null;
+            } else {
+                return <ul>
+                    {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)} 
+                    </ul>
+            }
+        }
+
+        render() {
+            return (
+                <main className="main1">
+                    <article className="main2">
+                
+                        <div className="phone"> 
+                            <div className="containerPhotos">
+                                <img className="feelings" src={sad}/>
+                                <img className="feelings" src={average}/>
+                                <img className="feelings" src={happy}/>
+                            </div>
+                        </div>
+
+                        <div className="form-container">
+                            <div className="loginBox">
+                                <h1 className="name">Whoopiegram</h1>
+                            <div className="form-section">
+                                <form className="form" onSubmit={this.handle}>
             
-        )
-    } 
-}
+                            <div className="user-container"> 
+                                <div className="user-box">
+                                    <input className="username" 
+                                        placeholder="Username"
+                                        type="text"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                        required={true}
+                                    />
+                                    <label>Username</label>
+                                </div>
+                            </div>   
+            
+                            <div className="pw-container">
+                                <div className="pw-box">
+                                    <input className="password focus-visible"
+                                        placeholder="Password"
+                                        type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                        required={true}
+                                        pattern=".{6,}" 
+                                    />
+                                    <label className="divide-pw-box">Password</label>
+                                </div>
+                            </div>
+                            {this.renderErrors()}
+                            <div className="login">
+                                <button type="submit" className="login-button">{this.props.formType}</button>
+                            </div>
 
-export default LoginForm
+                            <div className="or-container">
+                                <div className="or-line"></div>
+                                <div className="or">or</div>
+                                <div className="or-line"></div>
+                            </div>
+
+                            <div className="forgot-pw-container">
+                                <a className="tooBad" href="https://www.youtube.com/watch?v=rAlTOfl9F2w">Forgot password?</a>
+                            </div>
+                                </form>
+                            </div>
+                            </div>
+                            <div className="signup-container">
+                                <div className="signup">
+                                    <p className="dont-have">
+                                        Don't have an account?  
+                                        <Link id="link" to={`/signup`}> <span className="signup-font">Sign Up</span> </Link>
+                                    </p>
+                                </div>
+                            </div>  
+                        </div>
+                    </article>
+                </main>
+            )
+        } 
+    }
+
+    export default LoginForm
