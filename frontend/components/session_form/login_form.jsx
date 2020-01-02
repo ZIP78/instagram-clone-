@@ -11,7 +11,7 @@
             super(props)
             this.state = {
                 username: '',
-                password: ''
+                password: '',
             };
 
             this.handle = this.handle.bind(this)
@@ -21,7 +21,9 @@
         handle(e) {
             e.preventDefault();
             this.props.loginForm(this.state)
-                .then(() => this.props.history.push('/')); 
+
+
+                // .then(() => this.props.history.push('/')); 
             //then direct them somewhere else
         }
 
@@ -35,9 +37,9 @@
             if (this.props.errors.length === 0) {
                 return null;
             } else {
-                return <ul>
-                    {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)} 
-                    </ul>
+                return <div className="errors">
+                        {this.props.errors.map((error, idx) => <p className="error-text" key={idx}>{error}</p>)} 
+                      </div>
             }
         }
 
@@ -86,7 +88,7 @@
                                     <label className="divide-pw-box">Password</label>
                                 </div>
                             </div>
-                            {this.renderErrors()}
+                            
                             <div className="login">
                                 <button type="submit" className="login-button">{this.props.formType}</button>
                             </div>
@@ -96,6 +98,8 @@
                                 <div className="or">or</div>
                                 <div className="or-line"></div>
                             </div>
+
+                            {this.renderErrors()}
 
                             <div className="forgot-pw-container">
                                 <a className="tooBad" href="https://www.youtube.com/watch?v=rAlTOfl9F2w">Forgot password?</a>

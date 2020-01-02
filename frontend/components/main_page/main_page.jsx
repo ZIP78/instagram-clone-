@@ -6,6 +6,9 @@ export default ({ currentUser, logout }) => {
         <div>
             <h3>Welcome {currentUser.username}!</h3>
             <button onClick={logout}>Logout</button>
+            <div className="pic-test">
+
+            </div>
         </div>
     ) : (
             <div>
@@ -17,6 +20,9 @@ export default ({ currentUser, logout }) => {
         <header>
             <div>
                 {display}
+                <div className="pic-test">
+
+                </div>
             </div>
         </header>
     )

@@ -105,22 +105,47 @@ html, body, #root {
 }
 
 .form-container {
-position: relative;
+/* position: relative;
     left: 493px;
     top: -581px;
     max-width: 350px;
     justify-content: center;
     max-height: 810px;
+    height: 681px; */
+
+    position: relative;
+    left: 493px;
+    /* top: -742px; */
+    top: -724px;
+    max-width: 350px;
+    justify-content: center;
+    max-height: 810px;
     height: 681px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-orient: vertical;
 }
 .loginBox {
+    /* background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+    width: 348px;
+    height: 305px; */
+
     background-color: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 1px;
     margin: 0 0 10px;
     padding: 10px 0;
     width: 348px;
-    height: 285px;
+    /* height: 326px; */
+    display: flex;
+    flex-direction: column;
+    /* -webkit-box-orient: vertical; */
+    position: relative;
+    align-items: stretch;
 }
 
 .name {
@@ -137,22 +162,24 @@ position: relative;
 }
 
 .form-section {
+    /* margin-bottom: 10px;
+    width: 348px;
+    height: 214px; */
+
     margin-bottom: 10px;
-    width: 248px;
-    height: 263px;
+    width: 348px;
+    /* height: 236px; */
+    display: flex;
   }
 
 .form {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    height: 483px;
+    width: 348px;
+    display: flex;
 }
 
 
@@ -160,7 +187,7 @@ position: relative;
 .lname-container {
 
     background-color: aquamarine;
-      margin: 0 40px 6px;
+    margin: 0 40px 6px;
     height: 38px;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -282,7 +309,7 @@ input.username::placeholder{
 }
 
 .login {
-    margin: 8px 40px 8px 40px;
+    margin: 0px 40px 8px 40px;
     flex: 0 0 auto;
     width: 268px;
     height: 30px;
@@ -337,7 +364,7 @@ input.username::placeholder{
 }
 
 .forgot-pw-container {
-    margin: 8px 40px 10px 40px;
+    margin: 8px 40px 8px 40px;
     flex: 0 0 auto;
     width: 268px;
     height: 20px;
@@ -392,7 +419,7 @@ a, a:visited {
 
 
 .signup-main {
-    min-height: 91.73%; 
+    min-height: 91.73%;
     background-color: #FAFAFA;
     flex-grow: 1;
     min-height: 100%;
@@ -403,27 +430,26 @@ a, a:visited {
 }
 
 .form-container-signup {
-    margin: 0 auto;
+     margin: 0 auto;
     max-width: 935px;
     height: 852px;
+    display: flex;
     width: 100%;
+    justify-content: center;
+
 }
 
 .signinBox {
     color: #262626;
-    -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1;
     -ms-flex-pack: center;
-    height: 840px;
-    width: 350px;
-    margin: auto;
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    margin-left: -175px;
+    display: flex;
     margin-top: 12px;
-    bottom: 103px;
+    -webkit-justify-content: center;
+    max-width: 350px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .signup-section {
@@ -432,12 +458,13 @@ a, a:visited {
     border-radius: 1px;
     margin: 0 0 10px;
     padding: 10px 0;
-    height: 576px;
+    -webkit-box-orient: vertical;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-section-signup {
     width: 348px;
-    height: 483px;
     margin-bottom: 20px;
 }
 
@@ -526,4 +553,41 @@ a, a:visited {
     height: 54px;
   }
 
+  .errors {
+    /* color: #ed4956;
+    margin: 0px 40px;
+    /* width: 100%; */
+    /* height: 29px;
+    display: flex;
+    margin: 10px 40px;
+    flex: 0 0 auto; */ 
+
+    color: #ed4956;
+    margin: 0px 40px;
+    /* width: 100%; */
+    height: 29px;
+    display: flex;
+    margin: 10px 40px;
+    flex: 0 0 auto;
+    justify-content: baseline;
+    flex-direction: column;
+    position: relative;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+}
+
+.error-text {
+  text-align: center;
+    /* position: relative; */
+    /* display: flex; */
+    /* -webkit-box-orient: vertical; */
+    /* padding: 0; */
+    -webkit-flex-direction: column;
+}
+
+.pic-test{
+  width: 650px;
+  height: 500px;
+}
+  
   
