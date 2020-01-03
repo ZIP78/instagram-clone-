@@ -22,4 +22,4 @@ Whoopiegram is a clone of instagram. This app should allow the user to post funn
 
 ## Splash Page
 
-![](name-of-giphy.gif)
+![](ezgif.com-video-to-gif.gif)
