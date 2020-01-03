@@ -12,10 +12,14 @@ class SignupForm extends React.Component {
             email: '',
             first_name: '',
             last_name: '',
-            password: ''
+            password: '',
+
         };
         this.handle = this.handle.bind(this)
-        this.update = this.update.bind(this)
+    }
+
+    componentWillUnmount() {
+        this.props.clearErrors()
     }
 
     update(field) {
@@ -29,7 +33,7 @@ class SignupForm extends React.Component {
             return null;
         } else {
             return <div className="errors">
-                {this.props.errors.map((error, idx) => <p className="error-text" key={idx}>{error}</p>)}
+                {this.state.errors.map((error, idx) => <p className="error-text" key={idx}>{error}</p>)}
             </div>
         }
     }
@@ -37,7 +41,7 @@ class SignupForm extends React.Component {
     handle(e) {
         e.preventDefault();
         this.props.signupForm(this.state)
-            .then(() => this.props.history.push('/')); 
+            // .then(() => this.props.history.push('/')); 
     }
 
     renderErrors() {

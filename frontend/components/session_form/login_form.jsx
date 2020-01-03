@@ -15,12 +15,16 @@
             };
 
             this.handle = this.handle.bind(this)
-            this.update = this.update.bind(this)
+        }
+
+        componentWillUnmount() {
+            this.props.clearErrors();
         }
 
         handle(e) {
             e.preventDefault();
             this.props.loginForm(this.state)
+                // .then(() => this.props.history.push('/'));
 
 
                 // .then(() => this.props.history.push('/')); 
