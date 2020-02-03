@@ -51,8 +51,8 @@
         demoUser(e) {
             e.preventDefault();
             this.props.loginForm({
-                username: 'helloman',
-                password: 'poopman9'
+                username: 'yoyo',
+                password: 'hunter123'
             })
         }
 
