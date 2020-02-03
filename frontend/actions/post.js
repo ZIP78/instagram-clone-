@@ -2,6 +2,8 @@ import * as APIUtil from '../utils/post'
 
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
+export const CREATE_POST = 'CREATE_POST'
+export const RECEIVE_POST = 'RECEIVE_POST'
 
 const receivePosts = (posts) => {
     return {
@@ -10,6 +12,28 @@ const receivePosts = (posts) => {
     }
 }
 
-export const fecthPosts = (posts) => (dispatch) => {
-    return APIUtil.fetchPosts(posts).then(posts => dispatch(receivePosts(posts)))
+const createSinglePost = (post) => {
+    return {
+        type: CREATE_POST,
+        post
+    }
+}
+
+const receivePost = (post) => {
+    return {
+        type: RECEIVE_POST,
+        post
+    }
+}
+
+export const requestAllPost = () => (dispatch) => {
+    return APIUtil.fetchPosts().then(posts => dispatch(receivePosts(posts)))
+}
+
+export const requestPost = (id) => (dispatch) => {
+    return APIUtil.fetchPost(id).then(post => dispatch(receivePost(post)))
+}
+
+export const createPost = (post) => dispatch => {
+    return APIUtil.createPost(post).then(post => dispatch(createSinglePost(post)))
 }

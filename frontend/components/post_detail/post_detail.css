@@ -1,0 +1,109 @@
+.post-show-container {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin: 0 auto;
+    max-width: 935px;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 65px 20px;
+    top: 78px;
+    position: relative;
+    height: 670px;
+    display: flex;
+
+}
+
+.instagram-show-post {
+    width: 600px;
+    max-height: 600px;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-top: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-left: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-right: 1px solid rgba(var(--b6a,219,219,219),1);
+}
+
+.show-post-upper-part {
+    width: 336px;
+    height: 38px;
+    padding: 16px;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-top: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-left: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-right: 1px solid rgba(var(--b6a,219,219,219),1);
+    background-color: rgba(var(--cdc,255,255,255),1);
+}
+
+.post-show-ellipsh {
+    position: relative;
+    left: 313px;
+    top: 13px;
+}
+
+.show-post-comments {
+    width: 337px;
+    height: 343px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-top: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-left: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-right: 1px solid rgba(var(--b6a,219,219,219),1);
+    padding: 12px 16px;
+    top: 38px;
+    position: relative;
+    left: -18px;
+}
+
+.show-interactive-icons {
+    width: 321px;
+    height: 161px;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: absolute;
+    top: 368px;
+    border-right: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1)
+}
+
+.insta-show-likes-container, .insta-show-time-container {
+    margin-top: 12px;
+    margin-left: 2px
+}
+
+.show-profile-name {
+    width: 50px;
+    position: relative;
+    display: inline;
+    top: 12px;
+    margin-left: 42px;
+}
+
+.show-caption-section {
+    margin-left: -12px;
+    margin-right: 0;
+    padding: 12px 16px;
+    width: 338px;
+    position: relative;
+    top: 7px;
+    left: -3px;
+    height: 94px;
+}
+
+.insta-profile-icon {
+    /* top: 11px;
+    left: -5px;
+    width: 42px;
+    border-radius: 50%;
+background-position: center center;
+background-size: cover;  
+
+    height: 42px;*/
+    position: absolute; 
+
+ width: 100px;
+    height: 100px;
+   border-radius: 50%;
+}

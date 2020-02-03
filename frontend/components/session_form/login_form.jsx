@@ -15,6 +15,7 @@
             };
 
             this.handle = this.handle.bind(this)
+            this.demoUser = this.demoUser.bind(this)
         }
 
         componentWillUnmount() {
@@ -47,6 +48,14 @@
             }
         }
 
+        demoUser(e) {
+            e.preventDefault();
+            this.props.loginForm({
+                username: 'helloman',
+                password: 'poopman9'
+            })
+        }
+
         render() {
             return (
                 <main className="main1">
@@ -73,7 +82,6 @@
                                         type="text"
                                         value={this.state.username}
                                         onChange={this.update('username')}
-                                        required={true}
                                     />
                                     <label>Username</label>
                                 </div>
@@ -86,8 +94,6 @@
                                         type="password"
                                         value={this.state.password}
                                         onChange={this.update('password')}
-                                        required={true}
-                                        pattern=".{6,}" 
                                     />
                                     <label className="divide-pw-box">Password</label>
                                 </div>
@@ -101,6 +107,10 @@
                                 <div className="or-line"></div>
                                 <div className="or">or</div>
                                 <div className="or-line"></div>
+                            </div>
+
+                            <div className="login">
+                                <button onClick={this.demoUser} className="login-button">Demo User</button>
                             </div>
 
                             {this.renderErrors()}

@@ -1,58 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Upload from '../upload/upload_container'
+import PostIndex from './post_index'
+import './main_page.css'
 
-export default ({ currentUser, logout }) => {
-    const display = currentUser ? (
-        <div>
-            <h3>Welcome {currentUser.username}!</h3>
-            <button onClick={logout}>Logout</button>
-            <div className="pic-test">
 
-            </div>
-        </div>
-    ) : (
-            <div>
-                <Link className="btn" to="/signup">Sign Up</Link>
-                <Link className="btn" to="/login">Log In</Link>
-            </div>
-        );
-    return (
-        <header>
-            <div>
-                {display}
-                <div className="pic-test">
 
-                </div>
-            </div>
-        </header>
-    )
+
+class MainPage extends React.Component {
+    constructor(props) {
+        super(props)
+    
+    }
+
+    componentDidMount() {
+        this.props.requestAllPost()
+    }
+
+
+
+
+
+    render() {
+        const { logout, requestAllPost, posts} = this.props
+        console.log(posts)
+        
+            return (
+                <header>
+                    
+                    <section className="main-page-container">
+                        <div className="insta-post-container">
+                            <PostIndex posts={posts}/>
+                        </div>
+                        <button onClick={logout}>Logout</button>
+                    </section>    
+
+                </header>
+            )
+        }
 }
 
-// class MainForm extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             posts: []
-//         }
-//         this.fetchPosts = this.fetchPosts.bind(this)
-//     }
-//     fetchPosts() {
-//         $.ajax ({
-//             url: "api/posts"
-//         }).then(posts => {
-//             debugger;
-//             this.setState(posts)
-//         })
-//     }
-//     componentDidMount() {
-//         this.fetchPosts();
-//     }
+export default MainPage
 
-//     render() {
-//         return (
-//             <div>
-                
-//             </div>
-//         )
-//     }
-// }

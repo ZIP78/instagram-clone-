@@ -1,16 +1,20 @@
 import {connect} from 'react-redux'
 import MainPage from './main_page'
 import {logout} from '../../actions/session'
+import { requestAllPost} from '../../actions/post'
 
 const mapStateToProps = (state) => {
+    
    return {
+       posts: state.entities.posts,
        currentUser: state.entities.users[state.session.id]
    }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    requestAllPost: () => dispatch(requestAllPost())
     }
 }
 
