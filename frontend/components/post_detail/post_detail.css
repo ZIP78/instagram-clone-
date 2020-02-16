@@ -15,6 +15,15 @@
 
 }
 
+.instagram-show-post-video {
+    width: 600px;
+    height: 602px;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-top: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-left: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-right: 1px solid rgba(var(--b6a,219,219,219),1);
+}
+
 .instagram-show-post {
     width: 600px;
     max-height: 600px;
@@ -22,7 +31,11 @@
     border-top: 1px solid rgba(var(--b6a,219,219,219),1);
     border-left: 1px solid rgba(var(--b6a,219,219,219),1);
     border-right: 1px solid rgba(var(--b6a,219,219,219),1);
+    background-color: #fafafa;
 }
+
+
+
 
 .show-post-upper-part {
     width: 336px;
@@ -58,14 +71,15 @@
 }
 
 .show-interactive-icons {
-    width: 321px;
+    width: 339px;
     height: 161px;
     padding-left: 16px;
     padding-right: 16px;
     position: absolute;
     top: 368px;
+    left: -2px;
     border-right: 1px solid rgba(var(--b6a,219,219,219),1);
-    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1)
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
 }
 
 .insta-show-likes-container, .insta-show-time-container {

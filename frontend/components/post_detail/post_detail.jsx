@@ -35,7 +35,7 @@ class PostDetail extends React.Component {
           <div className="post-show-container">
             {this.props.post.photoUrl.split(".").pop() === "mp4" ? (
               <VideoPlayer
-                className="instagram-show-post"
+                className="instagram-show-post-video"
                 src={this.props.post.photoUrl}
               />
             ) : (
