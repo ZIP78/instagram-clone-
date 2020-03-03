@@ -175,6 +175,24 @@
 
 }
 
+.insta-likes-container-test {
+    height: 64px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+
+.insta-likes-container-time-test {
+    width: 568px;
+    height: 18px;
+    padding-left: 18px;
+}
+
+.insta-likes-container-comment-test {
+    width: 600px;
+    height: 67.99px;
+    /* padding-left: 18px; */
+}
+
 .post-ellipsh {
     position: relative;
     left: 561px;

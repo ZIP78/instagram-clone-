@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
+import CommentForm from "../comment/comment_form"
 
 //            { (post.photoUrl.split('.').pop() === "mp4") ?
 //                     <video src={post.photoUrk}></video>
@@ -35,7 +36,6 @@ const PostIndex = ({posts}) => {
                                 <Link to={`/posts/${post.id}`}>
                                     <FontAwesomeIcon  className="comment-icon" icon={faComment}/>
                                 </Link>    
-                                 
                            </div>
                            <div className="insta-likes-container">
                                 <h3>Likes here</h3>
@@ -45,9 +45,19 @@ const PostIndex = ({posts}) => {
                                 <h3>Caption here</h3>
                            </div>
 
-                             <div className="insta-likes-container">
+                           <div className="insta-likes-container-test">
                                 <h3>Comments here</h3>
                            </div>
+
+                           <div className="insta-likes-container-time-test">
+                                <h3>Time posted here</h3>
+                           </div>
+
+                            <div className="insta-likes-container-comment-test">
+                                   <CommentForm/>
+                           </div>
+
+
                             
                        </div>
 
