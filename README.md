@@ -1,24 +1,25 @@
-# README
+# Whoopiegram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+Whoopiegram is a clone of instagram. This app should allow the user to post funny videos, like, comment, and follow other users. If you're ever feeling down Whoopiegram is there to turn that frown upside down. 
 
-Things you may want to cover:
+## Features
+* Log in/ Log out
+* Sign up
 
-* Ruby version
+## Link
+[Live Demo](https://whoopiegram.herokuapp.com/#/login)
 
-* System dependencies
+## Technologies used 
+* Rails (back-end)
+* React-Redux (front-end
+* AWS
 
-* Configuration
+## Future Features
+* upload pictures/videos
+* like and comment on posts
+* follow other users 
 
-* Database creation
+## Splash Page
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](screenshots/ezgif.com-video-to-gif.gif)
