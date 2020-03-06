@@ -4,13 +4,13 @@ class CommentForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            loading: false,
-            error: "",
+            // loading: false,
+            // error: "",
 
-            comment: {
-                name: "",
-                message: ""
-            }
+            // comment: {
+            //     name: "",
+            //     message: ""
+            // }
         };
 
     }

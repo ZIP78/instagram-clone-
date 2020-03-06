@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        @post = current_user.posts.new(post_params)
+        @post = Post.new(post_params)
         if @post.save!
             render :show 
         else
