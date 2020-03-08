@@ -23,7 +23,7 @@ class MainPage extends React.Component {
 
     render() {
         const { logout, requestAllPost, posts} = this.props
-        console.log(posts)
+        // console.log(posts)
         
             return (
                 <header>
