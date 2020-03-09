@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-    # before_action :ensure_logged_in?
+    
     def index
         @posts = Post.all
         render :index
