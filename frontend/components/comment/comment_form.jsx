@@ -4,21 +4,24 @@ class CommentForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // loading: false,
-            // error: "",
+            body: ''
+        }
 
-            // comment: {
-            //     name: "",
-            //     message: ""
-            // }
-        };
+    }
+    handleInput(e) {
+        e.preventDefault()
 
     }
 
-
     render() {
         return (
-            <h1>Testing comments</h1>
+            <form>
+                <input type="text" 
+                value={this.state.body}
+                />
+
+            
+            </form>
 
         )
     }

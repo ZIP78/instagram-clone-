@@ -1,0 +1,17 @@
+export const createComment = (comment) => {
+    return $.ajax({
+        method: 'POST',
+        url: 'api/comments',
+        data: comment
+    })
+}
+
+export const deleteComment = (commentId) => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `api/comments/${commentId}`,
+        data: comment
+    })
+}
+
+// maybe might have a problem with the delete method 

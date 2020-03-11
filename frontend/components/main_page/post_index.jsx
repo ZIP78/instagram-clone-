@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
-import CommentForm from "../comment/comment_form"
+import CommentForm from "../comment/comment_form_container"
 
 //            { (post.photoUrl.split('.').pop() === "mp4") ?
 //                     <video src={post.photoUrk}></video>
