@@ -53,7 +53,7 @@ const PostIndex = ({posts}) => {
                                 <h3>Time posted here</h3>
                            </div>
 
-                            <div className="insta-likes-container-comment-test">
+                            <div className="insta-likes-container-comment">
                                    <CommentForm/>
                            </div>
 

@@ -9,16 +9,15 @@ class Upload extends React.Component {
         }
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-
         this.handleInput = this.handleInput.bind(this)
     }
 
     handleInput(e) {
         e.preventDefault()
-        this.setState({body: e.currentTarget.value})
-            this.setState({body: null}) 
-        
+        this.setState({body: e.currentTarget.value})        
     }
+
+    
 
 
     handleFile(e) {
@@ -37,7 +36,11 @@ class Upload extends React.Component {
         }
 
         this.props.createPost(formData) 
-        this.setState({ body: '' });        
+        this.setState({ body: '' }); 
+        
+        
+        
+            
     }
 
     render() {
@@ -48,8 +51,10 @@ class Upload extends React.Component {
             <input
               type="file"
               style={{ width: "210px" }}
-              onChange={this.handleFile}              
+              onChange={this.handleFile}
+              onClick={e => (e.target.value = null)}              
             />
+            
 
             <input
               type="text"
@@ -57,7 +62,7 @@ class Upload extends React.Component {
               value={this.state.body}
             />
 
-            <button>Create Post</button>
+            <button >Create Post</button>
           </form>
         );
     }
