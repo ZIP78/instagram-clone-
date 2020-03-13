@@ -3,7 +3,7 @@ import CommentForm from './comment_form'
 import {createComment, deleteComment} from '../../actions/comment'
 
 const mapStateToProps = (state) => {
-    debugger
+    
     return {
 
     }
@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        createComment: (comment) => dispatch(createComment(comment)),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId))
     }
 }
 

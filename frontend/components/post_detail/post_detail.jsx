@@ -9,9 +9,11 @@ import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
 
 class PostDetail extends React.Component {
+    
     constructor(props) {
         super(props)
         // this.attachment = this.attachment.bind(this)
+        
     }
 
     componentDidMount() {
