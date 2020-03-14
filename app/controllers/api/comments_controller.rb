@@ -1,13 +1,13 @@
 class Api::CommentsController < ApplicationController
 
-    def new
-        @comment = Comment.new(post_id: params[:post_id])
-    end
+    # def new
+    #     @comment = Comment.new(post_id: params[:post_id])
+    # end
 
     def create
         @comment = current_user.comments.new(comment_parans)
         debugger
-        if @comment.save
+        if @comment.save!
             render :show
         else
             render json: @comment, state: :unprocessible_entity

@@ -1,3 +1,3 @@
 json.comment do 
-    json.extract! @comment, :body, :post_id
+    json.extract! @comment, :body
 end 
