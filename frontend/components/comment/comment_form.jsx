@@ -4,6 +4,7 @@ import './comment.css'
 class CommentForm extends React.Component {
     constructor(props) {
         super(props)
+        debugger
         this.state = {
             body: ''
         }
@@ -19,6 +20,7 @@ class CommentForm extends React.Component {
         e.preventDefault()
         const formData = new FormData()
         formData.append("comment[body]", this.state.body)
+        formData.append("comment[post_id]", this.props.post.id)
         this.props.createComment(formData)
         this.setState({body: ''})
     }

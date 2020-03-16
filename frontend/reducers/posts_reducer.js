@@ -1,4 +1,6 @@
 import {RECEIVE_POSTS, CREATE_POST, RECEIVE_POST} from '../actions/post'
+import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/comment'
+
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state)
@@ -9,7 +11,7 @@ const postsReducer = (state = {}, action) => {
             return Object.assign({}, state, action.post)    
         case CREATE_POST:
             let post = action.post
-            return Object.assign({}, state, post)     
+            return Object.assign({}, state, post)
         default:
             return state;
     }

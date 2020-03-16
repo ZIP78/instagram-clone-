@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
 import CommentForm from "../comment/comment_form_container"
+import CommentIndex from "../comment/comment_index"
 
 //            { (post.photoUrl.split('.').pop() === "mp4") ?
 //                     <video src={post.photoUrk}></video>
@@ -13,7 +14,7 @@ import CommentForm from "../comment/comment_form_container"
 // }
                 
 
-const PostIndex = ({posts}) => {
+const PostIndex = ({posts, comments}) => {
     
     return (
        <div className="post-container">
@@ -46,7 +47,7 @@ const PostIndex = ({posts}) => {
                            </div>
 
                            <div className="insta-likes-container-test">
-                                <h3>Comments here</h3>
+                                <CommentIndex comments={comments}/>
                            </div>
 
                            <div className="insta-likes-container-time-test">
@@ -54,7 +55,7 @@ const PostIndex = ({posts}) => {
                            </div>
 
                             <div className="insta-likes-container-comment">
-                                   <CommentForm/>
+                                   <CommentForm post={post}/>
                            </div>
 
 

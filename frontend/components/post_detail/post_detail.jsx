@@ -33,6 +33,7 @@ class PostDetail extends React.Component {
     render() {
         
         if (!this.props.post) return null
+        debugger
         return (
           <div className="post-show-container">
             {this.props.post.photoUrl.split(".").pop() === "mp4" ? (
