@@ -4,3 +4,5 @@
         json.extract! comment, :id, :body, :post_id
     end
 end 
+
+# work on the front end next 

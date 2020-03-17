@@ -4,7 +4,7 @@ import './comment.css'
 class CommentForm extends React.Component {
     constructor(props) {
         super(props)
-        debugger
+        
         this.state = {
             body: ''
         }

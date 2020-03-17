@@ -2,6 +2,7 @@ import {connect} from 'react-redux'
 import MainPage from './main_page'
 import {logout} from '../../actions/session'
 import { requestAllPost} from '../../actions/post'
+import {getComments} from '../../actions/comment'
 
 const mapStateToProps = (state) => {
     
@@ -15,7 +16,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
     logout: () => dispatch(logout()),
-    requestAllPost: () => dispatch(requestAllPost())
+    requestAllPost: () => dispatch(requestAllPost()),
+    requestAllComments: () => dispatch(getComments())
     }
 }
 

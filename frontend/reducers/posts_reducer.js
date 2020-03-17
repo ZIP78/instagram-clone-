@@ -1,5 +1,4 @@
 import {RECEIVE_POSTS, CREATE_POST, RECEIVE_POST} from '../actions/post'
-import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/comment'
 
 
 const postsReducer = (state = {}, action) => {
