@@ -14,9 +14,7 @@ class MainPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestAllPost()
-        
-        // this.props.requestAllComments()
+        this.props.requestAllPost()        
     }
 
 
@@ -24,7 +22,7 @@ class MainPage extends React.Component {
 
 
     render() {
-        const { logout, posts, comments, requestAllComments} = this.props
+        const { logout, posts, comments, getComments} = this.props
         // console.log(posts)
         
             return (
@@ -32,7 +30,7 @@ class MainPage extends React.Component {
                     
                     <section className="main-page-container">
                         <div className="insta-post-container">
-                            <PostIndex posts={posts} comments={comments} requestAllComments={requestAllComments}/>
+                            <PostIndex posts={posts} comments={comments} getComments={getComments}/>
                         </div>
                         <button onClick={logout}>Logout</button>
                     </section>    

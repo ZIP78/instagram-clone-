@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
     logout: () => dispatch(logout()),
     requestAllPost: () => dispatch(requestAllPost()),
-    requestAllComments: () => dispatch(getComments())
+    getComments: () => dispatch(getComments())
     }
 }
 

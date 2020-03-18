@@ -16,11 +16,11 @@ class PostIndex extends React.Component {
           
      }
      componentDidMount() {
-          this.props.requestAllComments()
+          this.props.getComments()
      }
 
      render() {
-          const { posts, comments, requestAllComments} = this.props
+          const { posts, comments} = this.props
            return (
        <div className="post-container">
                { Object.values(posts).map(post => {
@@ -52,7 +52,7 @@ class PostIndex extends React.Component {
                            </div>
 
                            <div className="insta-likes-container-test">
-                                       <CommentIndex comments={comments} requestAllComments={requestAllComments}/>
+                                       <CommentIndex comments={comments}/>
                                 <h1>test</h1>
                            </div>
 

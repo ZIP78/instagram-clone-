@@ -5,17 +5,17 @@ class CommentIndex extends React.Component {
         super(props)
     }
 
-    // componentDidMount() {
-    //     this.props.requestAllComments()
-    // }
+   
 
     render() {
         const {comments} = this.props
         return (
          <div>
              {Object.values(comments).map(comment => (
-                 comment.body
+                 <div>{comment.body}</div> 
+                 
              ))}
+                
          </div>
 
      )

@@ -5,7 +5,7 @@ const postsReducer = (state = {}, action) => {
     Object.freeze(state)
     switch (action.type) {
         case RECEIVE_POSTS:
-            return Object.assign({}, state, action.posts)
+            return action.posts
         case RECEIVE_POST:
             return Object.assign({}, state, action.post)    
         case CREATE_POST:
