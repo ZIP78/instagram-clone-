@@ -53,7 +53,6 @@ class PostIndex extends React.Component {
 
                            <div className="insta-likes-container-test">
                                        <CommentIndex comments={comments}/>
-                                <h1>test</h1>
                            </div>
 
                            <div className="insta-likes-container-time-test">

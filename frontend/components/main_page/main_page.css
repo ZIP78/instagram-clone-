@@ -138,7 +138,7 @@
 
 .post-bottom-part {
     width: 613px;
-    height: 260px;
+    max-height: 250px;
     background-color: #FFFFFF;
     border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
     border-top: 1px solid rgba(var(--b6a,219,219,219),1);
