@@ -38,3 +38,33 @@ textarea.add-comment::placeholder{
   position: relative;
   top: -2px;
 }
+
+.view-all {
+    width: 582px;
+    height: 17px;
+    font-size: 14px;
+    color: #999;
+    margin-top: -2px;
+
+}
+
+.comments {
+    position: relative;
+    top: 5px;
+    width: 570px;
+    height: 21px;
+    bottom: 14px;
+    font-size: 14px;
+}
+
+.comment-user, .post-user {
+    display: inline;
+    font-weight: 700;
+    max-width: 120px;
+    height: 16px;
+}
+
+.comment, .post-caption {
+    display: inline;
+    margin-left: 6px;
+}

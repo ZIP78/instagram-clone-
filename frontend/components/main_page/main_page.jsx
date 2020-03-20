@@ -22,7 +22,7 @@ class MainPage extends React.Component {
 
 
     render() {
-        const { logout, posts, comments, getComments} = this.props
+        const { logout, posts, comments, getComments, users} = this.props
         // console.log(posts)
         
             return (
@@ -30,7 +30,7 @@ class MainPage extends React.Component {
                     
                     <section className="main-page-container">
                         <div className="insta-post-container">
-                            <PostIndex posts={posts} comments={comments} getComments={getComments}/>
+                            <PostIndex posts={posts} users={users} comments={comments} getComments={getComments}/>
                         </div>
                         <button onClick={logout}>Logout</button>
                     </section>    

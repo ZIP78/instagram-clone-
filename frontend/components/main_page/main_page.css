@@ -138,9 +138,8 @@
 
 .post-bottom-part {
     width: 613px;
-    max-height: 250px;
+    min-height: 258px;
     background-color: #FFFFFF;
-    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
     border-top: 1px solid rgba(var(--b6a,219,219,219),1);
     border-left: 1px solid rgba(var(--b6a,219,219,219),1);
     border-right: 1px solid rgba(var(--b6a,219,219,219),1);
@@ -184,7 +183,9 @@
 .insta-likes-container-time-test {
     width: 568px;
     height: 18px;
-    padding-left: 18px;
+    padding-left: 15px;
+    text-transform: uppercase;
+
 }
 
 .insta-likes-container-comment {
@@ -192,15 +193,23 @@
     position: relative;
     top: 2px;
     width: 582px;
-    height: 56px;
+    height: 54px;
     top: 9px;
     padding-left: 16px;
     padding-right: 16px;
     margin-top: 4px;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
 }
 
 .post-ellipsh {
     position: relative;
     left: 561px;
     top: 7px;
+}
+
+.time-post {
+    font-size: 10px;
+    color: #999;
+    position: relative;
+    top: 3px;
 }
