@@ -6,7 +6,10 @@ import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
 import CommentForm from "../comment/comment_form_container"
 import CommentIndex from "../comment/comment_index"
+import Like from "../like/like"
 import Moment from "react-moment";
+import MdHeartOutline from "react-ionicons/lib/MdHeartOutline";
+
  
 
 
@@ -15,14 +18,15 @@ class PostIndex extends React.Component {
 
      constructor(props){
           super(props)
-          debugger;
+          // debugger;
      }
+
      componentDidMount() {
           this.props.getComments()
      }
 
      render() {
-          const { posts, comments, users} = this.props
+          const { posts, comments, users, likePost} = this.props;
            return (
        <div className="post-container">
                { Object.values(posts).map(post => {
@@ -48,18 +52,18 @@ class PostIndex extends React.Component {
                          )}
                        </div>
                        <div className="post-bottom-part">
-                         <div className="insta-interactive-icons">
-                           <FontAwesomeIcon
+                         {/* <div className="insta-interactive-icons"> */}
+                           <Like post={post} likePost={likePost} />
+                           {/* <MdHeartOutline
                              className="heart-icon"
-                             icon={faHeart}
-                           />
-                           <Link to={`/posts/${post.id}`}>
+                           /> */}
+                           {/* <Link to={`/posts/${post.id}`}>
                              <FontAwesomeIcon
                                className="comment-icon"
                                icon={faComment}
                              />
-                           </Link>
-                         </div>
+                           </Link> */}
+                         {/* </div> */}
                          <div className="insta-likes-container">
                            <h3>Likes here</h3>
                          </div>
@@ -98,60 +102,5 @@ class PostIndex extends React.Component {
      }
 }
 
-// const PostIndex = ({posts, comments}) => {
-    
-//     return (
-//        <div className="post-container">
-//                { Object.values(posts).map(post => {
-//                    return (
-//                      <div className="individual-post">
-//                        <div className="post-upper-part">
-//                             <FontAwesomeIcon className="post-ellipsh" icon={faEllipsisH}/>
-//                        </div>
-//                        <div className="post-middle-part">
-//                             { (post.photoUrl.split('.').pop() === "mp4") ?
-//                                <VideoPlayer className="instagram-post" src={post.photoUrl} />
-//                                     :
-//                                 <img className="instagram-post" src={post.photoUrl} />
-//                             }
-//                        </div>
-//                        <div className="post-bottom-part">
-//                            <div className="insta-interactive-icons">
-//                                 <FontAwesomeIcon className="heart-icon" icon={faHeart}/>
-//                                 <Link to={`/posts/${post.id}`}>
-//                                     <FontAwesomeIcon  className="comment-icon" icon={faComment}/>
-//                                 </Link>    
-//                            </div>
-//                            <div className="insta-likes-container">
-//                                 <h3>Likes here</h3>
-//                            </div>
-
-//                             <div className="insta-likes-container">
-//                                 <h3>Caption here</h3>
-//                            </div>
-
-//                            <div className="insta-likes-container-test">
-//                                 <CommentIndex comments={comments}/>
-//                            </div>
-
-//                            <div className="insta-likes-container-time-test">
-//                                 <h3>Time posted here</h3>
-//                            </div>
-
-//                             <div className="insta-likes-container-comment">
-//                                    <CommentForm post={post}/>
-//                            </div>
-
-
-                            
-//                        </div>
-
-                       
-//                      </div>
-//                    );   
-//                })} 
-//         </div> 
-//     );
-// }
 
 export default PostIndex

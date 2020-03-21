@@ -22,21 +22,32 @@ class MainPage extends React.Component {
 
 
     render() {
-        const { logout, posts, comments, getComments, users} = this.props
+        const {
+          logout,
+          posts,
+          comments,
+          getComments,
+          users,
+          likePost
+        } = this.props;
         // console.log(posts)
         
             return (
-                <header>
-                    
-                    <section className="main-page-container">
-                        <div className="insta-post-container">
-                            <PostIndex posts={posts} users={users} comments={comments} getComments={getComments}/>
-                        </div>
-                        <button onClick={logout}>Logout</button>
-                    </section>    
-
-                </header>
-            )
+              <header>
+                <section className="main-page-container">
+                  <div className="insta-post-container">
+                    <PostIndex
+                      posts={posts}
+                      users={users}
+                      comments={comments}
+                      likePost={likePost}
+                      getComments={getComments}
+                    />
+                  </div>
+                  <button onClick={logout}>Logout</button>
+                </section>
+              </header>
+            );
         }
 }
 

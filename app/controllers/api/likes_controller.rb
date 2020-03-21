@@ -1,9 +1,13 @@
 class Api::LikesController < ApplicationController
 
   def create
-      @like = current_user.likes.new(like_params)
+      # @like = current_user.likes.new(like_params)
+      @like.user_id = current_user.id
+      @like.post_id = params[:id]
+      debugger
       if @like.save!
-          render :show
+          # @post = @like.post
+          render 'api/posts/show'
       else
         render json: @comment, state: :unprocessible_entity
       end
@@ -12,7 +16,7 @@ class Api::LikesController < ApplicationController
   def destroy
         @like = Like.find(params[:id])
         @like.destroy
-  end
+  end #come back to
 
   private
   def like_params

@@ -3,6 +3,7 @@ import MainPage from './main_page'
 import {logout} from '../../actions/session'
 import { requestAllPost} from '../../actions/post'
 import {getComments} from '../../actions/comment'
+import {likePost} from '../../actions/like'
 
 const mapStateToProps = (state) => {
     
@@ -17,7 +18,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
     logout: () => dispatch(logout()),
     requestAllPost: () => dispatch(requestAllPost()),
-    getComments: () => dispatch(getComments())
+    getComments: () => dispatch(getComments()),
+    likePost: (like) => dispatch(likePost(like))
     }
 }
 
