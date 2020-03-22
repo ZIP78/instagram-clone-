@@ -1,11 +1,11 @@
 export const postLike = (like) => {
     return $.ajax({
-        method: 'POST',
-        url: 'api/likes',
-        data: {like}
-    })
+      method: "POST",
+      url: `/api/posts/${like}/likes`,
+      data: { like }
+    });
 }
-
+//eeehhh
 export const deleteLike = (postId) => {
     return $.ajax({
         method: 'DELETE',

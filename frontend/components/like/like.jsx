@@ -24,9 +24,12 @@ class Like extends React.Component {
     render() {
         const {post, likePost} = this.props
         return (
-          <div insta-interactive-icons>
+          <div class="insta-interactive-icons">
              <MdHeartOutline
                 onClick={this.like}
+                style={{fill: this.state.heartColor}}
+                height="24px"
+                width="24px"
                 className="heart-icon"
             /> 
           </div>
