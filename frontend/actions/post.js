@@ -37,3 +37,10 @@ export const requestPost = (id) => (dispatch) => {
 export const createPost = (post) => dispatch => {
     return APIUtil.createPost(post).then(post => dispatch(createSinglePost(post)))
 }
+export const likePost = like => dispatch => {
+  return APIUtil.postLike(like).then(like => dispatch(receivePost(like)));
+};
+
+export const removeLike = id => dispatch => {
+  return APIUtil.deleteLike(id).then(() => dispatch(receivePost(id)));
+};

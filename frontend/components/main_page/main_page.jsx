@@ -28,7 +28,8 @@ class MainPage extends React.Component {
           comments,
           getComments,
           users,
-          likePost
+          likePost,
+          removeLike
         } = this.props;
         // console.log(posts)
         
@@ -41,6 +42,7 @@ class MainPage extends React.Component {
                       users={users}
                       comments={comments}
                       likePost={likePost}
+                      removeLike={removeLike}
                       getComments={getComments}
                     />
                   </div>

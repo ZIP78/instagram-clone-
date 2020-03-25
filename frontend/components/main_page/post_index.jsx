@@ -6,7 +6,7 @@ import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
 import CommentForm from "../comment/comment_form_container"
 import CommentIndex from "../comment/comment_index"
-import Like from "../like/like"
+import Like from "../icons/like"
 import Moment from "react-moment";
 import MdHeartOutline from "react-ionicons/lib/MdHeartOutline";
 
@@ -26,7 +26,7 @@ class PostIndex extends React.Component {
      }
 
      render() {
-          const { posts, comments, users, likePost} = this.props;
+          const { posts, comments, users, likePost, removeLike } = this.props;
            return (
        <div className="post-container">
                { Object.values(posts).map(post => {
@@ -53,11 +53,15 @@ class PostIndex extends React.Component {
                        </div>
                        <div className="post-bottom-part">
                          {/* <div className="insta-interactive-icons"> */}
-                           <Like post={post} likePost={likePost} />
-                           {/* <MdHeartOutline
+                         <Like
+                           post={post}
+                           likePost={likePost}
+                           removeLike={removeLike}
+                         />
+                         {/* <MdHeartOutline
                              className="heart-icon"
                            /> */}
-                           {/* <Link to={`/posts/${post.id}`}>
+                         {/* <Link to={`/posts/${post.id}`}>
                              <FontAwesomeIcon
                                className="comment-icon"
                                icon={faComment}
