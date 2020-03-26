@@ -42,5 +42,6 @@ export const likePost = like => dispatch => {
 };
 
 export const removeLike = id => dispatch => {
-  return APIUtil.deleteLike(id).then(() => dispatch(receivePost(id)));
+  return APIUtil.deleteLike(id).then((id) => dispatch(receivePost(id)));
 };
+

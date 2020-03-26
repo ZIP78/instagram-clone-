@@ -1,6 +1,5 @@
 import React from 'react'
 import VideoPlayer from "react-video-js-player";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
@@ -18,7 +17,6 @@ class PostIndex extends React.Component {
 
      constructor(props){
           super(props)
-          // debugger;
      }
 
      componentDidMount() {
@@ -52,22 +50,11 @@ class PostIndex extends React.Component {
                          )}
                        </div>
                        <div className="post-bottom-part">
-                         {/* <div className="insta-interactive-icons"> */}
                          <Like
                            post={post}
                            likePost={likePost}
                            removeLike={removeLike}
-                         />
-                         {/* <MdHeartOutline
-                             className="heart-icon"
-                           /> */}
-                         {/* <Link to={`/posts/${post.id}`}>
-                             <FontAwesomeIcon
-                               className="comment-icon"
-                               icon={faComment}
-                             />
-                           </Link> */}
-                         {/* </div> */}
+                         />                        
                          <div className="insta-likes-container">
                            <h3>Likes here</h3>
                          </div>

@@ -165,12 +165,14 @@
 
 
 .comment-icon {
-    margin-top: 9px;
+    margin-top: -10px;
     width: 34px !important;
-    height: 34px;
-    padding-right: 21px;
+    height: 35px;
+    padding-right: 11px;
     transform: rotate(360deg) scaleX(-1);
     color: black;
+    position: relative;
+    top: 3px;
 }
 
 .insta-likes-container {

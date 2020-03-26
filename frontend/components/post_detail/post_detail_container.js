@@ -3,7 +3,6 @@ import PostDetail from './post_detail'
 import { requestPost } from "../../actions/post";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         post: state.entities.posts[ownProps.match.params.postId],
         currentUser: state.entities.users[state.session.id]

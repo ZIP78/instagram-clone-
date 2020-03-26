@@ -1,8 +1,8 @@
 import React from 'react'
 import IosHeartOutline from "react-ionicons/lib/IosHeartOutline";
 import IosHeart from "react-ionicons/lib/IosHeart";
-// import heartIcon from '../../../app/assets/images/favorite_border-24px.svg'
-// import { IoMdHeartEmpty } from "react-icons/io";
+import IosTextOutline from "react-ionicons/lib/IosTextOutline"
+import { Link } from "react-router-dom";
 
 
 
@@ -10,9 +10,7 @@ import IosHeart from "react-ionicons/lib/IosHeart";
 class Like extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            // heartColor: ''
-        }
+      
         this.like = this.like.bind(this)
         this.removeLike = this.removeLike.bind(this)
     }
@@ -20,9 +18,6 @@ class Like extends React.Component {
     like() {
         let postId = this.props.post.id
         this.props.likePost(postId)
-            // this.setState({
-            //     heartColor: 'red'
-            // })
     }
 
     removeLike() {
@@ -31,12 +26,11 @@ class Like extends React.Component {
     }
 
     render() {
-        // const {post, likePost} = this.props
+        const {post, likePost} = this.props
         let heart;
         if (this.props.post.liked_by_current_user) {
               heart = <IosHeart
                  onClick={this.removeLike}
-                //  style={{color: this.state.heartColor}}
                 color="red"
                  className="heart-icon"
                />
@@ -44,17 +38,17 @@ class Like extends React.Component {
             heart = 
               <IosHeartOutline
                 onClick={this.like}
-                //  style={{color: this.state.heartColor}}
                 className="heart-icon"
               />
             
         }
         return (
           <div class="insta-interactive-icons">
-              {heart}
+            {heart}
+            <Link to={`/posts/${post.id}`}>
+              <IosTextOutline className="comment-icon" />
+            </Link>
           </div>
-
-
         );
     }
 }
