@@ -1,6 +1,6 @@
-class RemoveUser < ActiveRecord::Migration[5.2]
-  def change
-        remove_column :posts, :user_id, :integer
+# class RemoveUser < ActiveRecord::Migration[5.2]
+#   def change
+#         remove_column :posts, :user_id, :integer
 
-  end
-end
+#   end
+# end
