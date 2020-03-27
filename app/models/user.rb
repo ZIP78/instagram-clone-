@@ -5,7 +5,11 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil: true 
 
     after_initialize :ensure_session_token
-    has_many :posts, dependent: :destroy
+    has_many :posts, dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Post
+
     has_many :likes
     has_many :comments
 
