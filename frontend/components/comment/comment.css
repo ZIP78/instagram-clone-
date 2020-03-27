@@ -5,15 +5,13 @@
     top: 23px;
 }
 
-textarea {
+input {
     border: none;
     overflow: auto;
     outline: none;
-
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-
     resize: none; 
 }
 
@@ -33,7 +31,7 @@ textarea {
     top: -1px;
 }
 
-textarea.add-comment::placeholder{
+input.add-comment::placeholder{
   color: #999999;
   position: relative;
   top: -2px;
@@ -41,10 +39,11 @@ textarea.add-comment::placeholder{
 
 .view-all {
     width: 582px;
-    height: 17px;
+    height: 16px;
     font-size: 14px;
     color: #999;
-    margin-top: -2px;
+    margin-top: 16px;
+    margin-bottom: 2px
 
 }
 

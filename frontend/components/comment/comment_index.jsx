@@ -17,6 +17,7 @@ class CommentIndex extends React.Component {
             <Link to={`posts/${this.props.post.id}`}>
               <h1 className="view-all">View all {postComments.length} comments</h1>
             </Link>
+            
           );
           
        }
@@ -31,7 +32,7 @@ class CommentIndex extends React.Component {
         const {user} = this.props
         
         return (
-          <div>
+          <div className="insta-likes-container-test">
             {this.viewMoreComments()}
             {this.comments()
               .slice(0, 2)

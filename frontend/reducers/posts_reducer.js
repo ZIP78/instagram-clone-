@@ -10,7 +10,10 @@ const postsReducer = (state = {}, action) => {
             return Object.assign({}, state, {[action.post["post"]["id"]]: action.post["post"]});       
         case CREATE_POST:
             let post = action.post
-            return Object.assign({}, state, post)  
+            return Object.assign({}, state, post)
+        // case RECEIVE_LIKE:
+        //     debugger
+        //     return Object.assign({}, state, {[action.like["post"]["id"]]: action.like["post"]});       
         default:
             return state;
     }

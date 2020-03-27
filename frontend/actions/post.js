@@ -4,6 +4,7 @@ import * as APIUtil from '../utils/post'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const CREATE_POST = 'CREATE_POST'
 export const RECEIVE_POST = 'RECEIVE_POST'
+// export const RECEIVE_LIKE = 'RECEIVE_LIKE'
 
 const receivePosts = (posts) => {
     return {
@@ -26,6 +27,13 @@ const receivePost = (post) => {
     }
 }
 
+// const receiveLike = (like) => {
+//     return {
+//         type: RECEIVE_LIKE,
+//         like
+//     }
+// }
+
 export const requestAllPost = () => (dispatch) => {
     return APIUtil.fetchPosts().then(posts => dispatch(receivePosts(posts)))
 }
@@ -37,11 +45,18 @@ export const requestPost = (id) => (dispatch) => {
 export const createPost = (post) => dispatch => {
     return APIUtil.createPost(post).then(post => dispatch(createSinglePost(post)))
 }
+// export const likePost = like => dispatch => {
+//   return APIUtil.postLike(like).then(like => dispatch(receiveLike(like)));
+// };
+
+// export const removeLike = id => dispatch => {
+//   return APIUtil.deleteLike(id).then((id) => dispatch(receiveLike(id)));
+// };
+
 export const likePost = like => dispatch => {
   return APIUtil.postLike(like).then(like => dispatch(receivePost(like)));
 };
 
 export const removeLike = id => dispatch => {
-  return APIUtil.deleteLike(id).then((id) => dispatch(receivePost(id)));
+  return APIUtil.deleteLike(id).then(id => dispatch(receivePost(id)));
 };
-

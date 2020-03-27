@@ -1,14 +1,11 @@
 import React from 'react'
 import VideoPlayer from "react-video-js-player";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faHeart, faComment} from "@fortawesome/free-regular-svg-icons"
 import {faEllipsisH} from "@fortawesome/free-solid-svg-icons"
 import CommentForm from "../comment/comment_form_container"
 import CommentIndex from "../comment/comment_index"
-import Like from "../icons/like"
-import Moment from "react-moment";
-import MdHeartOutline from "react-ionicons/lib/MdHeartOutline";
-
+import LikeComment from "../icons/like_comment"
+import Time from './time'
  
 
 
@@ -50,13 +47,13 @@ class PostIndex extends React.Component {
                          )}
                        </div>
                        <div className="post-bottom-part">
-                         <Like
+                         <LikeComment
                            post={post}
                            likePost={likePost}
                            removeLike={removeLike}
                          />                        
                          <div className="insta-likes-container">
-                           <h3>Likes here</h3>
+                          <h1>{post.likes} likes</h1>
                          </div>
 
                          <div className="insta-likes-container">
@@ -67,18 +64,16 @@ class PostIndex extends React.Component {
                            <div className="post-caption">{post.body}</div>
                          </div>
 
-                         <div className="insta-likes-container-test">
+                         {/* <div className="insta-likes-container-test"> */}
                            <CommentIndex
                              post={post}
                              user={users[post.user_id]["username"]}
                              comments={comments}
                            />
-                         </div>
+                         {/* </div> */}
 
                          <div className="insta-likes-container-time-test">
-                           <div className="time-post">
-                             <Moment fromNow>{post.created_at}</Moment>{" "}
-                           </div>
+                            <Time post={post}/>
                          </div>
 
                          <div className="insta-likes-container-comment">

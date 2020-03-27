@@ -138,7 +138,7 @@
 
 .post-bottom-part {
     width: 613px;
-    min-height: 258px;
+    min-height: 245px;
     background-color: #FFFFFF;
     border-top: 1px solid rgba(var(--b6a,219,219,219),1);
     border-left: 1px solid rgba(var(--b6a,219,219,219),1);
@@ -176,14 +176,15 @@
 }
 
 .insta-likes-container {
-    margin-top: 12px;
+    margin-top: 6px;
     margin-left: 15px;
+    margin-bottom: 10px;
 
 }
 
 .insta-likes-container-test {
     height: 64px;
-    margin-top: 12px;
+    margin-top: -6px;
     margin-left: 15px;
 }
 
@@ -198,10 +199,10 @@
 .insta-likes-container-comment {
     border-top: 1px solid rgba(var(--ce3,239,239,239),1);
     position: relative;
-    top: 2px;
+    top: 3px;
     width: 582px;
     height: 54px;
-    top: 9px;
+    top: 5px;
     padding-left: 16px;
     padding-right: 16px;
     margin-top: 4px;
