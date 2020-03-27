@@ -64,13 +64,11 @@ class PostIndex extends React.Component {
                            <div className="post-caption">{post.body}</div>
                          </div>
 
-                         {/* <div className="insta-likes-container-test"> */}
                            <CommentIndex
                              post={post}
                              user={users[post.user_id]["username"]}
                              comments={comments}
                            />
-                         {/* </div> */}
 
                          <div className="insta-likes-container-time-test">
                             <Time post={post}/>

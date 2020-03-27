@@ -1,6 +1,5 @@
 import React from "react";
 import Moment from "react-moment";
-import TimeAgo from "react-timeago";
 
 class Time extends React.Component {
     constructor(props) {
@@ -10,7 +9,6 @@ class Time extends React.Component {
         }
     }
   render() {
-      const {post} = this.props
     return (
       <div className="time-post">
             <Moment fromNow>{this.state.time}</Moment>

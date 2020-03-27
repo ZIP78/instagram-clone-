@@ -49,7 +49,7 @@ input.add-comment::placeholder{
 
 .comments {
     position: relative;
-    top: 5px;
+    top: 2px;
     width: 570px;
     height: 21px;
     bottom: 14px;
