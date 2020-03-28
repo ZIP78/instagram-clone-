@@ -215,9 +215,14 @@
     top: 7px;
 }
 
-.time-post {
+.time-post, .time-single-post {
     font-size: 10px;
     color: #999;
     position: relative;
     top: 3px;
+}
+
+.time-single-post {
+    left: 41px;
+    top: 7px;
 }

@@ -26,12 +26,12 @@ class LikeComment extends React.Component {
     }
 
     render() {
-        const {post, likePost} = this.props
+        const {post, comments} = this.props
         let heart;
         if (this.props.post.liked_by_current_user) {
               heart = <IosHeart
                  onClick={this.removeLike}
-                color="red"
+                 color="red"
                  className="heart-icon"
                />
         } else {
@@ -45,7 +45,7 @@ class LikeComment extends React.Component {
         return (
           <div class="insta-interactive-icons">
             {heart}
-            <Link to={`/posts/${post.id}`}>
+            <Link to={{pathname: `/posts/${post.id}`, comments: {comments}}}>
               <IosTextOutline className="comment-icon" />
             </Link>
           </div>

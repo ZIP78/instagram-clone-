@@ -51,6 +51,7 @@ class PostIndex extends React.Component {
                            post={post}
                            likePost={likePost}
                            removeLike={removeLike}
+                           comments={comments}
                          />                        
                          <div className="insta-likes-container">
                           <h1>{post.likes} likes</h1>

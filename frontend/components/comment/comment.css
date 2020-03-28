@@ -31,7 +31,7 @@ input {
     top: -1px;
 }
 
-input.add-comment::placeholder{
+textarea.add-comment::placeholder{
   color: #999999;
   position: relative;
   top: -2px;

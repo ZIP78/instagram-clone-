@@ -56,7 +56,7 @@ class Upload extends React.Component {
             />
             
 
-            <input
+            <textarea
               type="text"
               onChange={this.handleInput}
               value={this.state.body}

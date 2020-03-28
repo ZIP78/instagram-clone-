@@ -15,7 +15,7 @@ class PostDetail extends React.Component {
     
     constructor(props) {
         super(props)
-        debugger
+        
         // this.attachment = this.attachment.bind(this)
         this.state = {
           // time: this.props.post.created_at
@@ -26,7 +26,12 @@ class PostDetail extends React.Component {
         this.props.requestPost(this.props.match.params.postId)
     }
 
-    // componentDidUpdate() {
+  comments() {
+    let comments = Object.values(this.props.location.comments.comments);
+    return comments.filter(comment => comment.post_id === this.props.post.id);
+  }
+
+    // componentDidUpdate() { maybe need did mount
 
     // }
 
@@ -37,6 +42,9 @@ class PostDetail extends React.Component {
                             
 
     render() {
+      debugger
+        // let comments = this.props.location.comments.comments
+
         const {post, currentUser} = this.props
         if (!post) return null
         
@@ -61,23 +69,38 @@ class PostDetail extends React.Component {
                 icon={faEllipsisH}
               />
               <div className="show-profile-name">
-                {this.props.currentUser.username}
+                {currentUser["username"]}
               </div>
 
-              <div className="show-post-comments">
+              <div className="show-post-comments-container">
                 <div className="show-caption-section">
+
                   <div className="user-caption-container">
                     <div className="comment-user">
                       {currentUser["username"]}
                     </div>
-
                     <div className="comment">{post.body}</div>
                   </div>
+
                   <div className="insta-likes-container-time-test">
-                    {/* <Time post={post} /> */}
-                    <Moment fromNow ago>{post.created_at}</Moment>
+                    <Moment fromNow ago className="time-single-post">{post.created_at}</Moment>
                   </div>
                 </div>
+
+                <div className="show-post-comments">
+                  {this.comments()
+                    .slice(0, 2)
+                    .map(comment => (
+                      <div className="comments">
+                        <div className="comment-user">
+                          {currentUser["username"]}
+                        </div>
+
+                        <div className="comment">{comment.body}</div>
+                      </div>
+                    ))}
+                </div>
+
                 <div className="show-interactive-icons">
                   <FontAwesomeIcon className="heart-icon" icon={faHeart} />
                   <FontAwesomeIcon className="comment-icon" icon={faComment} />
