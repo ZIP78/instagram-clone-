@@ -136,3 +136,10 @@ background-size: cover;
     font-size: 14px;
     left: 58px;
 }
+
+.show-post-comments {
+    position: absolute;
+    left: 75px;
+    width: 265px;
+    min-height: 46px;
+}

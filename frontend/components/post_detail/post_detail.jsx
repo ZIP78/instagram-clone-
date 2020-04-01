@@ -89,7 +89,7 @@ class PostDetail extends React.Component {
 
                 <div className="show-post-comments">
                   {this.comments()
-                    .slice(0, 2)
+                    // .slice(0, 2)
                     .map(comment => (
                       <div className="comments">
                         <div className="comment-user">
