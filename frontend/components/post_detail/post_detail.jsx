@@ -23,7 +23,8 @@ class PostDetail extends React.Component {
     }
 
     componentDidMount() {
-        this.props.requestPost(this.props.match.params.postId)
+      this.props.requestPost(this.props.match.params.postId)
+      // this.props.location.comments.comments
     }
 
   comments() {
@@ -31,7 +32,8 @@ class PostDetail extends React.Component {
     return comments.filter(comment => comment.post_id === this.props.post.id);
   }
 
-    // componentDidUpdate() { maybe need did mount
+    // componentDidUpdate() { 
+    //   this.props.location.comments.comments
 
     // }
 
