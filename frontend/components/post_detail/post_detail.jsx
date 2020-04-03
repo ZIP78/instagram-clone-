@@ -15,41 +15,26 @@ class PostDetail extends React.Component {
     
     constructor(props) {
         super(props)
-        
-        // this.attachment = this.attachment.bind(this)
-        this.state = {
-          // time: this.props.post.created_at
+                this.state = {
+
         };
     }
 
     componentDidMount() {
       this.props.requestPost(this.props.match.params.postId)
-      // this.props.location.comments.comments
+      this.props.getComments()
     }
 
   comments() {
-    let comments = Object.values(this.props.location.comments.comments);
+    let comments = Object.values(this.props.comments);
     return comments.filter(comment => comment.post_id === this.props.post.id);
   }
 
-    // componentDidUpdate() { 
-    //   this.props.location.comments.comments
-
-    // }
-
-    // attachment() {
-    
-
-    // } 
-                            
-
+                   
     render() {
-      debugger
-        // let comments = this.props.location.comments.comments
-
         const {post, currentUser} = this.props
         if (!post) return null
-        
+        debugger
         return (
           <div className="post-show-container">
             {post.photoUrl.split(".").pop() === "mp4" ? (
@@ -91,7 +76,6 @@ class PostDetail extends React.Component {
 
                 <div className="show-post-comments">
                   {this.comments()
-                    // .slice(0, 2)
                     .map(comment => (
                       <div className="comments">
                         <div className="comment-user">

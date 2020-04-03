@@ -1,19 +1,21 @@
 import { connect } from "react-redux";
 import PostDetail from './post_detail'
 import { requestPost } from "../../actions/post";
+import { getComments } from "../../actions/comment"
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+    debugger
     return {
         post: state.entities.posts[ownProps.match.params.postId],
         currentUser: state.entities.users[state.session.id],
-        // comments: this.props.location.comments.comments
+        comments: state.entities.comments
     }
 }
 
 const mapStateToDispatch = (dispatch) => {
     return {
-    requestPost: (id) => dispatch(requestPost(id))
+    requestPost: (id) => dispatch(requestPost(id)),
+    getComments: () => dispatch(getComments())
     }
 }
 

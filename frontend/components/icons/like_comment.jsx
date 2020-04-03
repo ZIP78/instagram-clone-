@@ -45,7 +45,9 @@ class LikeComment extends React.Component {
         return (
           <div class="insta-interactive-icons">
             {heart}
-            <Link to={{pathname: `/posts/${post.id}`, comments: {comments}}}>
+            <Link to={{
+              pathname: `/posts/${post.id}`, 
+              }}>
               <IosTextOutline className="comment-icon" />
             </Link>
           </div>
