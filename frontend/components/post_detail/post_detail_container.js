@@ -4,7 +4,7 @@ import { requestPost } from "../../actions/post";
 import { getComments } from "../../actions/comment"
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    
     return {
         post: state.entities.posts[ownProps.match.params.postId],
         currentUser: state.entities.users[state.session.id],

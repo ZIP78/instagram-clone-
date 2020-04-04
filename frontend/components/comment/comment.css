@@ -49,11 +49,12 @@ textarea.add-comment::placeholder{
 
 .comments {
     position: relative;
-    top: 2px;
+    top: 19px;
     width: 570px;
-    height: 21px;
-    bottom: 14px;
+    min-height: 45px;
+    bottom: 30px;
     font-size: 14px;
+    margin-bottom: 29px;
 }
 
 .comment-user, .post-user {
@@ -66,4 +67,34 @@ textarea.add-comment::placeholder{
 .comment, .post-caption {
     display: inline;
     margin-left: 6px;
+}
+
+.time-single-comment {
+    left: 41px;
+    font-size: 12px;
+    color: #999;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 19px;
+    overflow: hidden;
+    word-break: break-all;
+    height: 48px;
+    line-height: 74px;
+}
+
+.comment-d {
+    position: relative;
+    top: 18px;
+    left: 14px;
+    font-size: 12px;
+    color: #999;
+}
+
+.comment-d-post {
+    position: relative;
+    top: -3px;
+    left: 73px;
+    font-size: 12px;
+    color: #999;
 }
