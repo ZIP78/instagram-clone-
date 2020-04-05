@@ -48,13 +48,23 @@ textarea.add-comment::placeholder{
 }
 
 .comments {
-    position: relative;
-    top: 19px;
+    /* position: relative;
+    top: 5px;
     width: 570px;
     min-height: 45px;
-    bottom: 30px;
+    bottom: 14px;
     font-size: 14px;
-    margin-bottom: 29px;
+    margin-left: -12px;
+    margin-right: 0;
+    padding: 12px 16px;
+    width: auto; */
+
+    position: relative;
+    top: 2px;
+    width: 570px;
+    height: 21px;
+    bottom: 14px;
+    font-size: 14px;
 }
 
 .comment-user, .post-user {
@@ -69,32 +79,26 @@ textarea.add-comment::placeholder{
     margin-left: 6px;
 }
 
+.single-page-comments {
+    position: relative;
+    top: 5px;
+    width: 570px;
+    min-height: 45px;
+    bottom: 14px;
+    font-size: 14px;
+    margin-left: -16px;
+    margin-right: 0;
+    padding: 12px 16px;
+    width: auto;
+}
+
 .time-single-comment {
-    left: 41px;
-    font-size: 12px;
-    color: #999;
     position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 19px;
-    overflow: hidden;
-    word-break: break-all;
-    height: 48px;
-    line-height: 74px;
-}
-
-.comment-d {
     position: relative;
-    top: 18px;
-    left: 14px;
-    font-size: 12px;
-    color: #999;
-}
-
-.comment-d-post {
-    position: relative;
-    top: -3px;
-    left: 73px;
+    top: 30px;
+    left: -53px;
+    width: 570px;
+    width: auto;
     font-size: 12px;
     color: #999;
 }

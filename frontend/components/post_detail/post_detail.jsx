@@ -5,6 +5,8 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import Moment from "react-moment";
+import Time from "react-time";
+
 
 
 
@@ -69,24 +71,21 @@ class PostDetail extends React.Component {
                   </div>
 
                   <div className="insta-likes-container-time-test">
-                    <Moment fromNow ago className="time-single-post">{post.created_at}</Moment>
+                    <Moment fromNow className="time-single-post">{post.created_at}</Moment>
                     
                   </div>
-                  <div className="comment-d-post">d</div>
-
                 </div>
 
                 <div className="show-post-comments">
                   {this.comments()
                     .map(comment => (
-                      <div className="comments">
+                      <div className="single-page-comments">
                         <div className="comment-user">
                           {currentUser["username"]}
                         </div>
 
                         <div className="comment">{comment.body}</div>
                         <Moment fromNow ago className="time-single-comment">{comment.created_at}</Moment> 
-                        <div className="comment-d">d</div>
                       </div>
                     ))}
                 </div>

@@ -77,9 +77,10 @@
     padding-right: 16px;
     position: absolute;
     top: 368px;
-    left: -2px;
+    left: -1px;
     border-right: 1px solid rgba(var(--b6a,219,219,219),1);
     border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    background-color: #FFFFFF;
 }
 
 .insta-show-likes-container, .insta-show-time-container {

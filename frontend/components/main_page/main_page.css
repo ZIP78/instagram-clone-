@@ -216,19 +216,13 @@
 }
 
 .time-post, .time-single-post {
-    font-size: 12px;
+    font-size: 10px;
     color: #999;
     position: relative;
     top: 3px;
 }
 
 .time-single-post {
-    left: 75px;
-    top: 10px;
-    position: absolute;
-    width: 20px;
-    overflow: hidden;
-    word-break: break-all;
-    height: 49px;
-    line-height: 88px;
+    left: 41px;
+    top: 7px;
 }
