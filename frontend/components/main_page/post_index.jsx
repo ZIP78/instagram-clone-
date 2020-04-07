@@ -22,7 +22,6 @@ class PostIndex extends React.Component {
 
   render() {
     const { posts, comments, users, likePost, removeLike } = this.props;
-    debugger;
     return (
       <div className="post-container">
         {Object.values(posts).map((post) => {

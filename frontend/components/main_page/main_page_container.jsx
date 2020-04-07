@@ -5,7 +5,6 @@ import { requestAllPost, likePost, removeLike } from "../../actions/post";
 import { getComments } from "../../actions/comment";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     posts: state.entities.posts,
     comments: state.entities.comments,
