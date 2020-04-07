@@ -10,14 +10,19 @@ import Time from "./time";
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      // user: this.props.users,
+    };
   }
 
   componentDidMount() {
     this.props.getComments();
+    // this.props.user;
   }
 
   render() {
     const { posts, comments, users, likePost, removeLike } = this.props;
+    debugger;
     return (
       <div className="post-container">
         {Object.values(posts).map((post) => {
