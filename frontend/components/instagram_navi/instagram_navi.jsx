@@ -1,7 +1,7 @@
 import React from "react";
 import Upload from "../upload/upload_container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import IosAdd from "react-ionicons/lib/IosAdd";
+
 import { Link } from "react-router-dom";
 
 const instagramNavi = () => {
@@ -13,6 +13,10 @@ const instagramNavi = () => {
             <h1 className="insta-navi-name">Whoopiegram</h1>
           </Link>
         </div>
+        <div>
+          <IosAdd />
+        </div>
+
         <div className="insta-upload-button">
           <Upload />
         </div>
