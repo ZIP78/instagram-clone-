@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import MainPage from "./main_page";
-import { logout } from "../../actions/session";
+import { logout, requestUsers } from "../../actions/session";
 import { requestAllPost, likePost, removeLike } from "../../actions/post";
 import { getComments } from "../../actions/comment";
 
@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => {
     getComments: () => dispatch(getComments()),
     likePost: (postId) => dispatch(likePost(postId)),
     removeLike: (id) => dispatch(removeLike(id)),
+    requestUsers: () => dispatch(requestUsers()),
   };
 };
 

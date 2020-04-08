@@ -10,18 +10,22 @@ import Time from "./time";
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // user: this.props.users,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
     this.props.getComments();
-    // this.props.user;
   }
 
   render() {
-    const { posts, comments, users, likePost, removeLike } = this.props;
+    const {
+      posts,
+      comments,
+      users,
+      likePost,
+      removeLike,
+      getComments,
+    } = this.props;
     return (
       <div className="post-container">
         {Object.values(posts).map((post) => {
@@ -58,8 +62,9 @@ class PostIndex extends React.Component {
 
                 <CommentIndex
                   post={post}
-                  user={users[post.user_id]["username"]}
+                  user={users}
                   comments={comments}
+                  getComments={getComments}
                 />
 
                 <div className="insta-likes-container-time-test">

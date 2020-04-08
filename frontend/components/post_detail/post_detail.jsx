@@ -17,6 +17,7 @@ class PostDetail extends React.Component {
   componentDidMount() {
     this.props.requestPost(this.props.match.params.postId);
     this.props.getComments();
+    this.props.requestUsers();
   }
 
   comments() {
@@ -27,7 +28,7 @@ class PostDetail extends React.Component {
   render() {
     const { post, currentUser, likePost, removeLike } = this.props;
     if (!post) return null;
-
+    debugger;
     return (
       <div className="post-show-container">
         {post.photoUrl.split(".").pop() === "mp4" ? (
@@ -42,12 +43,16 @@ class PostDetail extends React.Component {
         <div className="show-post-upper-part">
           <div className="insta-profile-icon"></div>
           <FontAwesomeIcon className="post-show-ellipsh" icon={faEllipsisH} />
-          <div className="show-profile-name">{currentUser["username"]}</div>
+          <div className="show-profile-name">
+            {currentUser[post.user_id]["username"]}
+          </div>
 
           <div className="show-post-comments-container">
             <div className="show-caption-section">
               <div className="user-caption-container">
-                <div className="comment-user">{currentUser["username"]}</div>
+                <div className="comment-user">
+                  {currentUser[post.user_id]["username"]}
+                </div>
                 <div className="comment">{post.body}</div>
               </div>
 
@@ -61,7 +66,9 @@ class PostDetail extends React.Component {
             <div className="show-post-comments">
               {this.comments().map((comment) => (
                 <div className="single-page-comments">
-                  <div className="comment-user">{currentUser["username"]}</div>
+                  <div className="comment-user">
+                    {currentUser[comment.user_id]["username"]}
+                  </div>
 
                   <div className="comment">{comment.body}</div>
                   <Moment fromNow ago className="time-single-comment">
@@ -72,8 +79,6 @@ class PostDetail extends React.Component {
             </div>
 
             <div className="show-interactive-icons">
-              {/* <FontAwesomeIcon className="heart-icon" icon={faHeart} />
-                  <FontAwesomeIcon className="comment-icon" icon={faComment} /> */}
               <LikeComment
                 post={post}
                 likePost={likePost}
