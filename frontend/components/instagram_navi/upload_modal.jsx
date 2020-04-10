@@ -6,7 +6,10 @@ class UploadModal extends React.Component {
   }
 
   render() {
-    <div>modal</div>;
+    if (!this.props.show) {
+      return null;
+    }
+    return <div className="modal">Upload Photo / Video</div>;
   }
 }
 
