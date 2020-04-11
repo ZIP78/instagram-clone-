@@ -37,9 +37,9 @@ class InstagramNavi extends React.Component {
             <UploadModal show={this.state.show} />
           </div>
 
-          <div className="insta-upload-button">
+          {/* <div className="insta-upload-button">
             <Upload />
-          </div>
+          </div> */}
         </div>
       </div>
     );

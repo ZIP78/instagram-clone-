@@ -1,4 +1,5 @@
 import React from "react";
+import Upload from "../upload/upload_container";
 
 class UploadModal extends React.Component {
   constructor(props) {
@@ -9,7 +10,14 @@ class UploadModal extends React.Component {
     if (!this.props.show) {
       return null;
     }
-    return <div className="modal">Upload Photo / Video</div>;
+    return (
+      <div className="modal">
+        <section className="modal-main">
+          <div className="modal-title">Upload Photo / Video</div>
+          <Upload />
+        </section>
+      </div>
+    );
   }
 }
 

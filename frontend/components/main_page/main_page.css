@@ -82,7 +82,7 @@
   max-width: 935px;
   top: 78px;
   position: relative;
-  height: 19451px;
+  height: 100%;
   margin: 0px auto 0 auto;
 }
 
@@ -217,7 +217,4 @@
 .time-single-post {
   left: 41px;
   top: 7px;
-}
-
-.modal {
 }
