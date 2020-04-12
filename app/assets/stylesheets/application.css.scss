@@ -590,9 +590,10 @@ input.lname::placeholder {
     background: white;
     width: 600px;
     height: 300px;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 9999;
   }
 }
 
@@ -606,4 +607,15 @@ input.lname::placeholder {
 
 .modal-title {
   font-size: 45px;
+  padding-left: 92px;
+  font-family: "Pacifico", cursive;
+  padding-top: 18px;
+}
+
+.upload-form {
+  position: relative;
+  top: 45px;
+  padding-left: 39px;
+  width: 258px;
+  display: flex;
 }
