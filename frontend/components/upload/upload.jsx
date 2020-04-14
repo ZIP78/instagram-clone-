@@ -1,4 +1,6 @@
 import React from "react";
+import VideoThumbnail from "react-video-thumbnail";
+import VideoPlayer from "react-video-js-player";
 
 class Upload extends React.Component {
   constructor(props) {
@@ -6,6 +8,7 @@ class Upload extends React.Component {
     this.state = {
       body: "",
       photoFile: null,
+      photoUrl: null,
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +22,14 @@ class Upload extends React.Component {
 
   handleFile(e) {
     e.preventDefault();
-    this.setState({ photoFile: e.currentTarget.files[0] });
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {
@@ -36,16 +46,33 @@ class Upload extends React.Component {
 
   render() {
     console.log(this.state);
-
-    return (
-      <form className="upload-form" onSubmit={this.handleSubmit}>
+    let display;
+    const preview = this.state.photoUrl;
+    if (preview && this.state.photoFile.name.split(".").pop()) {
+      display = (
+        <VideoThumbnail
+          width={200}
+          height={169}
+          className="image-preview"
+          videoUrl={preview}
+        />
+      );
+    } else if (preview) {
+      display = <img className="image-preview" src={this.state.photoUrl} />;
+    } else {
+      display = (
         <input
           type="file"
-          style={{ width: "210px" }}
+          style={{ width: "194px", height: "100px" }}
           onChange={this.handleFile}
           onClick={(e) => (e.target.value = null)}
         />
-
+      );
+    }
+    debugger;
+    return (
+      <form className="upload-form" onSubmit={this.handleSubmit}>
+        {display}
         {/* <input
           type="text"
           onChange={this.handleInput}

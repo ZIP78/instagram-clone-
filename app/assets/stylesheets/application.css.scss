@@ -614,8 +614,15 @@ input.lname::placeholder {
 
 .upload-form {
   position: relative;
-  top: 45px;
+  top: 15px;
   padding-left: 39px;
   width: 258px;
+  height: 115px;
   display: flex;
+  padding-top: 10px;
+}
+
+.image-preview {
+  max-width: 211px;
+  height: 169px;
 }
