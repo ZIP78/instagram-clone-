@@ -13,7 +13,7 @@ class UploadModal extends React.Component {
     return (
       <div className="modal">
         <section className="modal-main">
-          <div className="modal-title">Upload Photo / Video</div>
+          <div className="modal-title">Upload Photo or Video</div>
           <Upload />
         </section>
       </div>

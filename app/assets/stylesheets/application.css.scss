@@ -606,10 +606,11 @@ input.lname::placeholder {
 }
 
 .modal-title {
-  font-size: 45px;
-  padding-left: 92px;
-  font-family: "Pacifico", cursive;
+  font-size: 37px;
+  padding-left: 123px;
   padding-top: 18px;
+  background-color: lightgrey;
+  display: flex;
 }
 
 .upload-form {
