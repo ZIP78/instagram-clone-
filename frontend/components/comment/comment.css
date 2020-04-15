@@ -16,9 +16,9 @@ input {
 }
 
 .add-comment {
-  height: 13px;
+  height: 14px;
   position: relative;
-  /* width: 547px; */
+  top: -2px;
 }
 
 .post-comment-button {

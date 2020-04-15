@@ -48,7 +48,7 @@ class Upload extends React.Component {
     console.log(this.state);
     let display;
     const preview = this.state.photoUrl;
-    if (preview && this.state.photoFile.name.split(".").pop()) {
+    if (preview && this.state.photoFile.name.split(".").pop() === 'mp4') {
       display = (
         <VideoThumbnail
           width={200}
@@ -69,15 +69,19 @@ class Upload extends React.Component {
         />
       );
     }
-    debugger;
     return (
       <form className="upload-form" onSubmit={this.handleSubmit}>
         {display}
-        {/* <input
+
+        <input
+          className="write-caption"
+          placeholder="test"
           type="text"
           onChange={this.handleInput}
           value={this.state.body}
-        /> */}
+        />
+        <label className="caption-placeholder">Write a caption...</label>
+
 
         {/* <button>Create Post</button> */}
         {/* come back here  */}

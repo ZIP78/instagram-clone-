@@ -609,21 +609,40 @@ input.lname::placeholder {
   font-size: 37px;
   padding-left: 123px;
   padding-top: 18px;
-  background-color: lightgrey;
+  background-color: #FAFAFA;
   display: flex;
 }
 
 .upload-form {
   position: relative;
-  top: 15px;
-  padding-left: 39px;
-  width: 258px;
-  height: 115px;
-  display: flex;
-  padding-top: 10px;
+    top: 15px;
+    padding-left: 39px;
+    width: 534px;
+    height: 179px;
+    display: flex;
+    padding-top: 10px;
 }
 
 .image-preview {
   max-width: 211px;
   height: 169px;
+}
+
+.write-caption {
+      position: absolute;
+    left: 259px;
+    width: 300px;
+    height: 167px;
+}
+
+.caption-placeholder {
+    width: 205px;
+    height: 30px;
+    position: absolute;
+    left: 261px;
+    top: 21px;
+}
+
+.write-caption:focus ~ .caption-placeholder {
+  display: none;
 }
