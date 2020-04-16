@@ -587,13 +587,13 @@ input.lname::placeholder {
 
   .modal-main {
     position: fixed;
-    background: white;
     width: 600px;
     height: 300px;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
+    background-color: #FAFAFA;
   }
 }
 
@@ -615,13 +615,19 @@ input.lname::placeholder {
 
 .upload-form {
   position: relative;
-    top: 15px;
+    top: 0px;
     padding-left: 39px;
-    width: 534px;
-    height: 179px;
+    width: 561px;
+    height: 165px;
     display: flex;
     padding-top: 10px;
+    border-top: 1px solid rgba(var(--ce3, 239, 239, 239), 1);
+    border-bottom: 1px solid rgba(var(--ce3, 239, 239, 239), 1);
+    background-color: white;
 }
+
+
+
 
 .image-preview {
   max-width: 211px;
@@ -632,17 +638,17 @@ input.lname::placeholder {
       position: absolute;
     left: 259px;
     width: 300px;
-    height: 167px;
+    height: 36px;
 }
 
 .caption-placeholder {
     width: 205px;
     height: 30px;
     position: absolute;
-    left: 261px;
+    left: 288px;
     top: 21px;
 }
 
-.write-caption:focus ~ .caption-placeholder {
-  display: none;
+input:focus::placeholder {
+  color: transparent;
 }

@@ -63,7 +63,7 @@ class Upload extends React.Component {
       display = (
         <input
           type="file"
-          style={{ width: "196px", height: "100px" }}
+          style={{ width: "196px", height: "100px", marginTop: "10px" }}
           onChange={this.handleFile}
           onClick={(e) => (e.target.value = null)}
         />
@@ -72,18 +72,16 @@ class Upload extends React.Component {
     return (
       <form className="upload-form" onSubmit={this.handleSubmit}>
         {display}
-
         <input
           className="write-caption"
-          placeholder="test"
+          placeholder="Write a caption..."
           type="text"
           onChange={this.handleInput}
           value={this.state.body}
         />
-        <label className="caption-placeholder">Write a caption...</label>
 
 
-        {/* <button>Create Post</button> */}
+        {/* <button className="create-post-button">Share</button> */}
         {/* come back here  */}
       </form>
     );
