@@ -42,6 +42,7 @@ class Upload extends React.Component {
 
     this.props.createPost(formData);
     this.setState({ body: "" });
+    this.setState({ photoUrl: null })
   }
 
   render() {
@@ -81,7 +82,7 @@ class Upload extends React.Component {
         />
 
 
-        {/* <button className="create-post-button">Share</button> */}
+        <button className="create-post-button">Share</button>
         {/* come back here  */}
       </form>
     );

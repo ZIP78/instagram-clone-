@@ -11,18 +11,38 @@ class InstagramNavi extends React.Component {
     this.state = {
       show: false,
     };
-    this.showModal = this.showModal.bind(this);
+    // this.showModal = this.showModal.bind(this);
+    this.handleClick = this.handleClick.bind(this)
+    this.handleOutsideClick = this.handleOutsideClick.bind(this)
   }
 
-  showModal(e) {
-    this.setState({
-      show: true,
-    });
+  // showModal(e) {
+  //   this.setState({
+  //     show: true,
+  //   });
+  // }
+
+  handleClick() {
+    if (!this.state.show) {
+      document.addEventListener('click', this.handleOutsideClick, false)
+    } else {
+      document.removeEventListener('click', this.handleOutsideClick, false)
+    }
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
+  }
+
+  handleOutsideClick(e) {
+    if (this.node.contains(e.target)) {
+      return
+    }
+    this.handleClick()
   }
 
   render() {
     return (
-      <div className="insta-navi-container">
+      <div className="insta-navi-container" ref={node => { this.node = node; }}>
         <div className="insta-navi-items">
           <div className="insta-navi-logo">
             <Link to={"/"}>
@@ -31,10 +51,10 @@ class InstagramNavi extends React.Component {
           </div>
 
           <div>
-            <IosAdd onClick={this.showModal} />
+            <IosAdd onClick={this.handleClick} />
           </div>
           <div>
-            <UploadModal show={this.state.show} />
+            {this.state.show && (<UploadModal show={this.state.show} />)}
           </div>
 
           {/* <div className="insta-upload-button">

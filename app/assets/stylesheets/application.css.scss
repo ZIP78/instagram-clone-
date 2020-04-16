@@ -605,12 +605,11 @@ input.lname::placeholder {
   display: none;
 }
 
-.modal-title {
+.modal-title-container {
   font-size: 37px;
   padding-left: 123px;
   padding-top: 18px;
   background-color: #FAFAFA;
-  display: flex;
 }
 
 .upload-form {
@@ -618,7 +617,7 @@ input.lname::placeholder {
     top: 0px;
     padding-left: 39px;
     width: 561px;
-    height: 165px;
+    height: 183px;
     display: flex;
     padding-top: 10px;
     border-top: 1px solid rgba(var(--ce3, 239, 239, 239), 1);
@@ -651,4 +650,26 @@ input.lname::placeholder {
 
 input:focus::placeholder {
   color: transparent;
+}
+
+.create-post-button {
+  border: 0;
+    color: #3897f0;
+    color: rgba(var(--h5f, 56, 151, 240), 1);
+    display: inline;
+    padding: 0;
+    position: absolute;
+    height: 20px;
+    left: 527px;
+    top: -38px;
+    background-color: #FAFAFA;
+}
+
+.modal-title {
+    width: 123px;
+    position: relative;
+    left: 100px;
+    font-size: 23px;
+    top: -13px;
+    display: inline;
 }
