@@ -1,6 +1,5 @@
 import React from "react";
 import VideoThumbnail from "react-video-thumbnail";
-import VideoPlayer from "react-video-js-player";
 
 class Upload extends React.Component {
   constructor(props) {
@@ -42,14 +41,14 @@ class Upload extends React.Component {
 
     this.props.createPost(formData);
     this.setState({ body: "" });
-    this.setState({ photoUrl: null })
+    this.setState({ photoUrl: null });
   }
 
   render() {
     console.log(this.state);
     let display;
     const preview = this.state.photoUrl;
-    if (preview && this.state.photoFile.name.split(".").pop() === 'mp4') {
+    if (preview && this.state.photoFile.name.split(".").pop() === "mp4") {
       display = (
         <VideoThumbnail
           width={200}
@@ -64,7 +63,7 @@ class Upload extends React.Component {
       display = (
         <input
           type="file"
-          style={{ width: "196px", height: "100px", marginTop: "10px" }}
+          style={{ width: "196px", height: "22px", marginTop: "10px" }}
           onChange={this.handleFile}
           onClick={(e) => (e.target.value = null)}
         />
@@ -81,9 +80,7 @@ class Upload extends React.Component {
           value={this.state.body}
         />
 
-
         <button className="create-post-button">Share</button>
-        {/* come back here  */}
       </form>
     );
   }

@@ -7,9 +7,9 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
   transition: height 0.2s ease-in-out;
   display: flex;
+  z-index: 1;
 }
 
 .insta-navi-items {
@@ -23,14 +23,15 @@
   -ms-flex-direction: row;
   flex-direction: row;
   height: 28px;
-  /* -webkit-box-pack: center; */
   -ms-flex-pack: center;
   justify-content: center;
-  /* max-width: 975px; */
   padding: 26px 25px;
   transition: height 0.2s ease-in-out;
   width: 77%;
+  position: relative;
   margin: 0px auto 0 auto;
+  left: 37px;
+  top: -2px;
 }
 
 .insta-navi-logo {
@@ -79,18 +80,18 @@
   padding-top: 60px;
   display: -ms-flexbox;
   -ms-flex-flow: row nowrap;
-  max-width: 935px;
-  top: 78px;
+  width: 100%;
+  top: -34px;
   position: relative;
   height: 100%;
+  background-color: #fafafa;
   margin: 0px auto 0 auto;
 }
 
 .insta-post-container {
-  float: left;
-  margin-right: 28px;
   max-width: 614px;
-  width: 100%;
+  position: relative;
+  left: 600px;
 }
 
 .post-container {
@@ -100,7 +101,8 @@
 .individual-post {
   width: 615px;
   max-height: 1350px;
-  margin-bottom: 60px;
+  margin-top: 60px;
+  padding-bottom: 30px;
 }
 
 .post-upper-part {

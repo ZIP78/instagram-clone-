@@ -1,9 +1,9 @@
 import React from "react";
-import Upload from "../upload/upload_container";
 import UploadModal from "./upload_modal";
 import IosAdd from "react-ionicons/lib/IosAdd";
-
+import IosLogOut from "react-ionicons/lib/IosLogOut";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
 class InstagramNavi extends React.Component {
   constructor(props) {
@@ -11,38 +11,26 @@ class InstagramNavi extends React.Component {
     this.state = {
       show: false,
     };
-    // this.showModal = this.showModal.bind(this);
-    this.handleClick = this.handleClick.bind(this)
-    this.handleOutsideClick = this.handleOutsideClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.outsideClick = this.outsideClick.bind(this);
   }
-
-  // showModal(e) {
-  //   this.setState({
-  //     show: true,
-  //   });
-  // }
 
   handleClick() {
-    if (!this.state.show) {
-      document.addEventListener('click', this.handleOutsideClick, false)
-    } else {
-      document.removeEventListener('click', this.handleOutsideClick, false)
-    }
-    this.setState(prevState => ({
-      show: !prevState.show
-    }))
+    this.setState({
+      show: true,
+    });
   }
 
-  handleOutsideClick(e) {
-    if (this.node.contains(e.target)) {
-      return
-    }
-    this.handleClick()
+  outsideClick() {
+    this.setState({
+      show: false,
+    });
   }
 
   render() {
+    const { logout } = this.props;
     return (
-      <div className="insta-navi-container" ref={node => { this.node = node; }}>
+      <div className="insta-navi-container">
         <div className="insta-navi-items">
           <div className="insta-navi-logo">
             <Link to={"/"}>
@@ -51,15 +39,24 @@ class InstagramNavi extends React.Component {
           </div>
 
           <div>
-            <IosAdd onClick={this.handleClick} />
-          </div>
-          <div>
-            {this.state.show && (<UploadModal show={this.state.show} />)}
-          </div>
+            <IosAdd className="upload-button" onClick={this.handleClick} />
 
-          {/* <div className="insta-upload-button">
-            <Upload />
-          </div> */}
+            <Modal
+              className="Modal"
+              overlayClassName="Overlay"
+              isOpen={this.state.show}
+              onRequestClose={this.outsideClick}
+            >
+              <UploadModal />
+            </Modal>
+
+            <IosLogOut
+              className="logout-button"
+              fontSize="37"
+              color="black"
+              onClick={logout}
+            />
+          </div>
         </div>
       </div>
     );

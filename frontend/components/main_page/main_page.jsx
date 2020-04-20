@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Upload from "../upload/upload_container";
 import PostIndex from "./post_index";
 import "./main_page.css";
 
@@ -41,7 +39,7 @@ class MainPage extends React.Component {
               requestUsers={requestUsers}
             />
           </div>
-          <button onClick={logout}>Logout</button>
+          {/* <button onClick={logout}>Logout</button> */}
         </section>
       </header>
     );
