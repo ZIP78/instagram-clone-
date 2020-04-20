@@ -4,6 +4,7 @@ import IosAdd from "react-ionicons/lib/IosAdd";
 import IosLogOut from "react-ionicons/lib/IosLogOut";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
+import ProfilePicture from "../profile/test";
 
 class InstagramNavi extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class InstagramNavi extends React.Component {
               color="black"
               onClick={logout}
             />
+            <ProfilePicture />
           </div>
         </div>
       </div>
