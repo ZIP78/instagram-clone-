@@ -10,6 +10,8 @@ class ProfilePic extends React.Component {
     };
   }
 
+  // add a submit photo
+
   render() {
     return (
       <div>
