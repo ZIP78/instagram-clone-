@@ -11,7 +11,14 @@ class ProfilePic extends React.Component {
   }
 
   render() {
-    return <div>need profile icon</div>;
+    return (
+      <div>
+        <form>
+          <input type="file" accept="image/png, image/jpeg" />
+          <button>test upload</button>
+        </form>
+      </div>
+    );
   }
 }
 export default ProfilePic;
