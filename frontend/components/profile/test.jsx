@@ -8,10 +8,21 @@ class ProfilePic extends React.Component {
       preview: null,
       src: "",
     };
+    this.onCrop = this.onCrop.bind(this);
+    this.onClose = this.onClose.bind(this);
+  }
+  onClose() {
+    this.setState({ preview: null });
+  }
+
+  onCrop() {
+    this.setState({
+      preview,
+    });
   }
 
   render() {
-    return <div></div>;
+    return <div>need profile icon</div>;
   }
 }
 export default ProfilePic;
