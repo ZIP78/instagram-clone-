@@ -8,11 +8,6 @@ class ProfilePic extends React.Component {
       preview: null,
       src: "",
     };
-    this.onCrop = this.onCrop.bind(this);
-    this.onClose = this.onClose.bind(this);
-  }
-  onClose() {
-    this.setState({ preview: null });
   }
 
   render() {
