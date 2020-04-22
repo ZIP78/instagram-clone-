@@ -15,12 +15,6 @@ class ProfilePic extends React.Component {
     this.setState({ preview: null });
   }
 
-  onCrop() {
-    this.setState({
-      preview,
-    });
-  }
-
   render() {
     return <div>need profile icon</div>;
   }
