@@ -19,6 +19,7 @@ const App = withRouter(({ location }) => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/" component={MainPageContainer} />
       <ProtectedRoute path="/posts/:postId" component={PostDetailContainer} />
+      {/* <ProtectedRoute path="/users/" component={} */}
     </Switch>
   </section>
 ));
