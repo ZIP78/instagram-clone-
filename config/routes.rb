@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     namespace :api, defaults: {format: :json} do
         resources :users, only: [:create, :index]
         resource :session, only:[:create, :show, :destroy]  
-        
+
+        patch 'users', to: 'users#update_profile_pic'
+
         resources :posts, only: [:create, :show, :index] do
                 resources :likes, only: [:create]
         end
