@@ -4,7 +4,7 @@ import IosAdd from "react-ionicons/lib/IosAdd";
 import IosLogOut from "react-ionicons/lib/IosLogOut";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
-import ProfilePicture from "../profile/test";
+import ProfilePicture from "../profile/profile_container";
 
 class InstagramNavi extends React.Component {
   constructor(props) {

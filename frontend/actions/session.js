@@ -60,3 +60,9 @@ export const login = (user) => (dispatch) => {
 export const logout = () => (dispatch) => {
   return APIUtil.logout().then((user) => dispatch(logoutCurrentUser()));
 };
+
+export const profilePicture = (pic) => (dispatch) => {
+  return APIUtil.profilePic(pic).then((pic) =>
+    dispatch(receiveCurrentUser(pic))
+  );
+};

@@ -23,3 +23,10 @@ export const logout = () =>
     method: "DELETE",
     url: "/api/session",
   });
+
+export const profilePic = (pic) =>
+  $.ajax({
+    method: "POST",
+    url: "/api/users",
+    data: pic,
+  });
