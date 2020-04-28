@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
+        debugger
         if @user.save
             login(@user)
             render :show
@@ -14,7 +15,8 @@ class Api::UsersController < ApplicationController
         render :index
     end
 
-    def update_profile_pic
+    # fix problem 
+    def update_profile_pic 
         @user = User.find(update_profile_params[:id])
         @user.photo.attach(update_profile_params[:photo])
         debugger
@@ -34,7 +36,7 @@ class Api::UsersController < ApplicationController
     end
 
     def update_profile_params
-        params.require(:user).permit(:photo, :id)
+        params.require(:user).permit(:photo)
     end
     
 end

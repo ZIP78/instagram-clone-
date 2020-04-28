@@ -26,7 +26,7 @@ export const logout = () =>
 
 export const profilePic = (pic) =>
   $.ajax({
-    method: "POST",
+    method: "PATCH",
     url: "/api/users",
     data: pic,
     contentType: false,
