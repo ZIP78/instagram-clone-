@@ -17,6 +17,7 @@ class Api::UsersController < ApplicationController
     def update_profile_pic
         @user = User.find(update_profile_params[:id])
         @user.photo.attach(update_profile_params[:photo])
+        debugger
         if @user.photo.attached?
             render :photo
         else
@@ -33,7 +34,7 @@ class Api::UsersController < ApplicationController
     end
 
     def update_profile_params
-        params.permit(:photo, :id)
+        params.require(:user).permit(:photo, :id)
     end
     
 end

@@ -29,4 +29,6 @@ export const profilePic = (pic) =>
     method: "POST",
     url: "/api/users",
     data: pic,
+    contentType: false,
+    processData: false,
   });
