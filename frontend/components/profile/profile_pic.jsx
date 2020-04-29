@@ -1,5 +1,6 @@
 import React from "react";
-import Avatar from "react-avatar-edit";
+import happy from '../../../app/assets/images/happy.png'
+
 
 class ProfilePic extends React.Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class ProfilePic extends React.Component {
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.user
   }
 
   handleFile(e) {
@@ -42,10 +47,11 @@ class ProfilePic extends React.Component {
 
   render() {
     console.log(this.state);
-
+    const { user } = this.props
+    debugger
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        {/* <form onSubmit={this.handleSubmit}>
           <input
             type="file"
             onChange={this.handleFile}
@@ -54,7 +60,10 @@ class ProfilePic extends React.Component {
             // accept="image/png, image/jpeg"
           />
           <button>test upload</button>
-        </form>
+        </form> */}
+        <div className="bubble">
+          <img src={user.photoUrl} />
+        </div>
       </div>
     );
   }
