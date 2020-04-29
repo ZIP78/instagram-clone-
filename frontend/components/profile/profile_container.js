@@ -4,7 +4,6 @@ import { profilePicture } from "../../actions/session";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    profilePicture: (pic) => dispatch(profilePicture(pic)),
   };
 };
 
