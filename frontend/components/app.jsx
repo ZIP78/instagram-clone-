@@ -5,6 +5,7 @@ import LoginFormContainer from "./session_form/login_form_container";
 import MainPageContainer from "./main_page/main_page_container";
 import PostDetailContainer from "./post_detail/post_detail_container";
 import InstagramNavi from "./instagram_navi/instagram_navi_container";
+import ProfilePageContainer from "./profile_page/profile_page_container"
 import { AuthRoute } from "../utils/route.util";
 import { ProtectedRoute } from "../utils/route.util";
 import { withRouter } from "react-router";
@@ -19,7 +20,7 @@ const App = withRouter(({ location }) => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/" component={MainPageContainer} />
       <ProtectedRoute path="/posts/:postId" component={PostDetailContainer} />
-      {/* <ProtectedRoute path="/users/" component={} */}
+      <Route path="/users/:username" component={ProfilePageContainer} />
     </Switch>
   </section>
 ));
