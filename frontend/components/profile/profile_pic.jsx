@@ -1,6 +1,5 @@
 import React from "react";
-import happy from '../../../app/assets/images/happy.png'
-
+import './profile.css'
 
 class ProfilePic extends React.Component {
   constructor(props) {
@@ -50,7 +49,7 @@ class ProfilePic extends React.Component {
     const { user } = this.props
     debugger
     return (
-      <div>
+      <div className="bubble">
         {/* <form onSubmit={this.handleSubmit}>
           <input
             type="file"
@@ -61,8 +60,8 @@ class ProfilePic extends React.Component {
           />
           <button>test upload</button>
         </form> */}
-        <div className="bubble">
-          <img src={user.photoUrl} />
+        <div>
+          <img className="profile-pic-circle" src={user.photoUrl} />
         </div>
       </div>
     );

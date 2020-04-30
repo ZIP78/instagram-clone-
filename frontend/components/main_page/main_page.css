@@ -157,6 +157,7 @@
   width: 29px !important;
   height: 29px;
   margin-top: 9px;
+  cursor: pointer;
 }
 
 .comment-icon {
