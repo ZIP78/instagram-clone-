@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+    debugger
     return {}
 }
 
-export default connect(mapDispatchToProps, mapDispatchToProps)(ProfilePage)
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)
