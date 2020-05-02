@@ -4,7 +4,7 @@
   left: 405px;
   width: 935px;
   height: 150px;
-  display: inline-block;
+  display: inline-flex;
 }
 
 .profile_page_pic_container {
@@ -22,4 +22,13 @@
   margin: auto;
   background-color: white;
   border-radius: 50%;
+}
+
+.profile_page_information_container {
+  width: 570px;
+  height: 134px;
+  position: relative;
+  background: white;
+  left: 214px;
+  top: 16px;
 }
