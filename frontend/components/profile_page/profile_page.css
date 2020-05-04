@@ -58,3 +58,20 @@
 .profile_page_setting_button {
   padding: 8px;
 }
+
+.post_followers_container {
+  width: 435px;
+  margin-top: 20px;
+  height: 27px;
+  position: relative;
+  left: -198px;
+  top: 50px;
+  display: flex;
+}
+
+.profile_page_posts,
+.profile_page_followers,
+.profile_page_following {
+  margin-right: 40px;
+  font-size: 16px;
+}

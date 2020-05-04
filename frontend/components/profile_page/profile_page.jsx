@@ -7,12 +7,24 @@ class ProfilePage extends React.Component {
     super(props);
   }
 
+  numOfPost() {
+    let user = this.props.user;
+    let posts = Object.values(this.props.posts);
+    let postsByUser = posts.filter((post) => post.user_id === user.id);
+    debugger;
+    return (
+      <div className="profile_page_posts">{postsByUser.length} postss</div>
+    );
+  }
+
   componentDidMount() {
     this.props.user;
+    this.props.requestAllPost();
   }
 
   render() {
     const { user } = this.props;
+    debugger;
     return (
       <div>
         <div className="profile_pic_page_container">
@@ -28,7 +40,12 @@ class ProfilePage extends React.Component {
               <IosSettings className="profile_page_setting_button" />
             </div>
 
-            <div className="post_followers_container"></div>
+            <div className="post_followers_container">
+              {/* <div className="profile_page_posts">0 posts</div> */}
+              {this.numOfPost()}
+              <div className="profile_page_followers">0 followers</div>
+              <div className="profile_page_following">0 following</div>
+            </div>
           </div>
         </div>
       </div>
