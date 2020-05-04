@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './profile.css'
+import "./profile.css";
 
 class ProfilePic extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class ProfilePic extends React.Component {
   }
 
   componentDidMount() {
-    this.props.user
+    this.props.user;
   }
 
   handleFile(e) {
@@ -47,8 +47,8 @@ class ProfilePic extends React.Component {
 
   render() {
     console.log(this.state);
-    const { user } = this.props
-    debugger
+    const { user } = this.props;
+
     return (
       <div className="bubble">
         {/* <form onSubmit={this.handleSubmit}>
@@ -61,11 +61,12 @@ class ProfilePic extends React.Component {
           />
           <button>test upload</button>
         </form> */}
-        <Link to={{
-          pathname: `/users/${user.username}`,
-        }}>
+        <Link
+          to={{
+            pathname: `/users/${user.username}`,
+          }}
+        >
           <img className="profile-pic-circle" src={user.photoUrl} />
-
         </Link>
 
         {/* <div> */}

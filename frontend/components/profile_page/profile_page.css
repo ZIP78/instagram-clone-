@@ -31,4 +31,30 @@
   background: white;
   left: 214px;
   top: 16px;
+  display: flex;
+}
+
+.profile_page_username {
+  font-size: 28px;
+  height: 31px;
+  font-weight: 300;
+}
+
+.profile_page_edit_button_container {
+  height: 36px;
+}
+
+.profile_page_edit_button {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.profile_page_setting_container {
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.profile_page_setting_button {
+  padding: 8px;
 }

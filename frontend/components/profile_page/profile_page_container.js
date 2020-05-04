@@ -2,9 +2,8 @@ import { connect } from "react-redux";
 import ProfilePage from "./profile_page";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
-    user: state.entities.users,
+    user: state.entities.users[state.session.id],
   };
 };
 
