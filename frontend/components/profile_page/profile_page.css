@@ -90,3 +90,18 @@
   top: 85px;
   right: 536px;
 }
+
+.profile_page_border {
+  border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
+  position: relative;
+  top: 95px;
+  width: 935px;
+  height: 53px;
+  display: inline-flex;
+  left: 400px;
+}
+
+.profile_page_post_container {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -12,9 +12,13 @@ class ProfilePage extends React.Component {
     let posts = Object.values(this.props.posts);
     let postsByUser = posts.filter((post) => post.user_id === user.id);
     debugger;
-    return (
-      <div className="profile_page_posts">{postsByUser.length} postss</div>
-    );
+    return <div className="profile_page_posts">{postsByUser.length} posts</div>;
+  }
+
+  postByUser() {
+    let user = this.props.user;
+    let posts = Object.values(this.props.posts);
+    return posts.filter((post) => post.user_id === user.id);
   }
 
   componentDidMount() {
@@ -54,6 +58,20 @@ class ProfilePage extends React.Component {
               <div>{user.first_name}</div>
             </div>
           </div>
+        </div>
+        <div className="profile_page_border"></div>
+        <div className="profile_page_post_container">
+          {this.postByUser().map((
+            post // not done here
+          ) => (
+            <div className="post-middle-part">
+              {post.photoUrl.split(".").pop() === "mp4" ? (
+                <VideoPlayer className="instagram-post" src={post.photoUrl} />
+              ) : (
+                <img className="instagram-post" src={post.photoUrl} />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     );
