@@ -5,6 +5,7 @@
   width: 935px;
   height: 150px;
   display: inline-flex;
+  margin-bottom: 44px;
 }
 
 .profile_page_pic_container {
@@ -24,11 +25,17 @@
   border-radius: 50%;
 }
 
+.name_edit_setting_container {
+  display: flex;
+  width: 380px;
+  height: 37px;
+}
+
 .profile_page_information_container {
   width: 570px;
   height: 134px;
   position: relative;
-  background: white;
+  background: #fafafa;
   left: 214px;
   top: 16px;
   display: flex;
@@ -60,12 +67,13 @@
 }
 
 .post_followers_container {
-  width: 435px;
+  width: 571px;
   margin-top: 20px;
   height: 27px;
   position: relative;
-  left: -198px;
-  top: 50px;
+  left: -226px;
+  top: 31px;
+  margin-bottom: 20px;
   display: flex;
 }
 
@@ -74,4 +82,11 @@
 .profile_page_following {
   margin-right: 40px;
   font-size: 16px;
+}
+
+.profile_page_name {
+  height: 20px;
+  position: absolute;
+  top: 85px;
+  right: 536px;
 }

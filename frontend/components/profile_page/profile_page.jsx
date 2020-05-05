@@ -32,19 +32,26 @@ class ProfilePage extends React.Component {
             <div className="profile_page_pic_upload"></div>
           </div>
           <div className="profile_page_information_container">
-            <div className="profile_page_username">{user.username}</div>
-            <div className="profile_page_edit_button_container">
-              <button className="profile_page_edit_button">Edit Profile</button>
-            </div>
-            <div className="profile_page_setting_container">
-              <IosSettings className="profile_page_setting_button" />
+            <div className="name_edit_setting_container">
+              <div className="profile_page_username">{user.username}</div>
+              <div className="profile_page_edit_button_container">
+                <button className="profile_page_edit_button">
+                  Edit Profile
+                </button>
+              </div>
+              <div className="profile_page_setting_container">
+                <IosSettings className="profile_page_setting_button" />
+              </div>
             </div>
 
             <div className="post_followers_container">
-              {/* <div className="profile_page_posts">0 posts</div> */}
               {this.numOfPost()}
               <div className="profile_page_followers">0 followers</div>
               <div className="profile_page_following">0 following</div>
+            </div>
+
+            <div className="profile_page_name">
+              <div>{user.first_name}</div>
             </div>
           </div>
         </div>
