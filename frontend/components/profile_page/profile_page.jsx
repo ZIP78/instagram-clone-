@@ -1,6 +1,10 @@
 import React from "react";
 import "./profile_page.css";
 import IosSettings from "react-ionicons/lib/IosSettings";
+import VideoPlayer from "react-video-js-player";
+import { Link } from "react-router-dom";
+
+// import VideoThumbnail from "react-video-thumbnail";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -61,14 +65,25 @@ class ProfilePage extends React.Component {
         </div>
         <div className="profile_page_border"></div>
         <div className="profile_page_post_container">
-          {this.postByUser().map((
-            post // not done here
-          ) => (
-            <div className="post-middle-part">
+          {this.postByUser().map((post) => (
+            <div>
               {post.photoUrl.split(".").pop() === "mp4" ? (
-                <VideoPlayer className="instagram-post" src={post.photoUrl} />
+                <Link
+                  to={{
+                    pathname: `/posts/${post.id}`,
+                  }}
+                >
+                  <VideoPlayer
+                    width={293}
+                    height={293}
+                    bigPlayButton={false}
+                    className="profile_page_vid"
+                    src={post.photoUrl}
+                    // onReady={}
+                  />
+                </Link>
               ) : (
-                <img className="instagram-post" src={post.photoUrl} />
+                <img className="profile_page_post" src={post.photoUrl} />
               )}
             </div>
           ))}
@@ -79,3 +94,5 @@ class ProfilePage extends React.Component {
 }
 
 export default ProfilePage;
+
+// 935 x 293  28 margin left and bottom

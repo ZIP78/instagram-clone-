@@ -93,8 +93,8 @@
 
 .profile_page_border {
   border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
-  position: relative;
-  top: 95px;
+  position: absolute;
+  top: 289px;
   width: 935px;
   height: 53px;
   display: inline-flex;
@@ -102,6 +102,19 @@
 }
 
 .profile_page_post_container {
+  top: 149px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
+  left: 401px;
+  width: 935px;
+}
+
+.profile_page_post,
+.profile_page_pic {
+  width: 293px;
+  height: 293px;
+  margin-left: 28px;
+  margin-bottom: 28px;
+  flex: 1 0 25%;
 }
