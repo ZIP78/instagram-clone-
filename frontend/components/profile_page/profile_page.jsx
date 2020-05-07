@@ -1,10 +1,8 @@
 import React from "react";
 import "./profile_page.css";
 import IosSettings from "react-ionicons/lib/IosSettings";
-import VideoPlayer from "react-video-js-player";
+import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
-
-// import VideoThumbnail from "react-video-thumbnail";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -73,13 +71,12 @@ class ProfilePage extends React.Component {
                     pathname: `/posts/${post.id}`,
                   }}
                 >
-                  <VideoPlayer
+                  <ReactPlayer
                     width={293}
                     height={293}
-                    bigPlayButton={false}
                     className="profile_page_vid"
-                    src={post.photoUrl}
-                    // onReady={}
+                    url={[{ src: post.photoUrl }]}
+                    controls={true}
                   />
                 </Link>
               ) : (
