@@ -24,7 +24,7 @@ class ProfilePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.user;
+    this.props.requestUsers();
     this.props.requestAllPost();
   }
 
@@ -80,7 +80,13 @@ class ProfilePage extends React.Component {
                   />
                 </Link>
               ) : (
-                <img className="profile_page_post" src={post.photoUrl} />
+                <Link
+                  to={{
+                    pathname: `/posts/${post.id}`,
+                  }}
+                >
+                  <img className="profile_page_post" src={post.photoUrl} />
+                </Link>
               )}
             </div>
           ))}
@@ -91,5 +97,3 @@ class ProfilePage extends React.Component {
 }
 
 export default ProfilePage;
-
-// 935 x 293  28 margin left and bottom

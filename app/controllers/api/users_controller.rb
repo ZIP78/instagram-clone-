@@ -1,7 +1,6 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
-        # @user.photo = "/assets/images/avg.png" if @user.photo.nil? 
         debugger
         if @user.save
             login(@user)
