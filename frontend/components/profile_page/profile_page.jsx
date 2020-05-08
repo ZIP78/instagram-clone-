@@ -23,6 +23,11 @@ class ProfilePage extends React.Component {
     return posts.filter((post) => post.user_id === user.id);
   }
 
+  handleImage(event) {
+    // left off here
+    event.preventDefault();
+  }
+
   componentDidMount() {
     this.props.requestUsers();
     this.props.requestAllPost();
@@ -33,6 +38,8 @@ class ProfilePage extends React.Component {
     debugger;
     return (
       <div>
+        {/* <input type="file" onChange={} style={{display: none}}/> */}
+
         <div className="profile_pic_page_container">
           <div className="profile_page_pic_container">
             <div className="profile_page_pic_upload"></div>

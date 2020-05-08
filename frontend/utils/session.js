@@ -24,11 +24,11 @@ export const logout = () =>
     url: "/api/session",
   });
 
-// export const profilePic = (pic) =>
-//   $.ajax({
-//     method: "PATCH",
-//     url: "/api/users",
-//     data: pic,
-//     contentType: false,
-//     processData: false,
-//   });
+export const editUser = (user) =>
+  $.ajax({
+    method: "PATCH",
+    url: "/api/users",
+    data: user,
+    contentType: false,
+    processData: false,
+  });

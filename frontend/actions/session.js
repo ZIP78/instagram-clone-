@@ -61,8 +61,6 @@ export const logout = () => (dispatch) => {
   return APIUtil.logout().then((user) => dispatch(logoutCurrentUser()));
 };
 
-// export const profilePicture = (pic) => (dispatch) => {
-//   return APIUtil.profilePic(pic).then((pic) =>
-//     dispatch(receiveCurrentUser(pic))
-//   );
-// };
+export const profilePicture = (pic) => (dispatch) => {
+  return APIUtil.editUser(pic).then((pic) => dispatch(receiveCurrentUser(pic)));
+};
