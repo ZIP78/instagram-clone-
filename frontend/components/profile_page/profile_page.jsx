@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      photoFile: null,
+    };
+    this.handleFile = this.handleFile.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   numOfPost() {
@@ -23,9 +28,14 @@ class ProfilePage extends React.Component {
     return posts.filter((post) => post.user_id === user.id);
   }
 
-  handleImage(event) {
+  handleFile(event) {
     // left off here
     event.preventDefault();
+    this.setState({ photoFile: event.currentTarget.files[0] });
+  }
+
+  handleClick() {
+    this.refs.fileUploader.click();
   }
 
   componentDidMount() {
@@ -38,11 +48,19 @@ class ProfilePage extends React.Component {
     debugger;
     return (
       <div>
-        {/* <input type="file" onChange={} style={{display: none}}/> */}
+        <input
+          type="file"
+          onChange={this.handleFile}
+          ref="fileUploader"
+          style={{ display: "none" }}
+        />
 
         <div className="profile_pic_page_container">
           <div className="profile_page_pic_container">
-            <div className="profile_page_pic_upload"></div>
+            <div
+              className="profile_page_pic_upload"
+              onClick={this.handleClick}
+            ></div>
           </div>
           <div className="profile_page_information_container">
             <div className="name_edit_setting_container">
