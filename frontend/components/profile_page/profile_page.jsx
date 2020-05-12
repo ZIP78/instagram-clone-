@@ -10,7 +10,7 @@ class ProfilePage extends React.Component {
     this.state = {
       photoFile: null,
     };
-    this.handleFile = this.handleFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -28,10 +28,13 @@ class ProfilePage extends React.Component {
     return posts.filter((post) => post.user_id === user.id);
   }
 
-  handleFile(event) {
+  handleSubmit(event) {
     // left off here
     event.preventDefault();
     this.setState({ photoFile: event.currentTarget.files[0] });
+    const formData = new FormData();
+    formData.append("user[photo]", this.state.photoFile);
+    this.props.profilePicture(formData);
   }
 
   handleClick() {
@@ -50,17 +53,17 @@ class ProfilePage extends React.Component {
       <div>
         <input
           type="file"
-          onChange={this.handleFile}
+          onchange="this.form.submit()" //left off here
           ref="fileUploader"
+          accept="image/*"
           style={{ display: "none" }}
         />
 
         <div className="profile_pic_page_container">
           <div className="profile_page_pic_container">
-            <div
-              className="profile_page_pic_upload"
-              onClick={this.handleClick}
-            ></div>
+            <div className="profile_page_pic_upload" onClick={this.handleClick}>
+              <img src={user.photoUrl} />
+            </div>
           </div>
           <div className="profile_page_information_container">
             <div className="name_edit_setting_container">
