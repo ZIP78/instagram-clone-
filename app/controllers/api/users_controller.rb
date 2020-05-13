@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
         
     end
     
-
+# fix the update method 
     
     
 

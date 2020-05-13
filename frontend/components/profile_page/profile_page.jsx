@@ -3,6 +3,7 @@ import "./profile_page.css";
 import IosSettings from "react-ionicons/lib/IosSettings";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
+import ProfilePageUploader from "./profile_page_uploader";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class ProfilePage extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   numOfPost() {
@@ -28,10 +30,12 @@ class ProfilePage extends React.Component {
     return posts.filter((post) => post.user_id === user.id);
   }
 
+  handleFile(event) {
+    this.setState({ photoFile: event.currentTarget.files[0] });
+  }
   handleSubmit(event) {
     // left off here
     event.preventDefault();
-    this.setState({ photoFile: event.currentTarget.files[0] });
     const formData = new FormData();
     formData.append("user[photo]", this.state.photoFile);
     this.props.profilePicture(formData);
@@ -47,24 +51,30 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, profilePicture } = this.props;
     debugger;
     return (
       <div>
-        <input
-          type="file"
-          onchange="this.form.submit()" //left off here
-          ref="fileUploader"
-          accept="image/*"
-          style={{ display: "none" }}
-        />
+        {/* <form onSubmit={this.handleSubmit}>
+          <input
+            type="file"
+            onChange={this.handleFile} //left off here
+            ref="fileUploader"
+            // accept="image/*"
+            style={{ display: "none" }}
+          /> */}
 
         <div className="profile_pic_page_container">
-          <div className="profile_page_pic_container">
-            <div className="profile_page_pic_upload" onClick={this.handleClick}>
-              <img src={user.photoUrl} />
-            </div>
-          </div>
+          {/* <div className="profile_page_pic_container">
+              <div
+                className="profile_page_pic_upload"
+                onClick={this.handleClick}
+              >
+                <img src={user.photoUrl} />
+              </div>
+            </div> */}
+          <ProfilePageUploader user={user} profilePicture={profilePicture} />
+
           <div className="profile_page_information_container">
             <div className="name_edit_setting_container">
               <div className="profile_page_username">{user.username}</div>
@@ -89,6 +99,8 @@ class ProfilePage extends React.Component {
             </div>
           </div>
         </div>
+        {/* <button>test</button>
+        </form> */}
         <div className="profile_page_border"></div>
         <div className="profile_page_post_container">
           {this.postByUser().map((post) => (

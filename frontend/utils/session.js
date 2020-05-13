@@ -27,8 +27,8 @@ export const logout = () =>
 export const editUser = (user) =>
   $.ajax({
     method: "PATCH",
-    url: "/api/users",
-    data: user,
+    url: `/api/users/${user.id}`,
+    data: { user },
     contentType: false,
     processData: false,
   });
