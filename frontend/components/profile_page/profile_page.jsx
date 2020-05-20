@@ -20,7 +20,6 @@ class ProfilePage extends React.Component {
     let user = this.props.user;
     let posts = Object.values(this.props.posts);
     let postsByUser = posts.filter((post) => post.user_id === user.id);
-    debugger;
     return <div className="profile_page_posts">{postsByUser.length} posts</div>;
   }
 
@@ -52,7 +51,6 @@ class ProfilePage extends React.Component {
 
   render() {
     const { user, profilePicture } = this.props;
-    debugger;
     return (
       <div>
         {/* <form onSubmit={this.handleSubmit}>

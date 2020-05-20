@@ -1,24 +1,25 @@
 .bubble {
-    width: 23px;
-    height: 23px;
-    display: inline-flex;
-    position: relative;
-    left: 398px;
-    top: 0px;
-    border-radius: 107%;
-    border-right: 0.5px solid black;
-    margin-left: 22px;
-    border-bottom: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
-    border-left: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
-    border-right: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
-    border-top: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  width: 23px;
+  height: 23px;
+  display: inline-flex;
+  position: relative;
+  left: 398px;
+  top: 0px;
+  border-radius: 107%;
+  border-right: 0.5px solid black;
+  margin-left: 22px;
+  border-bottom: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-left: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-right: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-top: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
 }
 
 .profile-pic-circle {
-    background: fixed;
-    width: 14px;
-    height: 18px;
-    position: absolute;
-    left: 4px;
-    top: 2px;
+  background: fixed;
+  width: 20px;
+  height: 23px;
+  position: absolute;
+  left: 1px;
+  top: -1px;
+  border-radius: 50%;
 }

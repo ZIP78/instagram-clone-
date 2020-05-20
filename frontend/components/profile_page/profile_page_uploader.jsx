@@ -20,6 +20,7 @@ class ProfilePageUploader extends React.Component {
     event.preventDefault();
     const formData = new FormData();
     formData.append("user[photo]", this.state.photoFile);
+    // formData.append("user[id]", this.props.user.id);
     this.props.profilePicture(formData);
   }
 
@@ -40,7 +41,7 @@ class ProfilePageUploader extends React.Component {
         />
         <div className="profile_page_pic_container">
           <div className="profile_page_pic_upload" onClick={this.handleClick}>
-            <img src={user.photoUrl} />
+            <img className="profile_page_profile_pic" src={user.photoUrl} />
           </div>
         </div>
         <button className="yo">test</button>

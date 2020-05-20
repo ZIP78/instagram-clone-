@@ -12,7 +12,6 @@
   width: 150px;
   height: 150px;
   display: inline-flex;
-  background-color: black;
   position: relative;
   left: 90px;
 }
@@ -121,4 +120,10 @@
 
 .yo {
   position: absolute;
+}
+
+.profile_page_profile_pic {
+  height: 148px;
+  width: 147px;
+  border-radius: 50%;
 }
