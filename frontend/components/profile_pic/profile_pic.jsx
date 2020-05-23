@@ -51,6 +51,17 @@ class ProfilePic extends React.Component {
 
     return (
       <div className="bubble">
+        {user ? (
+          <div>Loading...</div>
+        ) : (
+          <Link
+            to={{
+              pathname: `/users/${user.username}`,
+            }}
+          >
+            <img className="profile-pic-circle" src={user.photoUrl} />
+          </Link>
+        )}
         {/* <form onSubmit={this.handleSubmit}>
           <input
             type="file"
@@ -61,13 +72,6 @@ class ProfilePic extends React.Component {
           />
           <button>test upload</button>
         </form> */}
-        <Link
-          to={{
-            pathname: `/users/${user.username}`,
-          }}
-        >
-          <img className="profile-pic-circle" src={user.photoUrl} />
-        </Link>
 
         {/* <div> */}
         {/* </div> */}
