@@ -16,6 +16,10 @@ class InstagramNavi extends React.Component {
     this.outsideClick = this.outsideClick.bind(this);
   }
 
+  componentDidMount() {
+    this.props.user;
+  }
+
   handleClick() {
     this.setState({
       show: true,
