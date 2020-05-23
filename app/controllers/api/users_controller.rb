@@ -22,11 +22,7 @@ class Api::UsersController < ApplicationController
     
 
     def update
-        
-        
-        # @user = User.find(params[:id])
-         @user = current_user#user cannot find id 
-         debugger
+    @user = current_user
         if @user.update(user_params)
             render :show
         else
@@ -35,7 +31,6 @@ class Api::UsersController < ApplicationController
         
     end
     
-# fix the update method 
     
     
 
