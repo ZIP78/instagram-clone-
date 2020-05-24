@@ -20,7 +20,11 @@ const App = withRouter(({ location }) => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <ProtectedRoute exact path="/" component={MainPageContainer} />
       <ProtectedRoute path="/posts/:postId" component={PostDetailContainer} />
-      <Route path="/users/:username" component={ProfilePageContainer} />
+      <ProtectedRoute
+        exact
+        path="/users/:username"
+        component={ProfilePageContainer}
+      />
     </Switch>
   </section>
 ));

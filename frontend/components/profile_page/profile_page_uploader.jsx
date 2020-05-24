@@ -11,6 +11,11 @@ class ProfilePageUploader extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleFile = this.handleFile.bind(this);
   }
+
+  componentDidMount() {
+    //maybe
+    this.props.user;
+  }
   componentDidUpdate(prevState, prevProps) {
     if (
       this.state.photoFile != null &&
@@ -40,24 +45,21 @@ class ProfilePageUploader extends React.Component {
 
   render() {
     const { user } = this.props;
+    if (!user) return null;
     return (
       <div>
-        {/* <form> */}
         <input
           type="file"
-          onChange={this.handleFile} //left off here
+          onChange={this.handleFile}
           ref="fileUploader"
-          // accept="image/*"
           style={{ display: "none" }}
         />
-        {/* </form> */}
 
         <div className="profile_page_pic_container">
           <div className="profile_page_pic_upload" onClick={this.handleClick}>
             <img className="profile_page_profile_pic" src={user.photoUrl} />
           </div>
         </div>
-        {/* <button className="yo">test</button> */}
       </div>
     );
   }
