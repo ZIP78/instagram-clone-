@@ -15,6 +15,7 @@ class ProfilePic extends React.Component {
   render() {
     console.log(this.state);
     const { user } = this.props;
+    if (!user) return null;
     return (
       <div className="bubble">
         <Link
