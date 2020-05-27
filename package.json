@@ -60,11 +60,7 @@
     "webpack": "webpack --watch --mode=development"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "acorn": "^7.1.1",
-=======
-    "acorn": "^7.2.0",
->>>>>>> 7b67fc48f940283d7b2eed760c058945f400ef4e
     "webpack-dev-server": "^3.11.0"
   }
 }
