@@ -54,7 +54,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "start": "node index.js",
+    "start": "node webpack.config.js",
     "build:watch": "webpack --watch --mode=development",
     "postinstall": "webpack",
     "webpack": "webpack --watch --mode=development"
