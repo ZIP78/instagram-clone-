@@ -3,7 +3,6 @@ import "./post_detail.css";
 import VideoPlayer from "react-video-js-player";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 import Moment from "react-moment";
 import LikeComment from "../icons/like_comment";
 import CommentForm from "../comment/comment_form_container";
@@ -36,8 +35,8 @@ class PostDetail extends React.Component {
             src={post.photoUrl}
           />
         ) : (
-          <img className="instagram-show-post" src={post.photoUrl} />
-        )}
+            <img className="instagram-show-post" src={post.photoUrl} />
+          )}
 
         <div className="show-post-upper-part">
           <div className="insta-profile-icon"></div>
@@ -109,4 +108,3 @@ class PostDetail extends React.Component {
 
 export default PostDetail;
 
-// 308 width

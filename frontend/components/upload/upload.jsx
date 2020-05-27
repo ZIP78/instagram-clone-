@@ -69,6 +69,7 @@ class Upload extends React.Component {
         />
       );
     }
+
     return (
       <form className="upload-form" onSubmit={this.handleSubmit}>
         {display}

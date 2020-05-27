@@ -4,6 +4,7 @@ import IosAdd from "react-ionicons/lib/IosAdd";
 import IosLogOut from "react-ionicons/lib/IosLogOut";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
+import ProfilePicture from "../profile_pic/profile_container";
 
 class InstagramNavi extends React.Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class InstagramNavi extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.outsideClick = this.outsideClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.user;
   }
 
   handleClick() {
@@ -56,6 +61,7 @@ class InstagramNavi extends React.Component {
               color="black"
               onClick={logout}
             />
+            <ProfilePicture user={this.props.user} />
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 class Api::UsersController < ApplicationController
+    #   before_action :require_user!, only: [ :update]
+
     def create
         @user = User.new(user_params)
         if @user.save
             login(@user)
-            render '/api/users/show'
+            render :show
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -13,10 +15,32 @@ class Api::UsersController < ApplicationController
         @users = User.all
         render :index
     end
+
+    # def show
+    #      @user = User.find_by(id: params[:id])
+    # end
+    
+
+    def update
+    @user = current_user
+        if @user.update(user_params)
+            render :show
+        else
+            render json: @user.errors.full_messages, status: 422
+        end
+        
+    end
+    
+    
     
 
     private
     def user_params
-        params.require(:user).permit(:username, :password, :email, :first_name, :last_name )
+        params.require(:user).permit( :username, :password, :email, :first_name, :last_name, :photo )
     end
+
+#     def require_user!
+#     return if current_user.find_by(id: params[:id])
+#     render json: 'Forbidden', status: :forbidden
+#   end
 end

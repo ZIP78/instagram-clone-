@@ -1,0 +1,129 @@
+.profile_pic_page_container {
+  position: relative;
+  top: 95px;
+  left: 405px;
+  width: 935px;
+  height: 150px;
+  display: inline-flex;
+  margin-bottom: 44px;
+}
+
+.profile_page_pic_container {
+  width: 150px;
+  height: 150px;
+  display: inline-flex;
+  position: relative;
+  left: 90px;
+}
+
+.profile_page_pic_upload {
+  height: 148px;
+  width: 147px;
+  margin: auto;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.name_edit_setting_container {
+  display: flex;
+  width: 380px;
+  height: 37px;
+}
+
+.profile_page_information_container {
+  width: 570px;
+  height: 134px;
+  position: relative;
+  background: #fafafa;
+  left: 214px;
+  top: 16px;
+  display: flex;
+}
+
+.profile_page_username {
+  font-size: 28px;
+  height: 31px;
+  font-weight: 300;
+}
+
+.profile_page_edit_button_container {
+  height: 36px;
+}
+
+.profile_page_edit_button {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.profile_page_setting_container {
+  margin-left: 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.profile_page_setting_button {
+  padding: 8px;
+}
+
+.post_followers_container {
+  width: 571px;
+  margin-top: 20px;
+  height: 27px;
+  position: relative;
+  left: -226px;
+  top: 31px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.profile_page_posts,
+.profile_page_followers,
+.profile_page_following {
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.profile_page_name {
+  height: 20px;
+  position: absolute;
+  top: 85px;
+  right: 536px;
+}
+
+.profile_page_border {
+  border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
+  position: absolute;
+  top: 289px;
+  width: 935px;
+  height: 53px;
+  display: inline-flex;
+  left: 400px;
+}
+
+.profile_page_post_container {
+  top: 149px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  left: 401px;
+  width: 935px;
+}
+
+.profile_page_post,
+.profile_page_pic {
+  width: 293px;
+  height: 293px;
+  margin-left: 28px;
+  margin-bottom: 28px;
+  flex: 1 0 25%;
+}
+
+.yo {
+  position: absolute;
+}
+
+.profile_page_profile_pic {
+  height: 148px;
+  width: 147px;
+  border-radius: 50%;
+}

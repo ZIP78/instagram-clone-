@@ -23,3 +23,12 @@ export const logout = () =>
     method: "DELETE",
     url: "/api/session",
   });
+
+export const editUser = (user) =>
+  $.ajax({
+    method: "PATCH",
+    url: `/api/users/${user.id}`,
+    data: user,
+    contentType: false,
+    processData: false,
+  });

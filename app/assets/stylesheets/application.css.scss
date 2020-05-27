@@ -687,10 +687,13 @@ input:focus::placeholder {
   height: 23px;
   position: relative;
   left: 400px;
+  cursor: pointer;
 }
 
 .logout-button {
   position: relative;
-  left: 435px;
+  left: 400px;
+  margin-left: 22px;
   top: 5px;
+  cursor: pointer;
 }

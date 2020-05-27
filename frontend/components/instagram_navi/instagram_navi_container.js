@@ -2,10 +2,11 @@ import { logout } from "../../actions/session";
 import InstagramNavi from "./instagram_navi";
 import { connect } from "react-redux";
 
-// const mapStateToProps = (state) => {
-//   debugger;
-//   return {};
-// };
+const mapStateToProps = (state) => {
+  return {
+    user: state.entities.users[state.session.id],
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(InstagramNavi);
+export default connect(mapStateToProps, mapDispatchToProps)(InstagramNavi);
