@@ -78,7 +78,9 @@ class PostIndex extends React.Component {
                     {users[post.user_id]["username"]}
                   </div>
 
-                  <div className="post-caption">{post.body}</div>
+                  <div className="post-caption" style={{ left: -3 }}>
+                    {post.body}
+                  </div>
                 </div>
 
                 <CommentIndex

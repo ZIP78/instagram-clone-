@@ -35,22 +35,46 @@ class PostDetail extends React.Component {
             src={post.photoUrl}
           />
         ) : (
-            <img className="instagram-show-post" src={post.photoUrl} />
-          )}
+          <img className="instagram-show-post" src={post.photoUrl} />
+        )}
 
         <div className="show-post-upper-part">
           <div className="insta-profile-icon"></div>
           <FontAwesomeIcon className="post-show-ellipsh" icon={faEllipsisH} />
-          <div className="show-profile-name">
+          <div
+            className="post-user"
+            style={{ position: "relative", top: 11, marginLeft: 17, left: 15 }}
+          >
             {currentUser[post.user_id]["username"]}
           </div>
+          <img
+            style={{ top: 21, left: 21 }}
+            className="post-profile-icon"
+            src={currentUser[post.user_id]["photoUrl"]}
+            alt="profile-image"
+          />
 
           <div className="show-post-comments-container">
             <div className="show-caption-section">
               <div className="user-caption-container">
-                <div className="comment-user">
+                <div
+                  className="post-user"
+                  style={{
+                    position: "relative",
+                    top: 0,
+                    marginLeft: 16,
+                    left: -25,
+                  }}
+                >
                   {currentUser[post.user_id]["username"]}
                 </div>
+                <img
+                  style={{ top: -1, left: -54 }}
+                  className="post-profile-icon"
+                  src={currentUser[post.user_id]["photoUrl"]}
+                  alt="profile-image"
+                />
+
                 <div className="comment">{post.body}</div>
               </div>
 
@@ -64,9 +88,24 @@ class PostDetail extends React.Component {
             <div className="show-post-comments">
               {this.comments().map((comment) => (
                 <div className="single-page-comments">
-                  <div className="comment-user">
-                    {currentUser[comment.user_id]["username"]}
+                  <div
+                    className="post-user"
+                    style={{
+                      position: "relative",
+                      top: 0,
+                      marginLeft: 16,
+                      left: -25,
+                    }}
+                  >
+                    {currentUser[post.user_id]["username"]}
                   </div>
+
+                  <img
+                    style={{ top: 11, left: -39 }}
+                    className="post-profile-icon"
+                    src={currentUser[post.user_id]["photoUrl"]}
+                    alt="profile-image"
+                  />
 
                   <div className="comment">{comment.body}</div>
                   <Moment fromNow ago className="time-single-comment">
@@ -96,7 +135,7 @@ class PostDetail extends React.Component {
                 </Moment>
               </div>
               <div className="insta-post-container-comment">
-                <CommentForm post={post} width={308} left={11} />
+                <CommentForm post={post} width={308} />
               </div>
             </div>
           </div>
@@ -107,4 +146,3 @@ class PostDetail extends React.Component {
 }
 
 export default PostDetail;
-

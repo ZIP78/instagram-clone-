@@ -68,7 +68,9 @@ textarea.add-comment::placeholder {
 .comment,
 .post-caption {
   display: inline;
+  position: relative;
   margin-left: 6px;
+  left: -26px;
 }
 
 .single-page-comments {
@@ -87,7 +89,7 @@ textarea.add-comment::placeholder {
 .time-single-comment {
   position: absolute;
   top: 42px;
-  left: 15px;
+  left: 8px;
   width: 570px;
   width: auto;
   font-size: 12px;
