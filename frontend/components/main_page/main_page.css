@@ -123,6 +123,36 @@
   border-right: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
 }
 
+.post-profile-icon-container {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  position: relative;
+  left: -2px;
+  top: -2px;
+  border-radius: 107%;
+  border-right: 0.5px solid black;
+  margin-right: 16px;
+  border-bottom: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-left: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-right: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-top: 0.5px solid rgba(var(--b6a, 219, 219, 219), 1);
+}
+
+.post-profile-icon {
+  background: fixed;
+  width: 29px;
+  height: 30px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border-radius: 55%;
+}
+
+a {
+  color: black;
+}
+
 .post-middle-part {
   width: 613px;
   max-height: 800px;
@@ -205,8 +235,8 @@
 
 .post-ellipsh {
   position: relative;
-  left: 561px;
-  top: 7px;
+  left: 479px;
+  top: -11px;
 }
 
 .time-post,

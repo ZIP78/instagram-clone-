@@ -6,6 +6,7 @@ import CommentForm from "../comment/comment_form_container";
 import CommentIndex from "../comment/comment_index";
 import LikeComment from "../icons/like_comment";
 import Time from "./time";
+import { Link } from "react-router-dom";
 
 class PostIndex extends React.Component {
   constructor(props) {
@@ -26,12 +27,32 @@ class PostIndex extends React.Component {
       removeLike,
       getComments,
     } = this.props;
+    debugger;
     return (
       <div className="post-container">
         {Object.values(posts).map((post) => {
           return (
             <div className="individual-post">
               <div className="post-upper-part">
+                <Link
+                  to={{
+                    pathname: `/users/${users[post.user_id]["username"]}`,
+                  }}
+                >
+                  <div className="post-profile-icon-container">
+                    <img
+                      className="post-profile-icon"
+                      src={users[post.user_id]["photoUrl"]}
+                      alt="profile-image"
+                    />
+                  </div>
+                  <div
+                    className="post-user"
+                    style={{ position: "relative", top: -12 }}
+                  >
+                    {users[post.user_id]["username"]}
+                  </div>
+                </Link>
                 <FontAwesomeIcon className="post-ellipsh" icon={faEllipsisH} />
               </div>
               <div className="post-middle-part">

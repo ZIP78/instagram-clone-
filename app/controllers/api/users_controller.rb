@@ -16,11 +16,6 @@ class Api::UsersController < ApplicationController
         render :index
     end
 
-    # def show
-    #      @user = User.find_by(id: params[:id])
-    # end
-    
-
     def update
     @user = current_user
         if @user.update(user_params)
