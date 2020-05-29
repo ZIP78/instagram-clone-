@@ -27,7 +27,6 @@ class PostIndex extends React.Component {
       removeLike,
       getComments,
     } = this.props;
-    debugger;
     return (
       <div className="post-container">
         {Object.values(posts).map((post) => {
@@ -63,12 +62,14 @@ class PostIndex extends React.Component {
                 )}
               </div>
               <div className="post-bottom-part">
-                <LikeComment
-                  post={post}
-                  likePost={likePost}
-                  removeLike={removeLike}
-                  comments={comments}
-                />
+                <div style={{ paddingLeft: 20 }}>
+                  <LikeComment
+                    post={post}
+                    likePost={likePost}
+                    removeLike={removeLike}
+                    comments={comments}
+                  />
+                </div>
                 <div className="insta-likes-container">
                   <h1>{post.likes} likes</h1>
                 </div>
