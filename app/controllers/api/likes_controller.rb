@@ -9,7 +9,7 @@ class Api::LikesController < ApplicationController
           @post = @like.post
           render 'api/posts/show'
       else
-        render json: @comment, state: :unprocessible_entity
+        render json: @like, state: :unprocessible_entity
       end
   end
 

@@ -12,6 +12,7 @@ class User < ApplicationRecord
     class_name: :Post
 
     has_many :likes
+    has_many :followings
     has_many :comments
 
     has_one_attached :photo
