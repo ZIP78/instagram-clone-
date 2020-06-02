@@ -4,6 +4,7 @@ import IosSettings from "react-ionicons/lib/IosSettings";
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 import ProfilePageUploader from "./profile_page_uploader";
+import Follow from "../follow/follow";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -29,26 +30,49 @@ class ProfilePage extends React.Component {
     return posts.filter((post) => post.user_id === user.id);
   }
 
+  followOption() {
+    let user = this.props.user;
+    if (user === currentUser) {
+      return (
+        <div className="name_edit_setting_container">
+          <div className="profile_page_username">{user.username}</div>
+
+          <div className="profile_page_edit_button_container">
+            <button className="profile_page_edit_button">Edit Profile</button>
+          </div>
+          <div className="profile_page_setting_container">
+            <IosSettings className="profile_page_setting_button" />
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="name_edit_setting_container">
+          <div className="profile_page_username">{user.username}</div>
+          <Follow />
+        </div>
+      );
+    }
+  }
+
   render() {
     const { user, profilePicture } = this.props;
-
+    debugger;
     return (
       <div>
         <div className="profile_pic_page_container">
           <ProfilePageUploader user={user} profilePicture={profilePicture} />
 
           <div className="profile_page_information_container">
-            <div className="name_edit_setting_container">
-              <div className="profile_page_username">{user.username}</div>
-              <div className="profile_page_edit_button_container">
+            {/* <div className="profile_page_edit_button_container">
                 <button className="profile_page_edit_button">
                   Edit Profile
                 </button>
               </div>
               <div className="profile_page_setting_container">
                 <IosSettings className="profile_page_setting_button" />
-              </div>
-            </div>
+              </div> */}
+            {this.followOption()}
 
             <div className="post_followers_container">
               {this.numOfPost()}

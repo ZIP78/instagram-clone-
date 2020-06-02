@@ -1,4 +1,6 @@
 import * as APIUtil from "../utils/session";
+// import * as APIUtil from "../utils/follower";
+import * as API2Util from "../utils/follower";
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
@@ -63,4 +65,16 @@ export const logout = () => (dispatch) => {
 
 export const profilePicture = (pic) => (dispatch) => {
   return APIUtil.editUser(pic).then((pic) => dispatch(receiveCurrentUser(pic)));
+};
+
+export const follow = (userId) => (dispatch) => {
+  return APIUtil2.follow(userId).then((user) =>
+    dispatch(receiveCurrentUser(user))
+  );
+};
+
+export const unFollow = (userId) => (dispatch) => {
+  return APIUtil2.deleteFollow(userId).then((user) =>
+    dispatch(receiveCurrentUser(user))
+  );
 };
