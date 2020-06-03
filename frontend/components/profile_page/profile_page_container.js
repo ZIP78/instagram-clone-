@@ -4,8 +4,9 @@ import { requestAllPost } from "../../actions/post";
 import { requestUsers, profilePicture } from "../../actions/session";
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   return {
-    user: state.entities.users[state.session.id],
+    user: state.entities.users,
     posts: state.entities.posts,
   };
 };
