@@ -4,9 +4,10 @@ import { requestAllPost } from "../../actions/post";
 import { requestUsers, profilePicture } from "../../actions/session";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
-    users: Object.values(state.entities.users),
+    profileUser: Object.values(state.entities.users).filter((obj) => {
+      return obj.username === ownProps.match.params.username;
+    })[0],
     posts: state.entities.posts,
   };
 };

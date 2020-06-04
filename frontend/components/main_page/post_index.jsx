@@ -27,6 +27,7 @@ class PostIndex extends React.Component {
       removeLike,
       getComments,
     } = this.props;
+    if (!users) return null;
     return (
       <div className="post-container">
         {Object.values(posts).map((post) => {

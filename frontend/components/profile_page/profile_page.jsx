@@ -18,24 +18,24 @@ class ProfilePage extends React.Component {
   }
 
   numOfPost() {
-    let user = this.props.user;
+    let profileUser = this.props.profileUser;
     let posts = Object.values(this.props.posts);
-    let postsByUser = posts.filter((post) => post.user_id === user.id);
+    let postsByUser = posts.filter((post) => post.user_id === profileUser.id);
     return <div className="profile_page_posts">{postsByUser.length} posts</div>;
   }
 
   postByUser() {
-    let user = this.props.user;
+    let profileUser = this.props.profileUser;
     let posts = Object.values(this.props.posts);
-    return posts.filter((post) => post.user_id === user.id);
+    return posts.filter((post) => post.user_id === profileUser.id);
   }
 
   followOption() {
-    let user = this.props.user;
-    if (user === currentUser) {
+    let profileUser = this.props.profileUser;
+    if (profileUser.username === currentUser.username) {
       return (
         <div className="name_edit_setting_container">
-          <div className="profile_page_username">{user.username}</div>
+          <div className="profile_page_username">{profileUser.username}</div>
 
           <div className="profile_page_edit_button_container">
             <button className="profile_page_edit_button">Edit Profile</button>
@@ -48,7 +48,7 @@ class ProfilePage extends React.Component {
     } else {
       return (
         <div className="name_edit_setting_container">
-          <div className="profile_page_username">{user.username}</div>
+          <div className="profile_page_username">{profileUser.username}</div>
           <Follow />
         </div>
       );
@@ -56,12 +56,15 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    const { user, profilePicture } = this.props;
-    debugger;
+    const { profileUser, profilePicture } = this.props;
+    if (!profileUser) return null;
     return (
       <div>
         <div className="profile_pic_page_container">
-          <ProfilePageUploader user={user} profilePicture={profilePicture} />
+          <ProfilePageUploader
+            user={profileUser}
+            profilePicture={profilePicture}
+          />
 
           <div className="profile_page_information_container">
             {/* <div className="profile_page_edit_button_container">
@@ -81,7 +84,7 @@ class ProfilePage extends React.Component {
             </div>
 
             <div className="profile_page_name">
-              <div>{user.first_name}</div>
+              <div>{profileUser.first_name}</div>
             </div>
           </div>
         </div>

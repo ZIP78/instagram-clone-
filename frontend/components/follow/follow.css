@@ -1,0 +1,18 @@
+.follow-button-container {
+  width: 93px;
+  height: 28px;
+  margin-left: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.follow-button {
+  width: -webkit-fill-available;
+  height: inherit;
+  background: #0095f6;
+  color: #fff;
+  border-color: rgba(var(--d69, 0, 149, 246), 1);
+  border-radius: 3;
+  border-radius: 3px;
+  border-style: solid;
+}
