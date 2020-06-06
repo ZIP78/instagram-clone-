@@ -1,7 +1,12 @@
 import { connect } from "react-redux";
 import ProfilePage from "./profile_page";
 import { requestAllPost } from "../../actions/post";
-import { requestUsers, profilePicture } from "../../actions/session";
+import {
+  requestUsers,
+  profilePicture,
+  follow,
+  unFollow,
+} from "../../actions/session";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -17,6 +22,8 @@ const mapDispatchToProps = (dispatch) => {
     requestAllPost: () => dispatch(requestAllPost()),
     requestUsers: () => dispatch(requestUsers()),
     profilePicture: (pic) => dispatch(profilePicture(pic)),
+    follow: (userId) => dispatch(follow(userId)),
+    unFollow: (userId) => dispatch(unFollow(userId)),
   };
 };
 

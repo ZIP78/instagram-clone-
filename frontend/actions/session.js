@@ -68,13 +68,13 @@ export const profilePicture = (pic) => (dispatch) => {
 };
 
 export const follow = (userId) => (dispatch) => {
-  return APIUtil2.follow(userId).then((user) =>
+  return API2Util.follow(userId).then((user) =>
     dispatch(receiveCurrentUser(user))
   );
 };
 
 export const unFollow = (userId) => (dispatch) => {
-  return APIUtil2.deleteFollow(userId).then((user) =>
+  return API2Util.deleteFollow(userId).then((user) =>
     dispatch(receiveCurrentUser(user))
   );
 };
