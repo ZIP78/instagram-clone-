@@ -16,6 +16,7 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.getComments();
+    this.props.requestUsers();
   }
 
   render() {
