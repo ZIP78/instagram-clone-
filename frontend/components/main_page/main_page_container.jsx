@@ -5,21 +5,22 @@ import { requestAllPost, likePost, removeLike } from "../../actions/post";
 import { getComments } from "../../actions/comment";
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   return {
+    users: state.entities.users,
     posts: state.entities.posts,
     comments: state.entities.comments,
-    users: state.entities.users,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    requestUsers: () => dispatch(requestUsers()),
     logout: () => dispatch(logout()),
     requestAllPost: () => dispatch(requestAllPost()),
     getComments: () => dispatch(getComments()),
     likePost: (postId) => dispatch(likePost(postId)),
     removeLike: (id) => dispatch(removeLike(id)),
-    requestUsers: () => dispatch(requestUsers()),
   };
 };
 

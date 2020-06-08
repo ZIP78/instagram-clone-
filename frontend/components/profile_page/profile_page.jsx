@@ -49,7 +49,7 @@ class ProfilePage extends React.Component {
       return (
         <div className="name_edit_setting_container">
           <div className="profile_page_username">{profileUser.username}</div>
-          <Follow />
+          <Follow currentUser={currentUser} />
         </div>
       );
     }

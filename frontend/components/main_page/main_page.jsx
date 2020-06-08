@@ -8,23 +8,25 @@ class MainPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllPost();
     this.props.requestUsers();
+    this.props.requestAllPost();
   }
 
   render() {
     const {
+      users,
       logout,
       posts,
       comments,
       getComments,
-      users,
       likePost,
       removeLike,
       requestUsers,
+      requestAllPost,
     } = this.props;
     // console.log(posts)
-
+    console.log(users);
+    if (!users || !posts) return null;
     return (
       <header>
         <section className="main-page-container">
@@ -37,6 +39,7 @@ class MainPage extends React.Component {
               removeLike={removeLike}
               getComments={getComments}
               requestUsers={requestUsers}
+              requestAllPost={requestAllPost}
             />
           </div>
           {/* <button onClick={logout}>Logout</button> */}

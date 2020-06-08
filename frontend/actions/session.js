@@ -1,5 +1,4 @@
 import * as APIUtil from "../utils/session";
-// import * as APIUtil from "../utils/follower";
 import * as API2Util from "../utils/follower";
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
