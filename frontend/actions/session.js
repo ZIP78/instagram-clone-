@@ -41,6 +41,7 @@ export const clearErrors = () => {
 };
 
 export const requestUsers = () => (dispatch) => {
+  debugger;
   return APIUtil.fetchUsers().then((users) => dispatch(receiveUsers(users)));
 };
 

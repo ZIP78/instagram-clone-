@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  debugger;
   return {
     requestUsers: () => dispatch(requestUsers()),
     logout: () => dispatch(logout()),

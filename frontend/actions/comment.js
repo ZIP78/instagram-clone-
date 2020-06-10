@@ -1,39 +1,44 @@
-import * as APIUtil from "../utils/comment"
+import * as APIUtil from "../utils/comment";
 
-export const CREATE_COMMENT = 'CREATE_COMMENT'
-export const DELETE_COMMENT = 'DELETE_COMMENT'
-export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS'
+export const CREATE_COMMENT = "CREATE_COMMENT";
+export const DELETE_COMMENT = "DELETE_COMMENT";
+export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 
 const receiveComments = (comments) => {
-    return {
-        type: RECEIVE_COMMENTS,
-        comments
-    }
-}
+  return {
+    type: RECEIVE_COMMENTS,
+    comments,
+  };
+};
 
 const receiveComment = (comment) => {
-    return {
-        type: CREATE_COMMENT,
-        comment
-    }
-}
+  return {
+    type: CREATE_COMMENT,
+    comment,
+  };
+};
 
 const removeComment = (comment) => {
-    return {
-        type: DELETE_COMMENT,
-        comment
-    }
-}
-
+  return {
+    type: DELETE_COMMENT,
+    comment,
+  };
+};
 
 export const getComments = () => (dispatch) => {
-    return APIUtil.fetchComments().then(comments => dispatch(receiveComments(comments)))
-}
+  return APIUtil.fetchComments().then((comments) =>
+    dispatch(receiveComments(comments))
+  );
+};
 
 export const createComment = (comment) => (dispatch) => {
-    return APIUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
-}
+  return APIUtil.createComment(comment).then((comment) =>
+    dispatch(receiveComment(comment))
+  );
+};
 
 export const deleteComment = (commentId) => (dispatch) => {
-    return APIUtil.deleteComment(commentId).then(() => dispatch(removeComment(commentId)))
-}
+  return APIUtil.deleteComment(commentId).then(() =>
+    dispatch(removeComment(commentId))
+  );
+};

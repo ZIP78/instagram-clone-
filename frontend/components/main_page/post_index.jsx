@@ -16,12 +16,13 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     // this.props.posts;
-    // this.props.getComments();
     // this.props.requestUsers();
-    if (this.props.requestUsers) {
-      this.props.requestUsers();
-      this.props.getComments();
-    }
+    // debugger;
+    // this.props.getComments();
+    // if (this.props.requestUsers) {
+    //   this.props.requestUsers();
+    // this.props.getComments();
+    // }
   }
 
   render() {
@@ -34,12 +35,12 @@ class PostIndex extends React.Component {
       getComments,
     } = this.props;
     if (!users || !posts) return null;
-    debugger;
+    // debugger;
     return (
       <div className="post-container">
-        {Object.values(posts).map((post) => {
+        {Object.values(posts).map((post, i) => {
           return (
-            <div className="individual-post">
+            <div key={i} className="individual-post">
               <div className="post-upper-part">
                 <Link
                   to={{

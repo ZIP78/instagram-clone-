@@ -5,14 +5,27 @@ import "./main_page.css";
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loaded: false,
+    };
   }
 
   componentDidMount() {
+    debugger;
     this.props.requestUsers();
+    // debugger;
+    // this.props.users;
     this.props.requestAllPost();
+    this.props.getComments();
+  }
+
+  componentDidUpdate(prevState, prevProps) {
+    debugger;
   }
 
   render() {
+    console.log(this.props.users);
+
     const {
       users,
       logout,
@@ -24,9 +37,9 @@ class MainPage extends React.Component {
       requestUsers,
       requestAllPost,
     } = this.props;
-    // console.log(posts)
-    console.log(users);
-    if (!users || !posts) return null;
+    console.log(posts);
+    if (!users) return null;
+    // debugger;
     return (
       <header>
         <section className="main-page-container">

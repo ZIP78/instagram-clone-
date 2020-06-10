@@ -13,8 +13,8 @@ class ProfilePage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllPost();
     this.props.requestUsers();
+    this.props.requestAllPost();
   }
 
   numOfPost() {
