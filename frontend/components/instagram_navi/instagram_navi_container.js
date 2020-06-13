@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
   return {
-    user: state.entities.users,
+    user: state.entities.users[state.session.id],
   };
 };
 

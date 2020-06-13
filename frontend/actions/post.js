@@ -27,6 +27,7 @@ const receivePost = (post) => {
 };
 
 export const requestAllPost = () => (dispatch) => {
+  // debugger;
   return APIUtil.fetchPosts().then((posts) => dispatch(receivePosts(posts)));
 };
 

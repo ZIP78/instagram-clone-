@@ -5,23 +5,23 @@ import "./main_page.css";
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loaded: false,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
-    debugger;
-    this.props.requestUsers();
     // debugger;
     // this.props.users;
     this.props.requestAllPost();
     this.props.getComments();
+    this.props.requestUsers();
   }
 
-  componentDidUpdate(prevState, prevProps) {
-    debugger;
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   // debugger;
+  //   if (this.props.users !== prevProps.users) {
+  //     this.setState({ posts: this.props.posts });
+  //   }
+  // }
 
   render() {
     console.log(this.props.users);
@@ -38,7 +38,7 @@ class MainPage extends React.Component {
       requestAllPost,
     } = this.props;
     console.log(posts);
-    if (!users) return null;
+    // if (!users) return null;
     // debugger;
     return (
       <header>
@@ -47,12 +47,12 @@ class MainPage extends React.Component {
             <PostIndex
               posts={posts}
               users={users}
-              comments={comments}
-              likePost={likePost}
-              removeLike={removeLike}
-              getComments={getComments}
+              // comments={comments}
+              // likePost={likePost}
+              // removeLike={removeLike}
+              // getComments={getComments}
               requestUsers={requestUsers}
-              requestAllPost={requestAllPost}
+              // requestAllPost={requestAllPost}
             />
           </div>
           {/* <button onClick={logout}>Logout</button> */}

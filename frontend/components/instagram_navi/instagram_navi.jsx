@@ -61,7 +61,7 @@ class InstagramNavi extends React.Component {
               color="black"
               onClick={logout}
             />
-            <ProfilePicture user={currentUser} />
+            <ProfilePicture user={this.props.user} />
           </div>
         </div>
       </div>

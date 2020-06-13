@@ -5,9 +5,9 @@ const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_USERS:
-      debugger;
+      // debugger;
       // return action.users;
-      // return Object.assign({}, state, action.users);
+      // // return Object.assign({}, state, action.users);
       return merge({}, state, action.users);
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { [action.currentUser.id]: action.currentUser });

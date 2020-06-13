@@ -6,6 +6,7 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@babel/runtime": "^7.10.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
@@ -61,6 +62,9 @@
   },
   "devDependencies": {
     "acorn": "^7.1.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "transform-runtime": "0.0.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
