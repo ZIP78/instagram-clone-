@@ -9,7 +9,6 @@ import {
 } from "../../actions/session";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     profileUser: Object.values(state.entities.users).filter((obj) => {
       return obj.username === ownProps.match.params.username;

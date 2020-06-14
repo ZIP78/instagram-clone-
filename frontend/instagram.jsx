@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: window.currentUser.id,
       },
       entities: {
-        // users: {[window.currentUser.id]: window.currentUser}
+        users: { [window.currentUser.id]: window.currentUser },
       },
     };
   }

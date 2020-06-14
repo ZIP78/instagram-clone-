@@ -11,28 +11,7 @@ import { Link } from "react-router-dom";
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { posts: this.props.posts };
   }
-  // componentDidUpdate(prevProps, prevState) {
-  //   // debugger;
-  //   if (
-  //     Object.values(this.props.posts).length !==
-  //     Object.values(prevProps.post).length
-  //   ) {
-  //     this.setState({ posts: this.props.posts });
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   // this.props.posts;
-  //   // this.props.requestUsers();
-  //   // debugger;
-  //   // this.props.getComments();
-  //   // if (this.props.requestUsers) {
-  //   //   this.props.requestUsers();
-  //   // this.props.getComments();
-  //   // }
-  // }
 
   render() {
     const {
@@ -45,84 +24,85 @@ class PostIndex extends React.Component {
       requestUsers,
     } = this.props;
 
-    if (!users || !posts) return null;
-    // debugger;
+    if (Object.keys(users).length === 0 || Object.keys(posts).length === 0)
+      return null;
+
+    console.log("we passed null");
     return (
-      <div>hello</div>
-      // <div className="post-container">
-      //   {Object.values(posts).map((post, i) => (
-      //     <div key={i} className="individual-post">
-      //       <div className="post-upper-part">
-      //         <Link
-      //           to={{
-      //             pathname: `/users/${users[post.user_id]["username"]}`,
-      //           }}
-      //         >
-      //           <div className="post-profile-icon-container">
-      //             <img
-      //               className="post-profile-icon"
-      //               src={users[post.user_id]["photoUrl"]}
-      //               alt="profile-image"
-      //             />
-      //           </div>
-      //           <div
-      //             className="post-user"
-      //             style={{ position: "relative", top: -12 }}
-      //           >
-      //             {users[post.user_id]["username"]}
-      //           </div>
-      //         </Link>
-      //         <FontAwesomeIcon className="post-ellipsh" icon={faEllipsisH} />
-      //       </div>
+      <div className="post-container">
+        {Object.values(posts).map((post) => (
+          <div key={post.id} className="individual-post">
+            <div className="post-upper-part">
+              <Link
+                to={{
+                  pathname: `/users/${users[post.user_id]["username"]}`,
+                }}
+              >
+                <div className="post-profile-icon-container">
+                  <img
+                    className="post-profile-icon"
+                    src={users[post.user_id]["photoUrl"]}
+                    alt="profile-image"
+                  />
+                </div>
+                <div
+                  className="post-user"
+                  style={{ position: "relative", top: -12 }}
+                >
+                  {users[post.user_id]["username"]}
+                </div>
+              </Link>
+              <FontAwesomeIcon className="post-ellipsh" icon={faEllipsisH} />
+            </div>
 
-      //       {/* <div className="post-middle-part">
-      //           {post.photoUrl.split(".").pop() === "mp4" ? (
-      //             <VideoPlayer className="instagram-post" src={post.photoUrl} />
-      //           ) : (
-      //             <img className="instagram-post" src={post.photoUrl} />
-      //           )}
-      //         </div>
-      //         <div className="post-bottom-part">
-      //           <div style={{ paddingLeft: 20 }}>
-      //             <LikeComment
-      //               post={post}
-      //               likePost={likePost}
-      //               removeLike={removeLike}
-      //               comments={comments}
-      //             />
-      //           </div>
-      //           <div className="insta-likes-container">
-      //             <h1>{post.likes} likes</h1>
-      //           </div>
+            <div className="post-middle-part">
+              {post.photoUrl.split(".").pop() === "mp4" ? (
+                <VideoPlayer className="instagram-post" src={post.photoUrl} />
+              ) : (
+                <img className="instagram-post" src={post.photoUrl} />
+              )}
+            </div>
+            <div className="post-bottom-part">
+              <div style={{ paddingLeft: 20 }}>
+                <LikeComment
+                  post={post}
+                  likePost={likePost}
+                  removeLike={removeLike}
+                  comments={comments}
+                />
+              </div>
+              <div className="insta-likes-container">
+                <h1>{post.likes} likes</h1>
+              </div>
 
-      //           <div className="insta-likes-container">
-      //             <div className="post-user">
-      //               {users[post.user_id]["username"]}
-      //             </div>
+              <div className="insta-likes-container">
+                <div className="post-user">
+                  {users[post.user_id]["username"]}
+                </div>
 
-      //             <div className="post-caption" style={{ left: -3 }}>
-      //               {post.body}
-      //             </div>
-      //           </div>
+                <div className="post-caption" style={{ left: -3 }}>
+                  {post.body}
+                </div>
+              </div>
 
-      //           <CommentIndex
-      //             post={post}
-      //             user={users}
-      //             comments={comments}
-      //             getComments={getComments}
-      //           />
+              <CommentIndex
+                post={post}
+                user={users}
+                comments={comments}
+                getComments={getComments}
+              />
 
-      //           <div className="insta-likes-container-time-test">
-      //             <Time post={post} />
-      //           </div>
+              <div className="insta-likes-container-time-test">
+                <Time post={post} />
+              </div>
 
-      //           <div className="insta-likes-container-comment">
-      //             <CommentForm post={post} width={547} left={0} />
-      //           </div>
-      //         </div> */}
-      //     </div>
-      //   ))}
-      // </div>
+              <div className="insta-likes-container-comment">
+                <CommentForm post={post} width={547} left={0} />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     );
   }
 }

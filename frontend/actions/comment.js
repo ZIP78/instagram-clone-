@@ -26,7 +26,6 @@ const removeComment = (comment) => {
 };
 
 export const getComments = () => (dispatch) => {
-  // debugger;
   return APIUtil.fetchComments().then((comments) =>
     dispatch(receiveComments(comments))
   );
