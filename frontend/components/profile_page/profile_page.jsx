@@ -14,6 +14,7 @@ class ProfilePage extends React.Component {
 
   componentDidMount() {
     this.props.requestUsers();
+
     this.props.requestAllPost();
   }
 
@@ -58,7 +59,6 @@ class ProfilePage extends React.Component {
   render() {
     const { profileUser, profilePicture } = this.props;
     if (!profileUser) return null;
-    debugger;
     return (
       <div>
         <div className="profile_pic_page_container">
@@ -68,13 +68,6 @@ class ProfilePage extends React.Component {
           />
 
           <div className="profile_page_information_container">
-            <div className="profile_page_edit_button_container">
-              <button className="profile_page_edit_button">Edit Profile</button>
-            </div>
-            <div className="profile_page_setting_container">
-              <IosSettings className="profile_page_setting_button" />
-            </div>
-
             {this.followOption()}
 
             <div className="post_followers_container">

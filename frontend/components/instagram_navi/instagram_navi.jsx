@@ -29,7 +29,7 @@ class InstagramNavi extends React.Component {
   }
 
   render() {
-    const { logout } = this.props;
+    const { logout, user } = this.props;
     return (
       <div className="insta-navi-container">
         <div className="insta-navi-items">
@@ -57,7 +57,7 @@ class InstagramNavi extends React.Component {
               color="black"
               onClick={logout}
             />
-            <ProfilePicture user={this.props.user} />
+            <ProfilePicture user={user} />
           </div>
         </div>
       </div>
