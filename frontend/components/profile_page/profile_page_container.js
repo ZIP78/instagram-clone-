@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     profileUser: Object.values(state.entities.users).filter((obj) => {
       return obj.username === ownProps.match.params.username;
     })[0],
+    loggedInUser: state.entities.users[state.session.id],
     posts: state.entities.posts,
   };
 };

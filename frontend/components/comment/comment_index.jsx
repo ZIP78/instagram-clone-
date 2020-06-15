@@ -34,7 +34,7 @@ class CommentIndex extends React.Component {
         {this.comments()
           .slice(0, 2)
           .map((comment) => (
-            <div className="comments">
+            <div key={comment.id} className="comments">
               <div className="comment-user">
                 {user[comment.user_id]["username"]}
               </div>

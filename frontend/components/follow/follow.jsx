@@ -5,26 +5,30 @@ class Follow extends React.Component {
   constructor(props) {
     super(props);
     this.follow = this.follow.bind(this);
+    this.unFollow = this.unFollow.bind(this);
   }
   follow() {
-    let currentUser = this.props.currentUser.id;
-    console.log(currentUser);
+    let currentUser = this.props.loggedInUser.id;
+    this.props.follow(currentUser);
   }
 
-  unfolow() {
-    console.log(this.props.currentUser);
+  unFollow() {
+    let currentUser = this.props.loggedInUser.id;
+    this.props.unFollow(currentUser);
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { loggedInUser } = this.props;
     let button;
-    if (currentUser.followed_by_current_user) {
+    if (loggedInUser.followed_by_current_user) {
+      console.log("followed but will now unfolow");
       button = (
-        <button onClick={this.follow} className="following-button">
+        <button onClick={this.unFollow} className="following-button">
           Following
         </button>
       );
     } else {
+      console.log("start to follow");
       button = (
         <button onClick={this.follow} className="follow-button">
           Follow
@@ -36,9 +40,7 @@ class Follow extends React.Component {
         className="follow-button-container"
         style={{ width: 93, height: 28 }}
       >
-        <button onClick={this.follow} className="follow-button">
-          Follow
-        </button>{" "}
+        {button}
       </div>
     );
   }

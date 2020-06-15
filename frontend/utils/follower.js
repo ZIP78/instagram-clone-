@@ -1,7 +1,7 @@
 export const follow = (userId) => {
   return $.ajax({
     method: "POST",
-    url: `/api/users/${userId}/followers`,
+    url: `/api/users/${userId}/followings`,
     data: { userId },
   });
 };
@@ -9,7 +9,7 @@ export const follow = (userId) => {
 export const deleteFollow = (follow) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/followers`,
+    url: `/api/followings`,
     data: { follow },
   });
 };

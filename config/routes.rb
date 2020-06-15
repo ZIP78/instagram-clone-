@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
     namespace :api, defaults: {format: :json} do
         resources :users, only: [:create, :index, :update] do
-            resources :followers, only: [:create]
+            resources :followings, only: [:create]
         end
-        delete '/followers', to: "followers#destroy"
+        delete '/followings', to: "followings#destroy"
         resource :session, only:[:create, :show, :destroy]  
 
         # patch 'users', to: 'users#update_profile_pic'
