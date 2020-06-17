@@ -18,11 +18,31 @@ class ProfilePage extends React.Component {
     this.props.requestAllPost();
   }
 
-  numOfPost() {
+  profileInfo() {
     let profileUser = this.props.profileUser;
-    let posts = Object.values(this.props.posts);
-    let postsByUser = posts.filter((post) => post.user_id === profileUser.id);
-    return <div className="profile_page_posts">{postsByUser.length} posts</div>;
+    let loggedInUser = this.props.loggedInUser;
+    if (profileUser.username === loggedInUser.username) {
+      let posts = Object.values(this.props.posts);
+      let postsByUser = posts.filter(
+        (post) => post.user_id === loggedInUser.id
+      );
+
+      // Object.values(this.props.users).filter((user) => {
+      //   user.following.includes(
+      //     user.following.user_id === this.props.loggedInUser.id
+      //   );
+      // }).length;
+
+      return (
+        <div className="post_followers_container">
+          <div className="profile_page_posts">{postsByUser.length} posts</div>
+          <div className="profile_page_followers">0 followers</div>
+          <div className="profile_page_following">
+            {loggedInUser.following.length} Following
+          </div>
+        </div>
+      );
+    }
   }
 
   postByUser() {
@@ -63,6 +83,7 @@ class ProfilePage extends React.Component {
   render() {
     const { profileUser, profilePicture } = this.props;
     if (!profileUser) return null;
+    debugger;
     return (
       <div>
         <div className="profile_pic_page_container">
@@ -74,11 +95,11 @@ class ProfilePage extends React.Component {
           <div className="profile_page_information_container">
             {this.followOption()}
 
-            <div className="post_followers_container">
-              {this.numOfPost()}
-              <div className="profile_page_followers">0 followers</div>
-              <div className="profile_page_following">0 following</div>
-            </div>
+            {/* <div className="post_followers_container"> */}
+            {this.profileInfo()}
+            {/* <div className="profile_page_followers">0 followers</div>
+              <div className="profile_page_following">0 following</div> */}
+            {/* </div> */}
 
             <div className="profile_page_name">
               <div>{profileUser.first_name}</div>
