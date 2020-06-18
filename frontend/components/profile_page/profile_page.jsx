@@ -27,11 +27,11 @@ class ProfilePage extends React.Component {
         (post) => post.user_id === loggedInUser.id
       );
 
-      // Object.values(this.props.users).filter((user) => {
-      //   user.following.includes(
-      //     user.following.user_id === this.props.loggedInUser.id
-      //   );
-      // }).length;
+      let followers = Object.values(this.props.users).filter((user) => {
+        return user.following.includes(
+          user.following.user_id === this.props.loggedInUser.id
+        );
+      });
 
       return (
         <div className="post_followers_container">
@@ -53,7 +53,9 @@ class ProfilePage extends React.Component {
 
   followOption() {
     let profileUser = this.props.profileUser;
-    if (profileUser.username === currentUser.username) {
+    let loggedInUser = this.props.loggedInUser;
+
+    if (profileUser.username === loggedInUser.username) {
       return (
         <div className="name_edit_setting_container">
           <div className="profile_page_username">{profileUser.username}</div>
@@ -73,7 +75,8 @@ class ProfilePage extends React.Component {
           <Follow
             follow={this.props.follow}
             unFollow={this.props.unFollow}
-            loggedInUser={this.props.loggedInUser}
+            user={profileUser}
+            currentUser={loggedInUser}
           />
         </div>
       );
@@ -81,8 +84,8 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    const { profileUser, profilePicture } = this.props;
-    if (!profileUser) return null;
+    const { profileUser, profilePicture, users } = this.props;
+    if (!profileUser || !users) return null;
     debugger;
     return (
       <div>

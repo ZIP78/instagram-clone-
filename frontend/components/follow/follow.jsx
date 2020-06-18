@@ -8,33 +8,39 @@ class Follow extends React.Component {
     this.unFollow = this.unFollow.bind(this);
   }
   follow() {
-    let currentUser = this.props.loggedInUser.id;
-    this.props.follow(currentUser);
+    let user = this.props.user.id;
+    this.props.follow(user);
   }
 
   unFollow() {
-    let currentUser = this.props.loggedInUser.id;
-    this.props.unFollow(currentUser);
+    let user = this.props.user.id;
+    this.props.unFollow(user);
   }
 
   render() {
-    const { loggedInUser } = this.props;
+    const { user, currentUser } = this.props;
     let button;
-    if (loggedInUser.followed_by_current_user) {
-      console.log("followed but will now unfolow");
+
+    let following = currentUser.following.some(
+      (following) => following.followed_user_id === user.id
+    );
+
+    if (following) {
+      console.log("followed but will now unfolow if clicked ");
       button = (
         <button onClick={this.unFollow} className="following-button">
           Following
         </button>
       );
     } else {
-      console.log("start to follow");
+      console.log("start to follow if clicked ");
       button = (
         <button onClick={this.follow} className="follow-button">
           Follow
         </button>
       );
     }
+    debugger;
     return (
       <div
         className="follow-button-container"

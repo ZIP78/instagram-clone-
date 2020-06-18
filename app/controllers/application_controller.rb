@@ -24,4 +24,13 @@ class ApplicationController < ActionController::Base
             render json: { base: ['Invalid Credentials'] }, status: 401
         end    
     end
+
+    # def following
+        
+    #     current_user.followings.one? { |following|
+    #         debugger
+    #        return following if (following.followed_user_id == User.find_by(params[:id]).id) 
+    #     }
+    # end
+    
 end
