@@ -10,5 +10,6 @@
          
         json.following user.followings
         
+        json.followed_by_current_user !!current_user.followings.find_by(followed_user_id: user.id)
     end
 end

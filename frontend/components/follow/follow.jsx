@@ -25,7 +25,7 @@ class Follow extends React.Component {
       (following) => following.followed_user_id === user.id
     );
 
-    if (following) {
+    if (currentUser.followed_by_current_user) {
       console.log("followed but will now unfolow if clicked ");
       button = (
         <button onClick={this.unFollow} className="following-button">
