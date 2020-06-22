@@ -66,14 +66,14 @@ export const profilePicture = (pic) => (dispatch) => {
   return APIUtil.editUser(pic).then((pic) => dispatch(receiveCurrentUser(pic)));
 };
 
-export const follow = (userId) => (dispatch) => {
-  return API2Util.follow(userId).then((user) =>
-    dispatch(receiveCurrentUser(user))
-  );
-};
+// export const follow = (userId) => (dispatch) => {
+//   return API2Util.follow(userId).then((user) =>
+//     dispatch(receiveCurrentUser(user))
+//   );
+// };
 
-export const unFollow = (userId) => (dispatch) => {
-  return API2Util.deleteFollow(userId).then((user) =>
-    dispatch(receiveCurrentUser(user))
-  );
-};
+// export const unFollow = (userId) => (dispatch) => {
+//   return API2Util.deleteFollow(userId).then((user) =>
+//     dispatch(receiveCurrentUser(user))
+//   );
+// };
