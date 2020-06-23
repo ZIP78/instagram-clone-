@@ -1,4 +1,10 @@
 class Api::FollowingsController < ApplicationController
+    def index
+        @followings = Following.all
+        render :index
+    end
+    
+
     def create
         @following = Following.new
         @following.user_id = current_user.id

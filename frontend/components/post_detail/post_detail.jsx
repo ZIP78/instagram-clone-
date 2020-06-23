@@ -26,7 +26,6 @@ class PostDetail extends React.Component {
 
   render() {
     const { post, users, likePost, removeLike } = this.props;
-    debugger;
     if (!post || !users) return null;
     console.log("passed null so check post and users");
     return (

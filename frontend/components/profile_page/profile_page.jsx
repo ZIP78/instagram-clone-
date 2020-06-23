@@ -14,7 +14,7 @@ class ProfilePage extends React.Component {
 
   componentDidMount() {
     this.props.requestUsers();
-
+    this.props.requestFollows();
     this.props.requestAllPost();
   }
 
@@ -27,34 +27,32 @@ class ProfilePage extends React.Component {
     if (profileUser.username === loggedInUser.username) {
       postsByUser = posts.filter((post) => post.user_id === loggedInUser.id);
 
-      followers = Object.values(this.props.users).filter((user) => {
-        return user.following.includes(
-          user.following.user_id === this.props.loggedInUser.id
-        );
-      });
+      followers = Object.values(this.props.follows).filter((follow) => {
+        return follow.followed_user_id === loggedInUser.id;
+      }).length;
 
       return (
         <div className="post_followers_container">
           <div className="profile_page_posts">{postsByUser.length} posts</div>
-          <div className="profile_page_followers">0 followers</div>
+          <div className="profile_page_followers"> {followers} followers</div>
           <div className="profile_page_following">
-            {loggedInUser.following.length} Following
+            {Object.values(loggedInUser.following).length} Following
           </div>
         </div>
       );
     } else {
       postsByUser = posts.filter((post) => post.user_id === profileUser.id);
 
-      followers = Object.values(this.props.users).filter(
-        (user) => user.following.user_id === this.props.profileUser.id
-      ).length; //trying to get following
+      followers = Object.values(this.props.follows).filter((follow) => {
+        return follow.followed_user_id === profileUser.id;
+      }).length;
 
       return (
         <div className="post_followers_container">
           <div className="profile_page_posts">{postsByUser.length} posts</div>
-          <div className="profile_page_followers">{followers}</div>
+          <div className="profile_page_followers">{followers} followers</div>
           <div className="profile_page_following">
-            {profileUser.following.length} Following
+            {Object.values(profileUser.following).length} Following
           </div>
         </div>
       );
@@ -100,8 +98,15 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    const { profileUser, profilePicture, users, loggedInUser } = this.props;
+    const {
+      profileUser,
+      profilePicture,
+      users,
+      loggedInUser,
+      requestFollows,
+    } = this.props;
     if (!profileUser || !users) return null;
+
     return (
       <div>
         <div className="profile_pic_page_container">

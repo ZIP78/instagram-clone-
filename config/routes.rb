@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     namespace :api, defaults: {format: :json} do
         resources :users, only: [:create, :index, :update] do
             resources :followings, only: [:create]
-        end
+        end 
+
+        resources :followings, only: [:index]
+
+
         delete '/followings', to: "followings#destroy"
         resource :session, only:[:create, :show, :destroy]  
 

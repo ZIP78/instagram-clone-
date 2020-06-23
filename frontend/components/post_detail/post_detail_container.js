@@ -6,7 +6,6 @@ import { likePost, removeLike } from "../../actions/post";
 import { requestUsers } from "../../actions/session";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     post: state.entities.posts[ownProps.match.params.postId],
     users: state.entities.users,

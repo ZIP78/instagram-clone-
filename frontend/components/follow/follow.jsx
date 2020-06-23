@@ -21,7 +21,7 @@ class Follow extends React.Component {
     const { user, currentUser } = this.props;
     let button;
 
-    let following = currentUser.following.some(
+    let following = Object.values(currentUser.following).some(
       (following) => following.followed_user_id === user.id
     );
 

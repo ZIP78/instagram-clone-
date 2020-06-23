@@ -1,3 +1,10 @@
+export const allFollows = () => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/followings`,
+  });
+};
+
 export const follow = (userId) => {
   return $.ajax({
     method: "POST",

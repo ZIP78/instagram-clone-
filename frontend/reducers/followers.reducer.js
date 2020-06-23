@@ -1,13 +1,14 @@
-// import {FOLLOW_USER} from '../actions/follow'
+import { ALL_FOLLOW } from "../actions/follow";
 
-// const followersReducer = (state = {}, action) => {
-//     Object.freeze(state)
-//     switch (action.type) {
-//         case FOLLOW_USER:
-//             return Object.assign({}, state)
-//             break;
+const followersReducer = (state = {}, action) => {
+  Object.freeze(state);
+  switch (action.type) {
+    case ALL_FOLLOW:
+      return action.follows;
 
-//         default:
-//             break;
-//     }
-// }
+    default:
+      return state;
+  }
+};
+
+export default followersReducer;
