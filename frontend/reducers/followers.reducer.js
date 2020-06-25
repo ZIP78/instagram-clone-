@@ -5,8 +5,6 @@ const followersReducer = (state = {}, action) => {
   switch (action.type) {
     case ALL_FOLLOW:
       return action.follows;
-    case FOLLOWING_USERS:
-      return action.follows;
     default:
       return state;
   }

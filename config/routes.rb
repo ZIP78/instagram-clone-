@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         resources :users, only: [:create, :index, :update] do
             resources :followings, only: [:create]
         end 
-        get '/users/:user_id/followings', to: "followings#currently_following"
+        # get '/users/:user_id/followings', to: "followings#currently_following"
 
 
         resources :followings, only: [:index]

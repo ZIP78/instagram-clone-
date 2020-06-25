@@ -11,7 +11,6 @@ class MainPage extends React.Component {
     this.props.requestAllPost();
     this.props.getComments();
     this.props.requestUsers();
-    // this.props.requestFollowingByUser(this.props.loggedInUser.id);
   }
   render() {
     const {
@@ -25,7 +24,6 @@ class MainPage extends React.Component {
       requestAllPost,
       loggedInUser,
     } = this.props;
-    debugger;
 
     return (
       <header>

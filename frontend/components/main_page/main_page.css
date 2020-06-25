@@ -67,7 +67,7 @@
   line-height: 50px;
   font-size: 24px;
   margin-top: -7px;
-  margin-left: -58px;
+  margin-left: 43px;
   color: black;
 }
 
@@ -91,7 +91,7 @@
 .insta-post-container {
   max-width: 614px;
   position: relative;
-  left: 600px;
+  margin: auto;
 }
 
 .post-container {

@@ -10,19 +10,6 @@ const followUser = (follows) => {
   };
 };
 
-const followingByUser = (follows) => {
-  return {
-    type: FOLLOWING_USERS,
-    follows,
-  };
-};
-
 export const requestFollows = () => (dispatch) => {
   return APIUtil.allFollows().then((follows) => dispatch(followUser(follows)));
-};
-
-export const requestFollowingByUser = (userId) => (dispatch) => {
-  return APIUtil.currentUserFollowing(userId).then((following) =>
-    dispatch(followingByUser(following))
-  );
 };

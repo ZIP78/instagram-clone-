@@ -5,14 +5,6 @@ export const allFollows = () => {
   });
 };
 
-export const currentUserFollowing = (userId) => {
-  return $.ajax({
-    method: "GET",
-    url: `/api/users/${userId}/following`,
-    data: { userId },
-  });
-};
-
 export const follow = (userId) => {
   return $.ajax({
     method: "POST",

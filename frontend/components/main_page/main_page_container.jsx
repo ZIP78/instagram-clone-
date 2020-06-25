@@ -6,7 +6,6 @@ import { getComments } from "../../actions/comment";
 import { requestFollowingByUser } from "../../actions/follow";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     users: state.entities.users,
     posts: state.entities.posts,
@@ -23,8 +22,6 @@ const mapDispatchToProps = (dispatch) => {
     getComments: () => dispatch(getComments()),
     likePost: (postId) => dispatch(likePost(postId)),
     removeLike: (id) => dispatch(removeLike(id)),
-    requestFollowingByUser: (userId) =>
-      dispatch(requestFollowingByUser(userId)),
   };
 };
 
