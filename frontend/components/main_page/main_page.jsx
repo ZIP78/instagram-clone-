@@ -5,13 +5,13 @@ import "./main_page.css";
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { users: this.props.users };
   }
 
   componentDidMount() {
     this.props.requestAllPost();
     this.props.getComments();
     this.props.requestUsers();
+    // this.props.requestFollowingByUser(this.props.loggedInUser.id);
   }
   render() {
     const {
@@ -23,7 +23,9 @@ class MainPage extends React.Component {
       removeLike,
       requestUsers,
       requestAllPost,
+      loggedInUser,
     } = this.props;
+    debugger;
 
     return (
       <header>
@@ -38,6 +40,7 @@ class MainPage extends React.Component {
               getComments={getComments}
               requestUsers={requestUsers}
               requestAllPost={requestAllPost}
+              loggedInUser={loggedInUser}
             />
           </div>
         </section>

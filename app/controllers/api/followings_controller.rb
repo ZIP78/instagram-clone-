@@ -19,6 +19,11 @@ class Api::FollowingsController < ApplicationController
         
     end
 
+    def currently_following 
+        debugger
+    end
+    
+
     def destroy 
         @following = Following.find_by(user_id: current_user.id, followed_user_id: params[:follow] ) 
         @following.destroy

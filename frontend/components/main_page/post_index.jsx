@@ -13,6 +13,17 @@ class PostIndex extends React.Component {
     super(props);
   }
 
+  postsByFollowing() {
+    let followingId = [currentUser.id];
+    Object.values(this.props.loggedInUser.following).forEach((id) => {
+      followingId.push(id.followed_user_id);
+    });
+
+    return Object.values(this.props.posts).filter((post) =>
+      followingId.includes(post.user_id)
+    );
+  }
+
   render() {
     const {
       posts,
@@ -21,7 +32,6 @@ class PostIndex extends React.Component {
       likePost,
       removeLike,
       getComments,
-      requestUsers,
     } = this.props;
 
     if (Object.keys(users).length === 0 || Object.keys(posts).length === 0)
@@ -30,7 +40,7 @@ class PostIndex extends React.Component {
     console.log("we passed null");
     return (
       <div className="post-container">
-        {Object.values(posts).map((post) => (
+        {this.postsByFollowing().map((post) => (
           <div key={post.id} className="individual-post">
             <div className="post-upper-part">
               <Link
