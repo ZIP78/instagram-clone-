@@ -14,7 +14,7 @@ class PostIndex extends React.Component {
   }
 
   postsByFollowing() {
-    let followingId = [currentUser.id];
+    let followingId = [this.props.loggedInUser.id];
     Object.values(this.props.loggedInUser.following).forEach((id) => {
       followingId.push(id.followed_user_id);
     });
