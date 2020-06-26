@@ -39,7 +39,7 @@ class CommentIndex extends React.Component {
                 {user[comment.user_id]["username"]}
               </div>
 
-              <div className="comment" style={{ left: -2 }}>
+              <div className="comment" style={{ left: -2, marginLeft: 4 }}>
                 {comment.body}
               </div>
             </div>

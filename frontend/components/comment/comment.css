@@ -65,11 +65,15 @@ textarea.add-comment::placeholder {
   height: 16px;
 }
 
-.comment,
 .post-caption {
   display: inline;
   position: relative;
   margin-left: 6px;
+  left: -26px;
+}
+.comment {
+  display: inline;
+  margin-left: -21px;
   left: -26px;
 }
 
@@ -89,7 +93,7 @@ textarea.add-comment::placeholder {
 .time-single-comment {
   position: absolute;
   top: 42px;
-  left: 8px;
+  left: 15px;
   width: 570px;
   width: auto;
   font-size: 12px;
