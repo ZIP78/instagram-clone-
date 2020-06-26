@@ -26,8 +26,8 @@ class PostDetail extends React.Component {
 
   render() {
     const { post, users, likePost, removeLike } = this.props;
-    if (!post || !users) return null;
-    console.log("passed null so check post and users");
+    if (Object.keys(users).length === 0 || Object.keys(post).length === 0)
+      return null;
     return (
       <div className="post-show-container">
         {post.photoUrl.split(".").pop() === "mp4" ? (
@@ -44,7 +44,7 @@ class PostDetail extends React.Component {
           <FontAwesomeIcon className="post-show-ellipsh" icon={faEllipsisH} />
           <div
             className="post-user"
-            style={{ position: "relative", top: 11, marginLeft: 17, left: 15 }}
+            style={{ position: "relative", top: 0, marginLeft: 23, left: -25 }}
           >
             {users[post.user_id]["username"]}
           </div>
