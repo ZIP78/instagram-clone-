@@ -68,7 +68,9 @@ textarea.add-comment::placeholder {
 .comment,
 .post-caption {
   display: inline;
-  margin-left: -20px;
+  position: relative;
+  margin-left: 6px;
+  left: -26px;
 }
 
 .single-page-comments {

@@ -44,7 +44,7 @@ class PostDetail extends React.Component {
           <FontAwesomeIcon className="post-show-ellipsh" icon={faEllipsisH} />
           <div
             className="post-user"
-            style={{ position: "relative", top: 0, marginLeft: 23, left: -25 }}
+            style={{ position: "relative", top: 11, marginLeft: 17, left: 15 }}
           >
             {users[post.user_id]["username"]}
           </div>
