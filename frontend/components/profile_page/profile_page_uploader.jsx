@@ -44,7 +44,7 @@ class ProfilePageUploader extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, currentUser } = this.props;
     if (!user) return null;
     return currentUser.username !== user.username ? (
       <div>
