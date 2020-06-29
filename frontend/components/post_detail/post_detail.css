@@ -119,7 +119,7 @@
 .user-caption-container {
   position: relative;
   top: 2px;
-  width: 570px;
+  /* width: 570px; */
   height: 21px;
   bottom: 14px;
   font-size: 14px;
