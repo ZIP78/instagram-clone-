@@ -1,8 +1,14 @@
-.profile_pic_page_container {
+.profile_page_container {
   position: relative;
-  top: 95px;
-  left: 405px;
-  width: 935px;
+  top: 55px;
+  margin: 0 auto;
+  padding: 30px;
+  padding-left: 114px;
+  left: 0px;
+  max-width: 1125px;
+}
+
+.profile_pic_page_container {
   height: 150px;
   display: inline-flex;
   margin-bottom: 44px;
@@ -92,20 +98,17 @@
 
 .profile_page_border {
   border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
-  position: absolute;
-  top: 289px;
+
   width: 935px;
   height: 53px;
   display: inline-flex;
-  left: 400px;
+  margin-left: 13px;
 }
 
 .profile_page_post_container {
   top: 149px;
-  position: relative;
   display: flex;
   flex-wrap: wrap;
-  left: 401px;
   width: 935px;
 }
 

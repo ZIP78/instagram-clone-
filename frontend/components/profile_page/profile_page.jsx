@@ -108,7 +108,7 @@ class ProfilePage extends React.Component {
     if (!profileUser || !users) return null;
 
     return (
-      <div>
+      <div className="profile_page_container">
         <div className="profile_pic_page_container">
           <ProfilePageUploader
             user={profileUser}
@@ -119,11 +119,7 @@ class ProfilePage extends React.Component {
           <div className="profile_page_information_container">
             {this.followOption()}
 
-            {/* <div className="post_followers_container"> */}
             {this.profileInfo()}
-            {/* <div className="profile_page_followers">0 followers</div>
-              <div className="profile_page_following">0 following</div> */}
-            {/* </div> */}
 
             <div className="profile_page_name">
               <div>{profileUser.first_name}</div>
