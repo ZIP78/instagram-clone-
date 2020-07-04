@@ -5,6 +5,7 @@ import IosLogOut from "react-ionicons/lib/IosLogOut";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import ProfilePicture from "../profile_pic/profile_container";
+import SearchBar from "../search_bar/search_bar";
 
 class InstagramNavi extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class InstagramNavi extends React.Component {
   }
 
   render() {
-    const { logout, user } = this.props;
+    const { logout, user, users } = this.props;
     return (
       <div className="insta-navi-container">
         <div className="insta-navi-items">
@@ -38,7 +39,7 @@ class InstagramNavi extends React.Component {
               <h1 className="insta-navi-name">Whoopiegram</h1>
             </Link>
           </div>
-
+          <SearchBar />
           <div>
             <IosAdd className="upload-button" onClick={this.handleClick} />
 

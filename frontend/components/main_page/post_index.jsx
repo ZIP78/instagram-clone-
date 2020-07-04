@@ -37,7 +37,6 @@ class PostIndex extends React.Component {
     if (Object.keys(users).length === 0 || Object.keys(posts).length === 0)
       return null;
 
-    console.log("we passed null");
     return (
       <div className="post-container">
         {this.postsByFollowing().map((post) => (

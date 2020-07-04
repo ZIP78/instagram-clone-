@@ -612,7 +612,7 @@ input.lname::placeholder {
 
 .write-caption {
   position: absolute;
-  left: 259px;
+  left: 280px;
   width: 300px;
   height: 36px;
 }
@@ -653,11 +653,11 @@ input:focus::placeholder {
 
 .Modal {
   position: absolute;
-  top: 130px;
-  left: 658px;
+  top: -44px;
+  left: 50px;
   right: 40px;
   bottom: 40px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid #cccccc;
   background-color: #fafafa;
   overflow: 1px;
   overflow: auto;
@@ -666,6 +666,7 @@ input:focus::placeholder {
   padding: 20px;
   width: 600px;
   height: 300px;
+  margin: auto;
 }
 
 .Overlay {

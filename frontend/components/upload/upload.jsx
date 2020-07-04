@@ -63,7 +63,7 @@ class Upload extends React.Component {
       display = (
         <input
           type="file"
-          style={{ width: "196px", height: "22px", marginTop: "10px" }}
+          style={{ width: "256", height: "22px", marginTop: "8px" }}
           onChange={this.handleFile}
           onClick={(e) => (e.target.value = null)}
         />
