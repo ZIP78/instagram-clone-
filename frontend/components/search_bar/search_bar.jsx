@@ -17,15 +17,23 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const { value, users } = this.state;
+    const { value } = this.state;
+    const { users } = this.props;
+    let items = Object.values(users).filter((user) => {
+      if (value === null) {
+        // logic
+      }
+    });
     return (
-      <div className="search-bar-container">
-        <input
-          className="search-bar"
-          type="text"
-          value={value}
-          onChange={this.handleChange}
-        />
+      <div className="search-container">
+        <div className="search-bar-container">
+          <input
+            className="search-bar"
+            type="text"
+            value={value}
+            onChange={this.handleChange}
+          />
+        </div>
       </div>
     );
   }

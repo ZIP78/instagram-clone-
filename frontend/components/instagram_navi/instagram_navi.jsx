@@ -39,7 +39,7 @@ class InstagramNavi extends React.Component {
               <h1 className="insta-navi-name">Whoopiegram</h1>
             </Link>
           </div>
-          <SearchBar />
+          <SearchBar users={users} />
           <div>
             <IosAdd className="upload-button" onClick={this.handleClick} />
 
