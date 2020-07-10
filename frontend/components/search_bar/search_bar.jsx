@@ -19,11 +19,22 @@ class SearchBar extends React.Component {
   render() {
     const { value } = this.state;
     const { users } = this.props;
-    let items = Object.values(users).filter((user) => {
-      if (value === null) {
-        // logic
-      }
-    });
+    console.log(value);
+    let items = Object.values(users)
+      .filter((user) => {
+        if (value === "") {
+          return;
+        } else if (
+          user.first_name.toLowerCase().includes(value.toLowerCase()) ||
+          user.last_name.toLowerCase().includes(value.toLowerCase()) ||
+          user.username.toLowerCase().includes(value.toLowerCase())
+        ) {
+          return user;
+        }
+      })
+      .map((user) => {
+        return <div>{user.username}</div>;
+      });
     return (
       <div className="search-container">
         <div className="search-bar-container">
@@ -33,6 +44,10 @@ class SearchBar extends React.Component {
             value={value}
             onChange={this.handleChange}
           />
+        </div>
+        <div className="user-options"></div>
+        <div className="result-box">
+          <div className="search-results">{items}</div>
         </div>
       </div>
     );
