@@ -90,3 +90,9 @@
   overflow-y: auto;
   padding: 0;
 }
+
+.search-result {
+  width: 237px;
+  height: 70px;
+  padding: 8px 14px;
+}

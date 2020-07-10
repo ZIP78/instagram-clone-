@@ -20,6 +20,10 @@ class SearchBar extends React.Component {
     const { value } = this.state;
     const { users } = this.props;
     console.log(value);
+    // <div className="user-options"></div>
+    //   <div className="result-box">
+    //     <div className="search-results">{items}</div>
+    //   </div>
     let items = Object.values(users)
       .filter((user) => {
         if (value === "") {
@@ -33,9 +37,11 @@ class SearchBar extends React.Component {
         }
       })
       .map((user) => {
-        return <div>{user.username}</div>;
+        return <div className="search-result">{user.username}</div>;
       });
-    return (
+    console.log(items);
+
+    return items.length >= 1 ? (
       <div className="search-container">
         <div className="search-bar-container">
           <input
@@ -48,6 +54,17 @@ class SearchBar extends React.Component {
         <div className="user-options"></div>
         <div className="result-box">
           <div className="search-results">{items}</div>
+        </div>
+      </div>
+    ) : (
+      <div className="search-container">
+        <div className="search-bar-container">
+          <input
+            className="search-bar"
+            type="text"
+            value={value}
+            onChange={this.handleChange}
+          />
         </div>
       </div>
     );
