@@ -1,5 +1,6 @@
 import React from "react";
 import "./search_bar.css";
+import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -9,21 +10,21 @@ class SearchBar extends React.Component {
       value: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
     const { value } = event.target;
     this.setState({ value });
   }
+  handleClick() {
+    this.setState({ value: "" });
+  }
 
   render() {
     const { value } = this.state;
     const { users } = this.props;
-    console.log(value);
-    // <div className="user-options"></div>
-    //   <div className="result-box">
-    //     <div className="search-results">{items}</div>
-    //   </div>
+
     let items = Object.values(users)
       .filter((user) => {
         if (value === "") {
@@ -37,9 +38,23 @@ class SearchBar extends React.Component {
         }
       })
       .map((user) => {
-        return <div className="search-result">{user.username}</div>;
+        return (
+          <Link
+            onClick={this.handleClick}
+            to={{
+              pathname: `/users/${user.username}`,
+            }}
+            className="search-result"
+          >
+            <div className="search-username-container">
+              <div>
+                <img className="search-profile-icon" src={user.photoUrl} />{" "}
+              </div>
+              <div className="search-username">{user.username}</div>
+            </div>
+          </Link>
+        );
       });
-    console.log(items);
 
     return items.length >= 1 ? (
       <div className="search-container">
