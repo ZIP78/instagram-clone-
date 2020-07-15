@@ -101,6 +101,7 @@
 
 .search-username-container {
   position: relative;
+  display: flex;
   top: 10px;
   height: 40px;
   margin-right: 10px;
@@ -120,6 +121,21 @@
 .search-username {
   position: relative;
   left: 43px;
-  bottom: 0px;
+  bottom: 2px;
   width: fit-content;
+  font-size: 14px;
+}
+
+.search-first-name,
+.search-last-name {
+  position: relative;
+  width: fit-content;
+  font-size: 14px;
+  left: 12px;
+  bottom: -16px;
+  font-weight: 200;
+}
+
+.search-last-name {
+  left: 16px;
 }

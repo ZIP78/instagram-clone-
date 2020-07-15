@@ -51,6 +51,10 @@ class SearchBar extends React.Component {
                 <img className="search-profile-icon" src={user.photoUrl} />{" "}
               </div>
               <div className="search-username">{user.username}</div>
+              <div>
+                <div className="search-first-name">{user.first_name}</div>
+                <div className="search-last-name">{user.last_name}</div>
+              </div>
             </div>
           </Link>
         );
