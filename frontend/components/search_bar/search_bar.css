@@ -120,22 +120,28 @@
 
 .search-username {
   position: relative;
-  left: 43px;
+  left: -3px;
   bottom: 2px;
   width: fit-content;
   font-size: 14px;
 }
 
-.search-first-name,
-.search-last-name {
-  position: relative;
-  width: fit-content;
-  font-size: 14px;
-  left: 12px;
-  bottom: -16px;
+.search-first-name {
+  margin-right: 4px;
   font-weight: 200;
+  font-size: 14px;
 }
 
 .search-last-name {
-  left: 16px;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.test {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  bottom: 7px;
+  left: 37px;
 }
