@@ -83,6 +83,7 @@ class SearchBar extends React.Component {
             type="text"
             value={value}
             onChange={this.handleChange}
+            placeholder="Search"
           />
         </div>
       </div>
