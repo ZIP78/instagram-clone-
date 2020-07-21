@@ -1,6 +1,8 @@
 import React from "react";
 import "./search_bar.css";
 import { Link } from "react-router-dom";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -8,9 +10,11 @@ class SearchBar extends React.Component {
     this.state = {
       //   data: [], we might not need this
       value: "",
+      showTransition: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.clickSearchbar = this.clickSearchbar.bind(this);
   }
 
   handleChange(event) {
@@ -19,6 +23,14 @@ class SearchBar extends React.Component {
   }
   handleClick() {
     this.setState({ value: "" });
+  }
+
+  clickSearchbar(event) {
+    // if event is clicked on
+    if (event) {
+      console.log(event);
+      this.setState({ showTransition: true });
+    }
   }
 
   render() {
@@ -77,14 +89,21 @@ class SearchBar extends React.Component {
       </div>
     ) : (
       <div className="search-container">
-        <div className="search-bar-container">
+        <div onClick={this.clickSearchbar} className="search-bar-container">
           <input
+            id="search-bar"
             className="search-bar"
             type="text"
             value={value}
             onChange={this.handleChange}
             placeholder="Search"
           />
+          {/* <div className="icon-search-title">
+            <span className="search-title">Search</span>
+            <span className="search-icon">
+              <FontAwesomeIcon icon={faSearch} />
+            </span>
+          </div> */}
         </div>
       </div>
     );
