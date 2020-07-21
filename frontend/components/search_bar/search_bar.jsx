@@ -7,6 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.textInput = React.createRef();
+
+    this.input = React.createRef();
+
     this.state = {
       //   data: [], we might not need this
       value: "",
@@ -15,6 +19,11 @@ class SearchBar extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.clickSearchbar = this.clickSearchbar.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidUpdate() {
+    if (this.textInput.current) this.textInput.current.focus();
   }
 
   handleChange(event) {
@@ -81,6 +90,11 @@ class SearchBar extends React.Component {
             value={value}
             onChange={this.handleChange}
           />
+          <div className="icon-search-clicked">
+            <span className="search-icon-clicked">
+              <FontAwesomeIcon icon={faSearch} />
+            </span>
+          </div>
         </div>
         <div className="user-options"></div>
         <div className="result-box">
@@ -89,25 +103,52 @@ class SearchBar extends React.Component {
       </div>
     ) : (
       <div className="search-container">
-        <div onClick={this.clickSearchbar} className="search-bar-container">
-          <input
-            id="search-bar"
-            className="search-bar"
-            type="text"
-            value={value}
-            onChange={this.handleChange}
-            placeholder="Search"
-          />
-          {/* <div className="icon-search-title">
-            <span className="search-title">Search</span>
-            <span className="search-icon">
-              <FontAwesomeIcon icon={faSearch} />
-            </span>
-          </div> */}
-        </div>
+        {this.state.showTransition ? (
+          <div className="search-bar-container">
+            <input
+              ref={this.textInput}
+              id="search-bar"
+              className="search-bar"
+              type="text"
+              value={value}
+              onChange={this.handleChange}
+              placeholder="Search"
+            />
+            <div className="icon-search-clicked">
+              <span className="search-icon-clicked">
+                <FontAwesomeIcon icon={faSearch} />
+              </span>
+            </div>
+          </div>
+        ) : (
+          <div onClick={this.clickSearchbar} className="search-bar-container">
+            <input
+              id="search-bar"
+              className="search-bar"
+              type="text"
+              value={value}
+              onChange={this.handleChange}
+              placeholder="Search"
+            />
+            <div className="icon-search-title">
+              <span className="search-title">Search</span>
+              <span className="search-icon">
+                <FontAwesomeIcon icon={faSearch} />
+              </span>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
 }
 
 export default SearchBar;
+
+{
+  /* <div className="icon-search-clicked">
+  <span className="search-icon-clicked">
+    <FontAwesomeIcon icon={faSearch} />
+  </span>
+</div> */
+}
