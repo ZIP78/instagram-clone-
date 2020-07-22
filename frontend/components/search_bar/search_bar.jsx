@@ -3,27 +3,51 @@ import "./search_bar.css";
 import { Link } from "react-router-dom";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ReactDOM from "react-dom";
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.textInput = React.createRef();
 
-    this.input = React.createRef();
+    this.outsideClick = React.createRef();
+    this.outsideClick2 = React.createRef();
 
     this.state = {
       //   data: [], we might not need this
+      results: 0,
       value: "",
       showTransition: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.clickSearchbar = this.clickSearchbar.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
   }
 
   componentDidUpdate() {
     if (this.textInput.current) this.textInput.current.focus();
+  }
+
+  handleClickOutside(event) {
+    let domMode = ReactDOM.findDOMNode(this);
+
+    if (
+      // this.outsideClick &&
+      // !this.outsideClick.current.contains(event.target)
+      !domMode ||
+      !domMode.contains(event.target)
+    ) {
+      this.setState({ showTransition: false });
+    }
   }
 
   handleChange(event) {
@@ -37,13 +61,12 @@ class SearchBar extends React.Component {
   clickSearchbar(event) {
     // if event is clicked on
     if (event) {
-      console.log(event);
       this.setState({ showTransition: true });
     }
   }
 
   render() {
-    const { value } = this.state;
+    const { value, results } = this.state;
     const { users } = this.props;
 
     let items = Object.values(users)
@@ -81,11 +104,15 @@ class SearchBar extends React.Component {
         );
       });
 
-    return items.length >= 1 ? (
+    return items.length >= 1 && this.state.showTransition ? (
       <div className="search-container">
-        <div className="search-bar-container">
+        <div
+          className="search-bar-container"
+          ref={(node) => (this.outsideClick = node)}
+        >
           <input
             className="search-bar"
+            ref={this.textInput}
             type="text"
             value={value}
             onChange={this.handleChange}
@@ -96,6 +123,7 @@ class SearchBar extends React.Component {
             </span>
           </div>
         </div>
+
         <div className="user-options"></div>
         <div className="result-box">
           <div className="search-results">{items}</div>
@@ -104,7 +132,10 @@ class SearchBar extends React.Component {
     ) : (
       <div className="search-container">
         {this.state.showTransition ? (
-          <div className="search-bar-container">
+          <div
+            className="search-bar-container"
+            ref={(node) => (this.outsideClick = node)}
+          >
             <input
               ref={this.textInput}
               id="search-bar"
@@ -112,7 +143,6 @@ class SearchBar extends React.Component {
               type="text"
               value={value}
               onChange={this.handleChange}
-              placeholder="Search"
             />
             <div className="icon-search-clicked">
               <span className="search-icon-clicked">
@@ -128,10 +158,13 @@ class SearchBar extends React.Component {
               type="text"
               value={value}
               onChange={this.handleChange}
-              placeholder="Search"
             />
             <div className="icon-search-title">
-              <span className="search-title">Search</span>
+              {value === "" ? (
+                <span className="search-title">Search</span>
+              ) : (
+                <span className="search-title">{value}</span>
+              )}
               <span className="search-icon">
                 <FontAwesomeIcon icon={faSearch} />
               </span>
