@@ -1,5 +1,6 @@
 import React from "react";
 import PostIndex from "./post_index";
+import Suggestion from "../suggest/suggestion";
 import "./main_page.css";
 
 class MainPage extends React.Component {
@@ -28,6 +29,7 @@ class MainPage extends React.Component {
     return (
       <header>
         <section className="main-page-container">
+          <Suggestion users={users} loggedInUser={loggedInUser} />
           <div className="insta-post-container">
             <PostIndex
               posts={posts}

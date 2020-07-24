@@ -1,0 +1,47 @@
+.suggestions-container {
+  width: 321px;
+  height: 256px;
+  border: solid;
+  position: fixed;
+}
+
+.whole-container {
+  display: inline-block;
+  position: relative;
+  left: 66%;
+  bottom: -95px;
+}
+
+.suggestion-caption {
+  padding-bottom: 8px;
+  color: #8e8e8e;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.suggested-user-container {
+  padding: 10px 16px;
+  height: 32px;
+}
+
+.suggested-username {
+  position: relative;
+  left: 33px;
+  bottom: -2px;
+  width: fit-content;
+  font-size: 14px;
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.suggestions-follow {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: #0095f6;
+  left: 87%;
+  top: -3px;
+}

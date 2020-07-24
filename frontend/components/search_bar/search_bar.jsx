@@ -40,12 +40,7 @@ class SearchBar extends React.Component {
   handleClickOutside(event) {
     let domMode = ReactDOM.findDOMNode(this);
 
-    if (
-      // this.outsideClick &&
-      // !this.outsideClick.current.contains(event.target)
-      !domMode ||
-      !domMode.contains(event.target)
-    ) {
+    if (!domMode || !domMode.contains(event.target)) {
       this.setState({ showTransition: false });
     }
   }
