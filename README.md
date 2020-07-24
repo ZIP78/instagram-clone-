@@ -6,6 +6,9 @@ Whoopiegram is a clone of instagram. This app should allow the user to post funn
 ## Features
 * Log in/ Log out
 * Sign up
+* upload pictures/videos
+* like and comment on posts
+* follow other users 
 
 ## Link
 [Live Demo](https://whoopiegram.herokuapp.com/#/login)
@@ -16,9 +19,7 @@ Whoopiegram is a clone of instagram. This app should allow the user to post funn
 * AWS
 
 ## Future Features
-* upload pictures/videos
-* like and comment on posts
-* follow other users 
+* Suggestions Pane 
 
 ## Splash Page
 
