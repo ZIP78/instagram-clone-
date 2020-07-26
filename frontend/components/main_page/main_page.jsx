@@ -2,6 +2,7 @@ import React from "react";
 import PostIndex from "./post_index";
 import Suggestion from "../suggest/suggestion";
 import "./main_page.css";
+import { unFollow } from "../../actions/session";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -24,12 +25,19 @@ class MainPage extends React.Component {
       requestUsers,
       requestAllPost,
       loggedInUser,
+      follow,
+      unfollow,
     } = this.props;
 
     return (
       <header>
         <section className="main-page-container">
-          <Suggestion users={users} loggedInUser={loggedInUser} />
+          <Suggestion
+            users={users}
+            loggedInUser={loggedInUser}
+            follow={follow}
+            unFollow={unFollow}
+          />
           <div className="insta-post-container">
             <PostIndex
               posts={posts}

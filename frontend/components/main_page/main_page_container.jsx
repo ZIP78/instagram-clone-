@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import MainPage from "./main_page";
-import { logout, requestUsers } from "../../actions/session";
+import { logout, requestUsers, follow, unFollow } from "../../actions/session";
 import { requestAllPost, likePost, removeLike } from "../../actions/post";
 import { getComments } from "../../actions/comment";
-import { requestFollowingByUser } from "../../actions/follow";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -22,6 +21,8 @@ const mapDispatchToProps = (dispatch) => {
     getComments: () => dispatch(getComments()),
     likePost: (postId) => dispatch(likePost(postId)),
     removeLike: (id) => dispatch(removeLike(id)),
+    follow: (userId) => dispatch(follow(userId)),
+    unFollow: (userId) => dispatch(unFollow(userId)),
   };
 };
 

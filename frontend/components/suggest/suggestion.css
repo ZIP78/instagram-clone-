@@ -3,6 +3,7 @@
   height: 256px;
   border: solid;
   position: fixed;
+  z-index: 10;
 }
 
 .whole-container {
