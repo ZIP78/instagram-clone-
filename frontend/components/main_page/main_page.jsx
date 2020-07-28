@@ -26,7 +26,8 @@ class MainPage extends React.Component {
       requestAllPost,
       loggedInUser,
       follow,
-      unfollow,
+      unFollow,
+      path,
     } = this.props;
 
     return (
@@ -37,6 +38,7 @@ class MainPage extends React.Component {
             loggedInUser={loggedInUser}
             follow={follow}
             unFollow={unFollow}
+            path={path}
           />
           <div className="insta-post-container">
             <PostIndex

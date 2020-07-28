@@ -1,29 +1,19 @@
 import React from "react";
 import "./suggestion.css";
 import { Link } from "react-router-dom";
+import SuggestionUser from "./suggestion_user";
 
 class Suggestion extends React.Component {
   constructor(props) {
     super(props);
-    this.follow = this.follow.bind(this);
-    this.unFollow = this.unFollow.bind(this);
-  }
-
-  follow(user) {
-    this.props.follow(user);
-  }
-
-  unFollow(user) {
-    this.props.unFollow(user);
   }
 
   render() {
-    const { users, loggedInUser } = this.props;
+    const { users, loggedInUser, follow, unFollow, path } = this.props;
     if (!users || !loggedInUser) {
       return null;
     }
 
-    debugger;
     let loggedInUserFollowing = Object.values(loggedInUser.following).map(
       (following) => {
         return following.followed_user_id;
@@ -31,11 +21,22 @@ class Suggestion extends React.Component {
     );
 
     let suggestedFollowing = Object.values(users).filter((user) => {
-      if (!loggedInUserFollowing.includes(user.id)) {
+      if (
+        (!loggedInUserFollowing.includes(user.id) ||
+          loggedInUserFollowing.includes(user.id)) &&
+        user.id !== loggedInUser.id &&
+        path === "/" &&
+        !loggedInUserFollowing.includes(user.id)
+      ) {
         return user;
       }
     });
-    // .map((user) => {
+    console.log(suggestedFollowing);
+    console.log(" suggestfollowing above");
+
+    console.log(loggedInUserFollowing);
+
+    // suggestedFollowing.map((user) => {
     //   return (
     //     <div className="suggested-user-container">
     //       <Link
@@ -48,10 +49,21 @@ class Suggestion extends React.Component {
     //         </div>{" "}
     //         <div className="suggested-username">{user.username}</div>{" "}
     //       </Link>
-    //       {!loggedInUser ? (
-    //         <div className="suggestions-follow">Follow</div>
+    //       {!following(user) ? (
+    //         <div
+    //           onClick={() => this.props.follow(user.id)}
+    //           className="suggestions-follow"
+    //         >
+    //           Follow
+    //         </div>
     //       ) : (
-    //         <div className="suggestions-follow">Following</div>
+    //         <div
+    //           style={{ color: "black" }}
+    //           onClick={() => this.props.unFollow(user.id)}
+    //           className="suggestions-follow"
+    //         >
+    //           Following
+    //         </div>
     //       )}
     //     </div>
     //   );
@@ -59,37 +71,44 @@ class Suggestion extends React.Component {
     return (
       <div className="whole-container">
         <h1 className="suggestion-caption">Suggestions For You</h1>
-        {/* <div className="suggestions-container">{suggestedFollowing}</div> */}
+
         <div className="suggestions-container">
           {suggestedFollowing.map((user) => {
             return (
-              <div className="suggested-user-container">
-                <Link
-                  to={{
-                    pathname: `/users/${user.username}`,
-                  }}
-                >
-                  <div style={{ position: "relative" }}>
-                    <img className="search-profile-icon" src={user.photoUrl} />
-                  </div>{" "}
-                  <div className="suggested-username">{user.username}</div>{" "}
-                </Link>
-                {!suggestedFollowing ? (
-                  <div
-                    onClick={this.unFollow(user.id)}
-                    className="suggestions-follow"
-                  >
-                    Following
-                  </div>
-                ) : (
-                  <div
-                    onClick={this.follow(user.id)}
-                    className="suggestions-follow"
-                  >
-                    follow
-                  </div>
-                )}
-              </div>
+              <SuggestionUser
+                user={user}
+                follow={follow}
+                unFollow={unFollow}
+                loggedInUser={loggedInUser}
+              />
+              // <div className="suggested-user-container">
+              //   <Link
+              //     to={{
+              //       pathname: `/users/${user.username}`,
+              //     }}
+              //   >
+              //     <div style={{ position: "relative" }}>
+              //       <img className="search-profile-icon" src={user.photoUrl} />
+              //     </div>{" "}
+              //     <div className="suggested-username">{user.username}</div>{" "}
+              //   </Link>
+              //   {!following(user.id) ? (
+              //     <div
+              //       onClick={() => this.followuser(user.id)}
+              //       className="suggestions-follow"
+              //     >
+              //       Follow
+              //     </div>
+              //   ) : (
+              //     <div
+              //       style={{ color: "black" }}
+              //       onClick={() => this.unFollowuser(user.id)}
+              //       className="suggestions-follow"
+              //     >
+              //       Following
+              //     </div>
+              //   )}
+              // </div>
             );
           })}
         </div>

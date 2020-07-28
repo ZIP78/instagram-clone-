@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     posts: state.entities.posts,
     comments: state.entities.comments,
     loggedInUser: state.entities.users[state.session.id],
+    path: ownProps.history.location.pathname,
   };
 };
 
