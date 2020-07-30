@@ -5,8 +5,23 @@ import { requestAllPost, likePost, removeLike } from "../../actions/post";
 import { getComments } from "../../actions/comment";
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   return {
     users: state.entities.users,
+    //unfollowed users
+    unfollowedUsers: Object.values(state.entities.users).filter((user) => {
+      let loggedInUserFollowing = Object.values(
+        state.entities.users[state.session.id].following
+      ).map((following) => {
+        return following.followed_user_id;
+      });
+      if (
+        !loggedInUserFollowing.includes(user.id) &&
+        user.id !== state.entities.users[state.session.id].id
+      ) {
+        return user;
+      }
+    }),
     posts: state.entities.posts,
     comments: state.entities.comments,
     loggedInUser: state.entities.users[state.session.id],

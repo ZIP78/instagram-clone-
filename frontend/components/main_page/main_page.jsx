@@ -28,12 +28,40 @@ class MainPage extends React.Component {
       follow,
       unFollow,
       path,
+      unfollowedUsers,
     } = this.props;
 
-    return (
+    return unfollowedUsers.length !== 0 ? (
       <header>
         <section className="main-page-container">
           <Suggestion
+            unfollowedUsers={unfollowedUsers}
+            users={users}
+            loggedInUser={loggedInUser}
+            follow={follow}
+            unFollow={unFollow}
+            path={path}
+          />
+          <div className="insta-post-container">
+            <PostIndex
+              posts={posts}
+              users={users}
+              comments={comments}
+              likePost={likePost}
+              removeLike={removeLike}
+              getComments={getComments}
+              requestUsers={requestUsers}
+              requestAllPost={requestAllPost}
+              loggedInUser={loggedInUser}
+            />
+          </div>
+        </section>
+      </header>
+    ) : (
+      <header>
+        <section style={{ maxWidth: 630 }} className="main-page-container">
+          <Suggestion
+            unfollowedUsers={unfollowedUsers}
             users={users}
             loggedInUser={loggedInUser}
             follow={follow}
