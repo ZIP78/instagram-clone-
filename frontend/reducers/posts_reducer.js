@@ -6,6 +6,7 @@ const postsReducer = (state = {}, action) => {
     case RECEIVE_POSTS:
       return action.posts;
     case RECEIVE_POST:
+      debugger;
       return Object.assign({}, state, {
         [action.post["post"]["id"]]: action.post["post"],
       });

@@ -4,9 +4,11 @@ import "./follow.css";
 class Follow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { following: null };
     this.follow = this.follow.bind(this);
     this.unFollow = this.unFollow.bind(this);
   }
+
   follow() {
     let user = this.props.user.id;
     this.props.follow(user);
@@ -24,6 +26,12 @@ class Follow extends React.Component {
     let following = Object.values(currentUser.following).some(
       (following) => following.followed_user_id === user.id
     );
+
+    // console.log(currentUser.currentFollowing);
+    console.log(" current user following objects below");
+    console.log(Object.values(currentUser.following));
+    console.log(" current user following below boolean below");
+    console.log(following);
 
     if (following) {
       console.log("followed but will now unfolow if clicked ");

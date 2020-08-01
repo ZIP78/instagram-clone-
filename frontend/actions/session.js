@@ -6,6 +6,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const TEST = "TEST";
 
 const receiveUsers = (users) => {
   return {
@@ -37,6 +38,13 @@ const receiveErrors = (error) => {
 export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS,
+  };
+};
+
+export const test = (testing) => {
+  return {
+    type: TEST,
+    testing,
   };
 };
 
@@ -72,8 +80,6 @@ export const follow = (userId) => (dispatch) => {
   );
 };
 
-export const unFollow = (userId) => (dispatch) => {
-  return API2Util.deleteFollow(userId).then((user) =>
-    dispatch(receiveCurrentUser(user))
-  );
+export const unFollow = (user) => (dispatch) => {
+  return API2Util.deleteFollow(user).then((user) => dispatch(test(user)));
 };

@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
     end
     
     def index
+        @user = current_user
         @users = User.all
         render :index
     end
@@ -34,8 +35,4 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit( :username, :password, :email, :first_name, :last_name, :photo )
     end
 
-#     def require_user!
-#     return if current_user.find_by(id: params[:id])
-#     render json: 'Forbidden', status: :forbidden
-#   end
 end

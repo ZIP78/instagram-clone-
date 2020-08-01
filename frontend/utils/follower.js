@@ -14,9 +14,10 @@ export const follow = (userId) => {
 };
 
 export const deleteFollow = (follow) => {
+  debugger;
   return $.ajax({
     method: "DELETE",
-    url: `/api/followings`,
+    url: `api/followings`,
     data: { follow },
   });
 };
