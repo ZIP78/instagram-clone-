@@ -71,13 +71,19 @@
   padding: 8px;
 }
 
+.profile_page_detail_container {
+  width: fit-content;
+  position: relative;
+  left: -168px;
+  height: 45px;
+  bottom: -31px;
+}
+
 .post_followers_container {
   width: 571px;
   margin-top: 20px;
   height: 27px;
   position: relative;
-  left: -226px;
-  top: 31px;
   margin-bottom: 20px;
   display: flex;
 }

@@ -1,4 +1,4 @@
-import { ALL_FOLLOW, FOLLOWING_USERS } from "../actions/follow";
+import { ALL_FOLLOW } from "../actions/follow";
 
 const followersReducer = (state = {}, action) => {
   Object.freeze(state);

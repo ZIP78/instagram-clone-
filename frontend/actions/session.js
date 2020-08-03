@@ -41,13 +41,6 @@ export const clearErrors = () => {
   };
 };
 
-export const test = (testing) => {
-  return {
-    type: TEST,
-    testing,
-  };
-};
-
 export const requestUsers = () => (dispatch) => {
   return APIUtil.fetchUsers().then((users) => dispatch(receiveUsers(users)));
 };
@@ -81,5 +74,7 @@ export const follow = (userId) => (dispatch) => {
 };
 
 export const unFollow = (user) => (dispatch) => {
-  return API2Util.deleteFollow(user).then((user) => dispatch(test(user)));
+  return API2Util.deleteFollow(user).then((user) =>
+    dispatch(receiveCurrentUser(user))
+  );
 };

@@ -45,7 +45,6 @@ class Upload extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let display;
     const preview = this.state.photoUrl;
     if (preview && this.state.photoFile.name.split(".").pop() === "mp4") {

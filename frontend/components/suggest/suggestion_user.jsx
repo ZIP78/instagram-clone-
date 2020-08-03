@@ -21,7 +21,6 @@ class SuggestionUser extends React.Component {
 
   render() {
     const { user, loggedInUser } = this.props;
-    console.log(user);
 
     if (!user || !loggedInUser) {
       return null;
