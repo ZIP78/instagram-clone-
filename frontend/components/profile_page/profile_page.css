@@ -31,8 +31,8 @@
 }
 
 .name_edit_setting_container {
-  display: flex;
-  width: 380px;
+  display: -webkit-box;
+  width: fit-content;
   height: 37px;
 }
 
@@ -57,12 +57,17 @@
 }
 
 .profile_page_edit_button {
-  margin-top: 8px;
+  margin-top: 3px;
   margin-left: 20px;
+  padding: 3px;
+  background-color: #fafafa;
+  width: 92px;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
 }
 
 .profile_page_setting_container {
   margin-left: 5px;
+  margin-top: -2px;
   height: 40px;
   width: 40px;
 }
@@ -74,7 +79,15 @@
 .profile_page_detail_container {
   width: fit-content;
   position: relative;
-  left: -168px;
+  left: -211px;
+  height: 45px;
+  bottom: -31px;
+}
+
+.profile_page_detail_container_other {
+  width: fit-content;
+  position: relative;
+  left: -154px;
   height: 45px;
   bottom: -31px;
 }
@@ -100,6 +113,13 @@
   position: absolute;
   top: 85px;
   right: 536px;
+}
+
+.profile_page_name_other {
+  height: 20px;
+  position: absolute;
+  top: 85px;
+  right: 529px;
 }
 
 .profile_page_border {

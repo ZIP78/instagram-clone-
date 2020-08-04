@@ -87,10 +87,15 @@ class ProfilePage extends React.Component {
               requestFollows={requestFollows}
               follows={follows}
             />
-
-            <div className="profile_page_name">
-              <div>{profileUser.first_name}</div>
-            </div>
+            {profileUser.username === loggedInUser.username ? (
+              <div className="profile_page_name">
+                <div>{profileUser.first_name}</div>
+              </div>
+            ) : (
+              <div className="profile_page_name_other">
+                <div>{profileUser.first_name}</div>
+              </div>
+            )}
           </div>
         </div>
 

@@ -39,14 +39,16 @@ class ProfilePageInfo extends React.Component {
       });
 
       profileInfo = (
-        <div className="post_followers_container">
-          <div className="profile_page_posts">{postsByUser.length} posts</div>
-          <div className="profile_page_followers">
-            {" "}
-            {followers.length} followers
-          </div>
-          <div className="profile_page_following">
-            {Object.values(loggedInUser.following).length} Following
+        <div className="profile_page_detail_container">
+          <div className="post_followers_container">
+            <div className="profile_page_posts">{postsByUser.length} posts</div>
+            <div className="profile_page_followers">
+              {" "}
+              {followers.length} followers
+            </div>
+            <div className="profile_page_following">
+              {Object.values(loggedInUser.following).length} Following
+            </div>
           </div>
         </div>
       );
@@ -60,19 +62,21 @@ class ProfilePageInfo extends React.Component {
       });
 
       profileInfo = (
-        <div className="post_followers_container">
-          <div className="profile_page_posts">{postsByUser.length} posts</div>
-          <div className="profile_page_followers">
-            {followers.length} followers
-          </div>
-          <div className="profile_page_following">
-            {Object.values(profileUser.following).length} Following
+        <div className="profile_page_detail_container_other">
+          <div className="post_followers_container">
+            <div className="profile_page_posts">{postsByUser.length} posts</div>
+            <div className="profile_page_followers">
+              {followers.length} followers
+            </div>
+            <div className="profile_page_following">
+              {Object.values(profileUser.following).length} Following
+            </div>
           </div>
         </div>
       );
     }
 
-    return <div className="profile_page_detail_container">{profileInfo}</div>;
+    return <div style={{ display: "contents" }}>{profileInfo}</div>;
   }
 }
 
