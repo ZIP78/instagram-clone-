@@ -86,10 +86,9 @@
 
 .profile_page_detail_container_other {
   width: fit-content;
-  position: relative;
-  left: -154px;
+  position: absolute;
   height: 45px;
-  bottom: -31px;
+  bottom: 59px;
 }
 
 .post_followers_container {
@@ -119,7 +118,6 @@
   height: 20px;
   position: absolute;
   top: 85px;
-  right: 529px;
 }
 
 .profile_page_border {
