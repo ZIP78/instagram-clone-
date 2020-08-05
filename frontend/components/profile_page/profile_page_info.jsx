@@ -39,7 +39,7 @@ class ProfilePageInfo extends React.Component {
       });
 
       profileInfo = (
-        <div className="profile_page_detail_container">
+        <div className="profile_page_detail_container_other">
           <div className="post_followers_container">
             <div className="profile_page_posts">{postsByUser.length} posts</div>
             <div className="profile_page_followers">

@@ -76,14 +76,6 @@
   padding: 8px;
 }
 
-.profile_page_detail_container {
-  width: fit-content;
-  position: relative;
-  left: -211px;
-  height: 45px;
-  bottom: -31px;
-}
-
 .profile_page_detail_container_other {
   width: fit-content;
   position: absolute;
@@ -105,13 +97,6 @@
 .profile_page_following {
   margin-right: 40px;
   font-size: 16px;
-}
-
-.profile_page_name {
-  height: 20px;
-  position: absolute;
-  top: 85px;
-  right: 536px;
 }
 
 .profile_page_name_other {
