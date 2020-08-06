@@ -49,7 +49,7 @@ class ProfilePageUploader extends React.Component {
     return currentUser.username !== user.username ? (
       <div>
         <div className="profile_page_pic_container">
-          <div className="profile_page_pic_upload" onClick={this.handleClick}>
+          <div className="profile_page_pic_upload">
             <img className="profile_page_profile_pic" src={user.photoUrl} />
           </div>
         </div>
