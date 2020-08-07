@@ -6,16 +6,30 @@ import { Link } from "react-router-dom";
 import ProfilePageUploader from "./profile_page_uploader";
 import Follow from "../follow/follow";
 import ProfilePageInfo from "./profile_page_info";
+import Modal from "react-modal";
+import EditProfilePage from "./edit_profile_page";
 
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      show: false,
+    };
+    this.showEditPage = this.showEditPage.bind(this);
+    this.closeEdit = this.closeEdit.bind(this);
   }
 
   componentDidMount() {
     this.props.requestUsers();
     this.props.requestAllPost();
+  }
+
+  showEditPage() {
+    this.setState({ show: true });
+  }
+
+  closeEdit() {
+    this.setState({ show: false });
   }
 
   postByUser() {
@@ -34,7 +48,22 @@ class ProfilePage extends React.Component {
           <div className="profile_page_username">{profileUser.username}</div>
 
           <div className="profile_page_edit_button_container">
-            <button className="profile_page_edit_button">Edit Profile</button>
+            <button
+              onClick={this.showEditPage}
+              className="profile_page_edit_button"
+            >
+              Edit Profile
+            </button>
+
+            <Modal
+              className="Modal"
+              overlayClassName="Overlay"
+              isOpen={this.state.show}
+              onRequestClose={this.closeEdit}
+              ariaHideApp={false}
+            >
+              <EditProfilePage loggedInUser={loggedInUser} />
+            </Modal>
           </div>
           <div className="profile_page_setting_container">
             <IosSettings className="profile_page_setting_button" />

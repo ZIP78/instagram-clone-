@@ -139,3 +139,13 @@
   width: 147px;
   border-radius: 50%;
 }
+
+.edit-page-form {
+  border: solid;
+  width: auto;
+  height: 240px;
+}
+
+.edit-username-container {
+  border: solid;
+}

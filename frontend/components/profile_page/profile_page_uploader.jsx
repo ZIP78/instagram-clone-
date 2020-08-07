@@ -18,8 +18,8 @@ class ProfilePageUploader extends React.Component {
   }
   componentDidUpdate(prevState, prevProps) {
     if (
-      this.state.photoFile != null &&
-      prevProps.photoFile != this.state.photoFile
+      this.state.photoFile !== null &&
+      prevProps.photoFile !== this.state.photoFile
     ) {
       const formData = new FormData();
       formData.append("user[photo]", this.state.photoFile);
@@ -31,11 +31,8 @@ class ProfilePageUploader extends React.Component {
     this.setState({ photoFile: event.currentTarget.files[0] });
   }
   handleSubmit(event) {
-    // left off here
-    // event.preventDefault();
     const formData = new FormData();
     formData.append("user[photo]", this.state.photoFile);
-    // formData.append("user[id]", this.props.user.id);
     this.props.profilePicture(formData);
   }
 
