@@ -15,9 +15,14 @@ class EditProfilePage extends React.Component {
         </div>
         <form className="edit-page-form">
           <div className="edit-username-container">
-            <div>Name</div>
-            <div>
-              <input type="text" placeholder={loggedInUser.username} />
+            <div className="edit-name-label">Name</div>
+            <div className="edit-input-container">
+              <input
+                id="edit-input"
+                className="edit-input"
+                type="text"
+                placeholder={loggedInUser.username}
+              />
             </div>
           </div>
         </form>

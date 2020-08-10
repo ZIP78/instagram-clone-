@@ -148,4 +148,30 @@
 
 .edit-username-container {
   border: solid;
+  display: flex;
+}
+
+.edit-name-label {
+  position: relative;
+  left: 138px;
+  padding-right: 32px;
+  bottom: -9px;
+  height: fit-content;
+  font-size: 16px;
+}
+
+.edit-input-container {
+  position: relative;
+  left: 140px;
+}
+
+.edit-input {
+  width: 355px;
+  height: 32px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+#edit-input::placeholder {
+  color: #262626;
 }
