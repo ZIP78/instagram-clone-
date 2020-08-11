@@ -4,6 +4,18 @@ import "./profile_page.css";
 class EditProfilePage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userName:
+        this.props.loggedInUser.first_name +
+        " " +
+        this.props.loggedInUser.last_name,
+    };
+    this.handleUsername = this.handleUsername.bind(this);
+  }
+
+  handleUsername(e) {
+    e.preventDefault();
+    this.setState({ userName: e.currentTarget.value });
   }
 
   render() {
@@ -21,7 +33,9 @@ class EditProfilePage extends React.Component {
                 id="edit-input"
                 className="edit-input"
                 type="text"
-                placeholder={loggedInUser.username}
+                value={this.state.userName}
+                onChange={this.handleUsername}
+                placeholder="Name"
               />
             </div>
           </div>

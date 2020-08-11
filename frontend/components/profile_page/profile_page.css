@@ -149,13 +149,14 @@
 .edit-username-container {
   border: solid;
   display: flex;
+  margin-bottom: 16px;
 }
 
 .edit-name-label {
   position: relative;
   left: 138px;
   padding-right: 32px;
-  bottom: -9px;
+  bottom: -7px;
   height: fit-content;
   font-size: 16px;
 }
@@ -170,8 +171,9 @@
   height: 32px;
   box-sizing: border-box;
   padding-left: 10px;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
 }
 
-#edit-input::placeholder {
-  color: #262626;
+.edit-input:focus {
+  border: 2px solid #005fcd;
 }
