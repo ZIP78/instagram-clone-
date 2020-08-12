@@ -146,24 +146,33 @@
   height: 240px;
 }
 
+.edit-name-container,
 .edit-username-container {
   border: solid;
   display: flex;
   margin-bottom: 16px;
 }
 
-.edit-name-label {
-  position: relative;
-  left: 138px;
+.edit-name-label,
+.edit-username-label {
+  position: absolute;
   padding-right: 32px;
-  bottom: -7px;
-  height: fit-content;
   font-size: 16px;
+}
+
+.edit-name-label {
+  left: 157px;
+  bottom: 240px;
+}
+
+.edit-username-label {
+  left: 126px;
+  bottom: 185px;
 }
 
 .edit-input-container {
   position: relative;
-  left: 140px;
+  left: 205px;
 }
 
 .edit-input {

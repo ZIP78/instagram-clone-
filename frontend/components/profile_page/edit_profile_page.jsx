@@ -5,12 +5,19 @@ class EditProfilePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName:
+      name:
         this.props.loggedInUser.first_name +
         " " +
         this.props.loggedInUser.last_name,
+      userName: this.props.loggedInUser.username,
     };
+    this.handleName = this.handleName.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
+  }
+
+  handleName(e) {
+    e.preventDefault();
+    this.setState({ name: e.currentTarget.value });
   }
 
   handleUsername(e) {
@@ -26,8 +33,22 @@ class EditProfilePage extends React.Component {
           <div className="modal-title">Edit Profile</div>
         </div>
         <form className="edit-page-form">
-          <div className="edit-username-container">
+          <div className="edit-name-container">
             <div className="edit-name-label">Name</div>
+            <div className="edit-input-container">
+              <input
+                id="edit-input"
+                className="edit-input"
+                type="text"
+                value={this.state.name}
+                onChange={this.handleName}
+                placeholder="Name"
+              />
+            </div>
+          </div>
+
+          <div className="edit-username-container">
+            <div className="edit-username-label">Username</div>
             <div className="edit-input-container">
               <input
                 id="edit-input"
@@ -35,7 +56,7 @@ class EditProfilePage extends React.Component {
                 type="text"
                 value={this.state.userName}
                 onChange={this.handleUsername}
-                placeholder="Name"
+                placeholder="Username"
               />
             </div>
           </div>
