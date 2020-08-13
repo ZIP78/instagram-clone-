@@ -10,6 +10,7 @@ class EditProfilePage extends React.Component {
         " " +
         this.props.loggedInUser.last_name,
       userName: this.props.loggedInUser.username,
+      // bio: this.props.
     };
     this.handleName = this.handleName.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
@@ -27,6 +28,7 @@ class EditProfilePage extends React.Component {
 
   render() {
     const { loggedInUser } = this.props;
+    debugger;
     return (
       <section>
         <div className="modal-title-container">
@@ -49,6 +51,20 @@ class EditProfilePage extends React.Component {
 
           <div className="edit-username-container">
             <div className="edit-username-label">Username</div>
+            <div className="edit-input-container">
+              <input
+                id="edit-input"
+                className="edit-input"
+                type="text"
+                value={this.state.userName}
+                onChange={this.handleUsername}
+                placeholder="Username"
+              />
+            </div>
+          </div>
+
+          <div className="edit-bio-container">
+            <div className="edit-bio-label">Username</div>
             <div className="edit-input-container">
               <input
                 id="edit-input"

@@ -147,14 +147,16 @@
 }
 
 .edit-name-container,
-.edit-username-container {
+.edit-username-container,
+.edit-bio-container {
   border: solid;
   display: flex;
   margin-bottom: 16px;
 }
 
 .edit-name-label,
-.edit-username-label {
+.edit-username-label,
+.edit-bio-label {
   position: absolute;
   padding-right: 32px;
   font-size: 16px;
