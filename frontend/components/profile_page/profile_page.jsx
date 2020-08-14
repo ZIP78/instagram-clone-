@@ -14,7 +14,6 @@ class ProfilePage extends React.Component {
     super(props);
     this.state = {
       show: false,
-      bio: "",
     };
     this.showEditPage = this.showEditPage.bind(this);
     this.closeEdit = this.closeEdit.bind(this);
@@ -23,9 +22,6 @@ class ProfilePage extends React.Component {
   componentDidMount() {
     this.props.requestUsers();
     this.props.requestAllPost();
-    this.setState((prevState, props) => {
-      debugger;
-    });
   }
 
   showEditPage() {

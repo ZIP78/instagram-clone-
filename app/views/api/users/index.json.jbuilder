@@ -9,6 +9,5 @@
          end
          
         json.following user.followings.all.index_by(&:id)
-        #  json.currentFollowing !!user.followings.find_by( followed_user_id: current_user.id )
     end
 end
