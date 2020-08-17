@@ -12,6 +12,7 @@
   height: 150px;
   display: inline-flex;
   margin-bottom: 44px;
+  cursor: pointer;
 }
 
 .profile_page_pic_container {
@@ -170,6 +171,11 @@
 .edit-username-label {
   left: 126px;
   bottom: 185px;
+}
+
+.edit-bio-label {
+  left: 177px;
+  bottom: 131px;
 }
 
 .edit-input-container {

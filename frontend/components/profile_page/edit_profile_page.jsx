@@ -10,10 +10,11 @@ class EditProfilePage extends React.Component {
         " " +
         this.props.loggedInUser.last_name,
       userName: this.props.loggedInUser.username,
-      // bio: this.props.
+      bio: "bioPlaceHolder",
     };
     this.handleName = this.handleName.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
+    this.handleBio = this.handleBio.bind(this);
   }
 
   handleName(e) {
@@ -26,9 +27,14 @@ class EditProfilePage extends React.Component {
     this.setState({ userName: e.currentTarget.value });
   }
 
+  handleBio(e) {
+    e.preventDefault();
+    this.setState({ bio: e.currentTarget.value });
+  }
+
   render() {
     const { loggedInUser } = this.props;
-    debugger;
+
     return (
       <section>
         <div className="modal-title-container">
@@ -64,18 +70,19 @@ class EditProfilePage extends React.Component {
           </div>
 
           <div className="edit-bio-container">
-            <div className="edit-bio-label">Username</div>
+            <div className="edit-bio-label">Bio</div>
             <div className="edit-input-container">
               <input
                 id="edit-input"
                 className="edit-input"
                 type="text"
-                value={this.state.userName}
-                onChange={this.handleUsername}
+                value={this.state.bio}
+                onChange={this.handleBio}
                 placeholder="Username"
               />
             </div>
           </div>
+          <button>Press me </button>
         </form>
       </section>
     );
