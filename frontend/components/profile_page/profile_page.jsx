@@ -41,6 +41,7 @@ class ProfilePage extends React.Component {
   followOption() {
     let profileUser = this.props.profileUser;
     let loggedInUser = this.props.loggedInUser;
+    let editProfile = this.props.editProfile;
 
     if (profileUser.username === loggedInUser.username) {
       return (
@@ -62,7 +63,10 @@ class ProfilePage extends React.Component {
               onRequestClose={this.closeEdit}
               ariaHideApp={false}
             >
-              <EditProfilePage loggedInUser={loggedInUser} />
+              <EditProfilePage
+                loggedInUser={loggedInUser}
+                editProfile={editProfile}
+              />
             </Modal>
           </div>
           <div className="profile_page_setting_container">

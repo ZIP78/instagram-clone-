@@ -147,7 +147,8 @@
   height: 240px;
 }
 
-.edit-name-container,
+.edit-firstName-container,
+.edit-lastName-container,
 .edit-username-container,
 .edit-bio-container {
   border: solid;
@@ -155,7 +156,8 @@
   margin-bottom: 16px;
 }
 
-.edit-name-label,
+.edit-firstName-label,
+.edit-lastName-label,
 .edit-username-label,
 .edit-bio-label {
   position: absolute;
@@ -163,19 +165,24 @@
   font-size: 16px;
 }
 
-.edit-name-label {
-  left: 157px;
+.edit-firstName-label {
+  left: 123px;
   bottom: 240px;
+}
+
+.edit-lastName-label {
+  left: 123px;
+  bottom: 185px;
 }
 
 .edit-username-label {
   left: 126px;
-  bottom: 185px;
+  bottom: 131px;
 }
 
 .edit-bio-label {
   left: 177px;
-  bottom: 131px;
+  bottom: 77px;
 }
 
 .edit-input-container {

@@ -67,6 +67,12 @@ export const profilePicture = (pic) => (dispatch) => {
   return APIUtil.editUser(pic).then((pic) => dispatch(receiveCurrentUser(pic)));
 };
 
+export const editProfile = (info) => (dispatch) => {
+  return APIUtil.editUser(info).then((info) =>
+    dispatch(receiveCurrentUser(info))
+  );
+};
+
 export const follow = (userId) => (dispatch) => {
   return API2Util.follow(userId).then((user) =>
     dispatch(receiveCurrentUser(user))

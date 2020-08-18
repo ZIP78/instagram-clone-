@@ -6,6 +6,7 @@ import {
   profilePicture,
   follow,
   unFollow,
+  editProfile,
 } from "../../actions/session";
 
 import { requestFollows } from "../../actions/follow";
@@ -28,6 +29,7 @@ const mapDispatchToProps = (dispatch) => {
     requestUsers: () => dispatch(requestUsers()),
     requestFollows: () => dispatch(requestFollows()),
     profilePicture: (pic) => dispatch(profilePicture(pic)),
+    editProfile: (info) => dispatch(editProfile(info)),
     follow: (userId) => dispatch(follow(userId)),
     unFollow: (userId) => dispatch(unFollow(userId)),
   };
