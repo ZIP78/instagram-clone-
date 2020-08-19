@@ -8,13 +8,13 @@ class EditProfilePage extends React.Component {
       firstName: this.props.loggedInUser.first_name,
       lastName: this.props.loggedInUser.last_name,
       userName: this.props.loggedInUser.username,
-      bio: "bioPlaceHolder",
+      bio: this.props.loggedInUser.bio,
     };
     this.handleFirstName = this.handleFirstName.bind(this);
     this.handleLastName = this.handleLastName.bind(this);
-
     this.handleUsername = this.handleUsername.bind(this);
     this.handleBio = this.handleBio.bind(this);
+    this.handleUpdates = this.handleUpdates.bind(this);
   }
 
   handleFirstName(e) {
@@ -51,6 +51,7 @@ class EditProfilePage extends React.Component {
       formData.append("user[username]", this.state.userName);
       formData.append("user[bio]", this.state.bio);
     }
+    this.props.editProfile(formData);
   }
 
   render() {
@@ -61,7 +62,7 @@ class EditProfilePage extends React.Component {
         <div className="modal-title-container">
           <div className="modal-title">Edit Profile</div>
         </div>
-        <form className="edit-page-form">
+        <form onSubmit={this.handleUpdates} className="edit-page-form">
           <div className="edit-firstName-container">
             <div className="edit-firstName-label">First Name</div>
             <div className="edit-input-container">
@@ -117,7 +118,7 @@ class EditProfilePage extends React.Component {
               />
             </div>
           </div>
-          <button>Press me </button>
+          <button>Press me</button>
         </form>
       </section>
     );

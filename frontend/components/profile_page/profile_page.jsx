@@ -123,10 +123,12 @@ class ProfilePage extends React.Component {
             {profileUser.username === loggedInUser.username ? (
               <div className="profile_page_name_other">
                 <div>{profileUser.first_name}</div>
+                <div className="profile-bio">{loggedInUser.bio}</div>
               </div>
             ) : (
               <div className="profile_page_name_other">
                 <div>{profileUser.first_name}</div>
+                <div className="profile-bio">{profileUser.bio}</div>
               </div>
             )}
           </div>

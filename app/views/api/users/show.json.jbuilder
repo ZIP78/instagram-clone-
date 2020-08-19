@@ -7,7 +7,8 @@
         json.photoUrl @user.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "happy.png")), filename: "happy.png")
     end
     json.following @user.followings.all.index_by(&:id)
-
+    
+    json.bio @user.bio || ""
 
 
 

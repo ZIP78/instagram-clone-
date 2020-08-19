@@ -9,5 +9,7 @@
          end
          
         json.following user.followings.all.index_by(&:id)
+        json.bio user.bio || ""
+
     end
 end

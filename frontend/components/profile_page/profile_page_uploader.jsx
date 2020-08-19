@@ -23,7 +23,6 @@ class ProfilePageUploader extends React.Component {
     ) {
       const formData = new FormData();
       formData.append("user[photo]", this.state.photoFile);
-      // formData.append("user[id]", this.props.user.id);
       this.props.profilePicture(formData);
     }
   }

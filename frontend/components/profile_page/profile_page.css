@@ -103,7 +103,7 @@
 .profile_page_name_other {
   height: 20px;
   position: absolute;
-  top: 85px;
+  top: 95px;
 }
 
 .profile_page_border {
@@ -200,4 +200,9 @@
 
 .edit-input:focus {
   border: 2px solid #005fcd;
+}
+
+.profile-bio {
+  position: absolute;
+  bottom: -28px;
 }
