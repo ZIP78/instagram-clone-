@@ -107,8 +107,6 @@
 }
 
 .profile_page_border {
-  border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1);
-
   width: 935px;
   height: 53px;
   display: inline-flex;
@@ -142,7 +140,6 @@
 }
 
 .edit-page-form {
-  border: solid;
   width: auto;
   height: 240px;
 }
@@ -151,7 +148,6 @@
 .edit-lastName-container,
 .edit-username-container,
 .edit-bio-container {
-  border: solid;
   display: flex;
   margin-bottom: 16px;
 }
@@ -167,22 +163,22 @@
 
 .edit-firstName-label {
   left: 123px;
-  bottom: 240px;
+  bottom: 245px;
 }
 
 .edit-lastName-label {
   left: 123px;
-  bottom: 185px;
+  bottom: 198px;
 }
 
 .edit-username-label {
   left: 126px;
-  bottom: 131px;
+  bottom: 149px;
 }
 
 .edit-bio-label {
   left: 177px;
-  bottom: 77px;
+  bottom: 101px;
 }
 
 .edit-input-container {
@@ -205,4 +201,22 @@
 .profile-bio {
   position: absolute;
   bottom: -28px;
+}
+
+.profile-edit-button {
+  opacity: 1;
+  background-color: #3897f0;
+  border-radius: 4px;
+  padding: 5px 9px 5px 9px;
+  width: 12%;
+  height: 30px;
+  border: 0;
+  color: white;
+  margin: auto;
+  position: absolute;
+  left: 260px;
+}
+
+.Modal {
+  background-color: white;
 }

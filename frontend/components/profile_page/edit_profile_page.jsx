@@ -118,7 +118,7 @@ class EditProfilePage extends React.Component {
               />
             </div>
           </div>
-          <button>Press me</button>
+          <button className="profile-edit-button">Edit</button>
         </form>
       </section>
     );
