@@ -114,7 +114,7 @@ class EditProfilePage extends React.Component {
                 type="text"
                 value={this.state.bio}
                 onChange={this.handleBio}
-                placeholder="Username"
+                placeholder="Bio"
               />
             </div>
           </div>
