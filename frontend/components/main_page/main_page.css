@@ -97,6 +97,8 @@
 
 .post-container {
   width: 615px;
+  flex-direction: column-reverse;
+  display: flex;
 }
 
 .individual-post {
