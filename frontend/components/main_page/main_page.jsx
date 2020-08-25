@@ -7,6 +7,9 @@ import { unFollow } from "../../actions/session";
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      darkMode: false,
+    };
   }
 
   componentDidMount() {
