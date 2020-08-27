@@ -14,9 +14,12 @@ class ProfilePage extends React.Component {
     super(props);
     this.state = {
       show: false,
+      showLightMode: false,
     };
     this.showEditPage = this.showEditPage.bind(this);
     this.closeEdit = this.closeEdit.bind(this);
+    this.showLightingSetting = this.showLightingSetting.bind(this);
+    this.hideLightingSetting = this.hideLightingSetting.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +33,14 @@ class ProfilePage extends React.Component {
 
   closeEdit() {
     this.setState({ show: false });
+  }
+
+  showLightingSetting() {
+    this.setState({ showLightMode: true });
+  }
+
+  hideLightingSetting() {
+    this.setState({ showLightMode: false });
   }
 
   postByUser() {
@@ -69,9 +80,25 @@ class ProfilePage extends React.Component {
               />
             </Modal>
           </div>
-          <div className="profile_page_setting_container">
-            <IosSettings className="profile_page_setting_button" />
-          </div>
+          {this.state.showLightMode === false ? (
+            <div className="profile_page_setting_container">
+              <IosSettings
+                onClick={this.showLightingSetting}
+                className="profile_page_setting_button"
+              />
+            </div>
+          ) : (
+            <div className="profile_page_setting_container">
+              <IosSettings
+                onClick={this.showLightingSetting}
+                className="profile_page_setting_button"
+              />
+              <div className="light-setting-options"></div>
+              <div className="light-setting-options-box">
+                <div className="search-results">hi</div>
+              </div>
+            </div>
+          )}
         </div>
       );
     } else {

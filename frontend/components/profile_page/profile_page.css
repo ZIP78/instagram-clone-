@@ -220,3 +220,58 @@
 .Modal {
   background-color: white;
 }
+
+.light-setting-options {
+  background: white;
+  border: solid 1px #dbdbdb;
+  border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.0975);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.0975);
+  -webkit-box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+  box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+  content: " ";
+  height: 14px;
+  left: 207px;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 14px;
+  z-index: 1;
+}
+
+.light-setting-options-box {
+  transform: rotate(-90deg);
+  background: rgba(var(--d87, 255, 255, 255), 1);
+  border: solid 1px #dbdbdb;
+  border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
+  -webkit-box-shadow: 0 0 5px rgba(var(--jb7, 0, 0, 0), 0.0975);
+  box-shadow: 0 0 5px rgba(var(--jb7, 0, 0, 0), 0.0975);
+  display: block;
+  left: 54.65%;
+  margin-left: -121px;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  width: 63px;
+  z-index: 9;
+}
+
+.light-setting-options-box::after {
+  border-color: transparent transparent #fff transparent;
+  border-color: transparent transparent rgba(var(--d87, 255, 255, 255), 1)
+    transparent;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  content: " ";
+  height: 0;
+  left: 17px;
+  position: absolute;
+  top: -9px;
+  width: 0;
+  z-index: 3;
+}
