@@ -8,6 +8,7 @@ import Follow from "../follow/follow";
 import ProfilePageInfo from "./profile_page_info";
 import Modal from "react-modal";
 import EditProfilePage from "./edit_profile_page";
+import Switch from "react-switch";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -95,7 +96,7 @@ class ProfilePage extends React.Component {
               />
               <div className="light-setting-options"></div>
               <div className="light-setting-options-box">
-                <div className="search-results">hi</div>
+                <Switch style={{ top: 124, left: 1 }} />
               </div>
             </div>
           )}
