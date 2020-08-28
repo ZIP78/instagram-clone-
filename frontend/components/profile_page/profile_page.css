@@ -117,7 +117,7 @@
   top: 149px;
   display: flex;
   flex-wrap: wrap;
-  width: 935px;
+  width: 965px;
 }
 
 .profile_page_post,
@@ -273,4 +273,9 @@
   top: -14px;
   width: 0;
   z-index: 3;
+}
+
+.toggle-switch {
+  top: 132px;
+  transform: rotate(89deg);
 }

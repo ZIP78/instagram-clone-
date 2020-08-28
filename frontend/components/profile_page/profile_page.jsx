@@ -15,12 +15,14 @@ class ProfilePage extends React.Component {
     super(props);
     this.state = {
       show: false,
-      showLightMode: false,
+      showLightModeOption: false,
+      darkMode: false,
     };
     this.showEditPage = this.showEditPage.bind(this);
     this.closeEdit = this.closeEdit.bind(this);
     this.showLightingSetting = this.showLightingSetting.bind(this);
     this.hideLightingSetting = this.hideLightingSetting.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
 
   componentDidMount() {
@@ -37,11 +39,15 @@ class ProfilePage extends React.Component {
   }
 
   showLightingSetting() {
-    this.setState({ showLightMode: true });
+    this.setState({ showLightModeOption: true });
   }
 
   hideLightingSetting() {
-    this.setState({ showLightMode: false });
+    this.setState({ showLightModeOption: false });
+  }
+
+  handleOptionChange(darkMode) {
+    this.setState({ darkMode });
   }
 
   postByUser() {
@@ -81,7 +87,7 @@ class ProfilePage extends React.Component {
               />
             </Modal>
           </div>
-          {this.state.showLightMode === false ? (
+          {this.state.showLightModeOption === false ? (
             <div className="profile_page_setting_container">
               <IosSettings
                 onClick={this.showLightingSetting}
@@ -91,12 +97,18 @@ class ProfilePage extends React.Component {
           ) : (
             <div className="profile_page_setting_container">
               <IosSettings
-                onClick={this.showLightingSetting}
+                // onClick={this.showLightingSetting}
                 className="profile_page_setting_button"
               />
               <div className="light-setting-options"></div>
               <div className="light-setting-options-box">
-                <Switch style={{ top: 124, left: 1 }} />
+                <Switch
+                  className="toggle-switch"
+                  uncheckedIcon={<div></div>}
+                  checkedIcon={<div></div>}
+                  onChange={this.handleOptionChange}
+                  checked={this.state.darkMode}
+                />
               </div>
             </div>
           )}
