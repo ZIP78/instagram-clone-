@@ -9,6 +9,7 @@ import ProfilePageInfo from "./profile_page_info";
 import Modal from "react-modal";
 import EditProfilePage from "./edit_profile_page";
 import Switch from "react-switch";
+import ReactDOM from "react-dom";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class ProfilePage extends React.Component {
     this.showLightingSetting = this.showLightingSetting.bind(this);
     this.hideLightingSetting = this.hideLightingSetting.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.closeSettings = this.closeSettings.bind(this);
   }
 
   componentDidMount() {
@@ -38,8 +40,15 @@ class ProfilePage extends React.Component {
     this.setState({ show: false });
   }
 
-  showLightingSetting() {
-    this.setState({ showLightModeOption: true });
+  showLightingSetting(event) {
+    if (!this.state.showLightModeOption) {
+      document.addEventListener("click", this.closeSettings, false);
+    } else {
+      document.removeEventListener("click", this.closeSettings, false);
+    }
+    this.setState((prevState) => ({
+      showLightModeOption: !prevState.showLightModeOption,
+    }));
   }
 
   hideLightingSetting() {
@@ -48,6 +57,13 @@ class ProfilePage extends React.Component {
 
   handleOptionChange(darkMode) {
     this.setState({ darkMode });
+  }
+
+  closeSettings(event) {
+    if (this.node.contains(event.target)) {
+      return;
+    }
+    this.showLightingSetting();
   }
 
   postByUser() {
@@ -88,16 +104,26 @@ class ProfilePage extends React.Component {
             </Modal>
           </div>
           {this.state.showLightModeOption === false ? (
-            <div className="profile_page_setting_container">
+            <div
+              className="profile_page_setting_container"
+              ref={(node) => {
+                this.node = node;
+              }}
+            >
               <IosSettings
                 onClick={this.showLightingSetting}
                 className="profile_page_setting_button"
               />
             </div>
           ) : (
-            <div className="profile_page_setting_container">
+            <div
+              className="profile_page_setting_container"
+              ref={(node) => {
+                this.node = node;
+              }}
+            >
               <IosSettings
-                // onClick={this.showLightingSetting}
+                onClick={this.showLightingSetting}
                 className="profile_page_setting_button"
               />
               <div className="light-setting-options"></div>

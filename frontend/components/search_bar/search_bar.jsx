@@ -10,11 +10,7 @@ class SearchBar extends React.Component {
     super(props);
     this.textInput = React.createRef();
 
-    this.outsideClick = React.createRef();
-    this.outsideClick2 = React.createRef();
-
     this.state = {
-      //   data: [], we might not need this
       results: 0,
       value: "",
       showTransition: false,
@@ -54,7 +50,6 @@ class SearchBar extends React.Component {
   }
 
   clickSearchbar(event) {
-    // if event is clicked on
     if (event) {
       this.setState({ showTransition: true });
     }
@@ -101,10 +96,7 @@ class SearchBar extends React.Component {
 
     return items.length >= 1 && this.state.showTransition ? (
       <div className="search-container">
-        <div
-          className="search-bar-container"
-          ref={(node) => (this.outsideClick = node)}
-        >
+        <div className="search-bar-container">
           <input
             className="search-bar"
             ref={this.textInput}
@@ -127,10 +119,7 @@ class SearchBar extends React.Component {
     ) : (
       <div className="search-container">
         {this.state.showTransition ? (
-          <div
-            className="search-bar-container"
-            ref={(node) => (this.outsideClick = node)}
-          >
+          <div className="search-bar-container">
             <input
               ref={this.textInput}
               id="search-bar"
@@ -172,11 +161,3 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
-
-{
-  /* <div className="icon-search-clicked">
-  <span className="search-icon-clicked">
-    <FontAwesomeIcon icon={faSearch} />
-  </span>
-</div> */
-}
