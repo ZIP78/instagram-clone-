@@ -6,8 +6,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
-export const TEST = "TEST";
-
+export const TOGGLE_DARKMODE = "TOGGLE_DARKMODE";
 const receiveUsers = (users) => {
   return {
     type: RECEIVE_USERS,
@@ -38,6 +37,12 @@ const receiveErrors = (error) => {
 export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS,
+  };
+};
+
+export const toggleDark = () => {
+  return {
+    type: TOGGLE_DARKMODE,
   };
 };
 
@@ -83,4 +88,8 @@ export const unFollow = (user) => (dispatch) => {
   return API2Util.deleteFollow(user).then((user) =>
     dispatch(receiveCurrentUser(user))
   );
+};
+
+export const toggleDm = () => (dispatch) => {
+  dispatch(toggleDark());
 };

@@ -10,6 +10,7 @@ import Modal from "react-modal";
 import EditProfilePage from "./edit_profile_page";
 import Switch from "react-switch";
 import ReactDOM from "react-dom";
+// import { TOGGLE_DARKMODE } from "../../actions/session";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -17,12 +18,11 @@ class ProfilePage extends React.Component {
     this.state = {
       show: false,
       showLightModeOption: false,
-      darkMode: false,
+      // darkMode: this.props.darkmodeEnabled,
     };
     this.showEditPage = this.showEditPage.bind(this);
     this.closeEdit = this.closeEdit.bind(this);
     this.showLightingSetting = this.showLightingSetting.bind(this);
-    this.hideLightingSetting = this.hideLightingSetting.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.closeSettings = this.closeSettings.bind(this);
   }
@@ -30,6 +30,13 @@ class ProfilePage extends React.Component {
   componentDidMount() {
     this.props.requestUsers();
     this.props.requestAllPost();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.darkmodeEnabled !== prevProps.darkmodeEnabled) {
+      localStorage.setItem("dark", JSON.stringify(this.props.darkmodeEnabled));
+    }
+    debugger;
   }
 
   showEditPage() {
@@ -42,17 +49,13 @@ class ProfilePage extends React.Component {
 
   showLightingSetting(event) {
     if (!this.state.showLightModeOption) {
-      document.addEventListener("click", this.closeSettings, false);
+      document.addEventListener("mousedown", this.closeSettings, false);
     } else {
-      document.removeEventListener("click", this.closeSettings, false);
+      document.removeEventListener("mousedown", this.closeSettings, false);
     }
     this.setState((prevState) => ({
       showLightModeOption: !prevState.showLightModeOption,
     }));
-  }
-
-  hideLightingSetting() {
-    this.setState({ showLightModeOption: false });
   }
 
   handleOptionChange(darkMode) {
@@ -122,18 +125,22 @@ class ProfilePage extends React.Component {
                 this.node = node;
               }}
             >
-              <IosSettings
-                onClick={this.showLightingSetting}
-                className="profile_page_setting_button"
-              />
+              <IosSettings className="profile_page_setting_button" />
               <div className="light-setting-options"></div>
               <div className="light-setting-options-box">
-                <Switch
+                {/* <Switch
                   className="toggle-switch"
                   uncheckedIcon={<div></div>}
                   checkedIcon={<div></div>}
-                  onChange={this.handleOptionChange}
-                  checked={this.state.darkMode}
+                  // onChange={this.handleOptionChange}
+                  // checked={this.props.darkmodeEnabled}
+                  onClick={this.props.toggleDm}
+                /> */}
+
+                <input
+                  type="checkbox"
+                  name="toggle-switch"
+                  onClick={this.props.toggleDm}
                 />
               </div>
             </div>
@@ -166,6 +173,7 @@ class ProfilePage extends React.Component {
       follows,
     } = this.props;
     if (!profileUser || !users) return null;
+    debugger;
     return (
       <div className="profile_page_container">
         <div className="profile_pic_page_container">
