@@ -136,12 +136,10 @@ class ProfilePage extends React.Component {
                   // checked={this.props.darkmodeEnabled}
                   onClick={this.props.toggleDm}
                 /> */}
-
-                <input
-                  type="checkbox"
-                  name="toggle-switch"
-                  onClick={this.props.toggleDm}
-                />
+                <label className="toggle-container">
+                  <input type="checkbox" onClick={this.props.toggleDm} />
+                  <span className="slider" />
+                </label>
               </div>
             </div>
           )}
@@ -173,7 +171,6 @@ class ProfilePage extends React.Component {
       follows,
     } = this.props;
     if (!profileUser || !users) return null;
-    debugger;
     return (
       <div className="profile_page_container">
         <div className="profile_pic_page_container">

@@ -279,3 +279,41 @@
   top: 132px;
   transform: rotate(89deg);
 }
+
+.toggle-container {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  transform: rotate(-270deg);
+  top: 129px;
+}
+
+.toggle-container input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34%;
+  background-color: #ccc;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 27px;
+  width: 28px;
+  left: 3px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 43%;
+}

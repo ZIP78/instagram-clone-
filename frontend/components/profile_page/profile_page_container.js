@@ -14,7 +14,6 @@ import { requestFollows } from "../../actions/follow";
 import { type } from "jquery";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     profileUser: Object.values(state.entities.users).filter((obj) => {
       return obj.username === ownProps.match.params.username;
