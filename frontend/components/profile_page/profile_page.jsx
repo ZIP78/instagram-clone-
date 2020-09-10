@@ -8,9 +8,6 @@ import Follow from "../follow/follow";
 import ProfilePageInfo from "./profile_page_info";
 import Modal from "react-modal";
 import EditProfilePage from "./edit_profile_page";
-import Switch from "react-switch";
-import ReactDOM from "react-dom";
-// import { TOGGLE_DARKMODE } from "../../actions/session";
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -18,7 +15,6 @@ class ProfilePage extends React.Component {
     this.state = {
       show: false,
       showLightModeOption: false,
-      // darkMode: this.props.darkmodeEnabled,
     };
     this.showEditPage = this.showEditPage.bind(this);
     this.closeEdit = this.closeEdit.bind(this);
@@ -128,16 +124,16 @@ class ProfilePage extends React.Component {
               <IosSettings className="profile_page_setting_button" />
               <div className="light-setting-options"></div>
               <div className="light-setting-options-box">
-                {/* <Switch
-                  className="toggle-switch"
-                  uncheckedIcon={<div></div>}
-                  checkedIcon={<div></div>}
-                  // onChange={this.handleOptionChange}
-                  // checked={this.props.darkmodeEnabled}
-                  onClick={this.props.toggleDm}
-                /> */}
                 <label className="toggle-container">
-                  <input type="checkbox" onClick={this.props.toggleDm} />
+                  <input
+                    type="checkbox"
+                    checked={this.props.darkmodeEnabled}
+                    onChange={
+                      this.props.darkmodeEnabled
+                        ? this.props.untoggleDm
+                        : this.props.toggleDm
+                    }
+                  />
                   <span className="slider" />
                 </label>
               </div>
@@ -171,6 +167,7 @@ class ProfilePage extends React.Component {
       follows,
     } = this.props;
     if (!profileUser || !users) return null;
+    debugger;
     return (
       <div className="profile_page_container">
         <div className="profile_pic_page_container">

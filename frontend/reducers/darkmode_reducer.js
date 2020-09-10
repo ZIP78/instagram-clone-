@@ -1,11 +1,16 @@
-import { TOGGLE_DARKMODE } from "../actions/session";
+import { TOGGLE_DARKMODE, UNTOGGLE_DARKMODE } from "../actions/session";
 
-const darkmodeReducer = (state = { darkThemeEnabled: false }, action) => {
+const darkmodeReducer = (
+  state = JSON.parse(localStorage.getItem("dark")),
+  action
+) => {
   Object.freeze(state);
   switch (action.type) {
     case TOGGLE_DARKMODE:
-      return { ...state, darkThemeEnabled: !state.darkThemeEnabled };
-    //   return Object.assign({}, state, !state.darkThemeEnabled);
+      return true;
+    case UNTOGGLE_DARKMODE:
+      debugger;
+      return false;
 
     default:
       return state;
