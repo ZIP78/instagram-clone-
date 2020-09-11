@@ -32,7 +32,6 @@ class ProfilePage extends React.Component {
     if (this.props.darkmodeEnabled !== prevProps.darkmodeEnabled) {
       localStorage.setItem("dark", JSON.stringify(this.props.darkmodeEnabled));
     }
-    debugger;
   }
 
   showEditPage() {
@@ -81,10 +80,20 @@ class ProfilePage extends React.Component {
         <div className="name_edit_setting_container">
           <div className="profile_page_username">{profileUser.username}</div>
 
-          <div className="profile_page_edit_button_container">
+          <div
+            className={
+              this.props.darkmodeEnabled
+                ? "profile_page_edit_button_container_darkMode"
+                : "profile_page_edit_button_container"
+            }
+          >
             <button
               onClick={this.showEditPage}
-              className="profile_page_edit_button"
+              className={
+                this.props.darkmodeEnabled
+                  ? "profile_page_edit_button_darkMode"
+                  : "profile_page_edit_button"
+              }
             >
               Edit Profile
             </button>
@@ -111,7 +120,11 @@ class ProfilePage extends React.Component {
             >
               <IosSettings
                 onClick={this.showLightingSetting}
-                className="profile_page_setting_button"
+                className={
+                  this.props.darkmodeEnabled
+                    ? "profile_page_setting_button_darkMode"
+                    : "profile_page_setting_button"
+                }
               />
             </div>
           ) : (
@@ -121,7 +134,13 @@ class ProfilePage extends React.Component {
                 this.node = node;
               }}
             >
-              <IosSettings className="profile_page_setting_button" />
+              <IosSettings
+                className={
+                  this.props.darkmodeEnabled
+                    ? "profile_page_setting_button_darkMode"
+                    : "profile_page_setting_button"
+                }
+              />
               <div className="light-setting-options"></div>
               <div className="light-setting-options-box">
                 <label className="toggle-container">
@@ -167,9 +186,14 @@ class ProfilePage extends React.Component {
       follows,
     } = this.props;
     if (!profileUser || !users) return null;
-    debugger;
     return (
-      <div className="profile_page_container">
+      <div
+        className={
+          this.props.darkmodeEnabled
+            ? "profile_page_container_darkMode"
+            : "profile_page_container"
+        }
+      >
         <div className="profile_pic_page_container">
           <ProfilePageUploader
             user={profileUser}
@@ -178,7 +202,13 @@ class ProfilePage extends React.Component {
             requestFollows={requestFollows}
           />
 
-          <div className="profile_page_information_container">
+          <div
+            className={
+              this.props.darkmodeEnabled
+                ? "profile_page_information_container_darkMode"
+                : "profile_page_information_container"
+            }
+          >
             {this.followOption()}
 
             <ProfilePageInfo

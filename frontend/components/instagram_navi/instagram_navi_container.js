@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.entities.users[state.session.id],
     users: state.entities.users,
+    darkmodeEnabled: state.entities.darkmode,
   };
 };
 

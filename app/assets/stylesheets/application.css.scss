@@ -691,7 +691,29 @@ input:focus::placeholder {
   cursor: pointer;
 }
 
+.upload-button-darkMode {
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  fill: white;
+  border-radius: 28%;
+  height: 23px;
+  position: relative;
+  left: 400px;
+  cursor: pointer;
+}
+
 .logout-button {
+  position: relative;
+  left: 400px;
+  margin-left: 22px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.logout-button-darkMode {
+  fill: white;
   position: relative;
   left: 400px;
   margin-left: 22px;

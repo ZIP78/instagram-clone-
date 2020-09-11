@@ -32,16 +32,40 @@ class InstagramNavi extends React.Component {
   render() {
     const { logout, user, users } = this.props;
     return (
-      <div className="insta-navi-container">
+      <div
+        className={
+          this.props.darkmodeEnabled
+            ? "insta-navi-container-darkMode"
+            : "insta-navi-container"
+        }
+      >
         <div className="insta-navi-items">
           <div className="insta-navi-logo">
             <Link to={"/"}>
-              <h1 className="insta-navi-name">Whoopiegram</h1>
+              <h1
+                className={
+                  this.props.darkmodeEnabled
+                    ? "insta-navi-name-darkMode"
+                    : "insta-navi-name"
+                }
+              >
+                Whoopiegram
+              </h1>
             </Link>
           </div>
-          <SearchBar users={users} />
+          <SearchBar
+            darkmodeEnabled={this.props.darkmodeEnabled}
+            users={users}
+          />
           <div>
-            <IosAdd className="upload-button" onClick={this.handleClick} />
+            <IosAdd
+              className={
+                this.props.darkmodeEnabled
+                  ? "upload-button-darkMode"
+                  : "upload-button"
+              }
+              onClick={this.handleClick}
+            />
 
             <Modal
               className="Modal"
@@ -53,7 +77,11 @@ class InstagramNavi extends React.Component {
             </Modal>
 
             <IosLogOut
-              className="logout-button"
+              className={
+                this.props.darkmodeEnabled
+                  ? "logout-button-darkMode"
+                  : "logout-button"
+              }
               fontSize="37"
               color="black"
               onClick={logout}

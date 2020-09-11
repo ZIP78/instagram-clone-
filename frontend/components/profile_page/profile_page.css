@@ -6,6 +6,19 @@
   padding-left: 114px;
   left: 0px;
   max-width: 1125px;
+  transition: background-color 0.25s ease-in;
+}
+
+.profile_page_container_darkMode {
+  position: relative;
+  top: 55px;
+  margin: 0 auto;
+  padding: 30px;
+  padding-left: 114px;
+  left: 0px;
+  max-width: 1125px;
+  background-color: #11161c;
+  transition: background-color 0.25s ease-in;
 }
 
 .profile_pic_page_container {
@@ -45,6 +58,20 @@
   left: 214px;
   top: 16px;
   display: flex;
+  transition: background-color 0.25s ease-in;
+}
+
+.profile_page_information_container_darkMode {
+  width: 570px;
+  height: 134px;
+  position: relative;
+  background: #fafafa;
+  left: 214px;
+  top: 16px;
+  display: flex;
+  color: white;
+  background-color: #11161c;
+  transition: background-color 0.25s ease-in;
 }
 
 .profile_page_username {
@@ -66,6 +93,16 @@
   border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
 }
 
+.profile_page_edit_button_darkMode {
+  margin-top: 3px;
+  margin-left: 20px;
+  padding: 3px;
+  background-color: #11161c;
+  width: 92px;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  color: white;
+}
+
 .profile_page_setting_container {
   margin-left: 5px;
   margin-top: -2px;
@@ -75,6 +112,11 @@
 
 .profile_page_setting_button {
   padding: 8px;
+}
+
+.profile_page_setting_button_darkMode {
+  padding: 8px;
+  fill: white;
 }
 
 .profile_page_detail_container_other {

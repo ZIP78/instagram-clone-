@@ -78,7 +78,11 @@ class SearchBar extends React.Component {
             to={{
               pathname: `/users/${user.username}`,
             }}
-            className="search-result"
+            className={
+              this.props.darkmodeEnabled
+                ? "search-result-darkMode"
+                : "search-result"
+            }
           >
             <div className="search-username-container">
               <div style={{ width: 40 }}>
@@ -96,60 +100,153 @@ class SearchBar extends React.Component {
 
     return items.length >= 1 && this.state.showTransition ? (
       <div className="search-container">
-        <div className="search-bar-container">
+        <div
+          className={
+            this.props.darkmodeEnabled
+              ? "search-bar-container-darkMode"
+              : "search-bar-container"
+          }
+        >
           <input
-            className="search-bar"
+            className={
+              this.props.darkmodeEnabled ? "search-bar-darkMode" : "search-bar"
+            }
             ref={this.textInput}
             type="text"
             value={value}
             onChange={this.handleChange}
           />
-          <div className="icon-search-clicked">
-            <span className="search-icon-clicked">
+          <div
+            className={
+              this.props.darkmodeEnabled
+                ? "icon-search-clicked-darkMode"
+                : "icon-search-clicked"
+            }
+          >
+            <span
+              className={
+                this.props.darkmodeEnabled
+                  ? "search-icon-clicked-darkMode"
+                  : "search-icon-clicked"
+              }
+            >
               <FontAwesomeIcon icon={faSearch} />
             </span>
           </div>
         </div>
 
         <div className="user-options"></div>
-        <div className="result-box">
-          <div className="search-results">{items}</div>
+        <div
+          className={
+            this.props.darkmodeEnabled ? "result-box-darkMode" : "result-box"
+          }
+        >
+          <div
+            className={
+              this.props.darkmodeEnabled
+                ? "search-results-darkMode"
+                : "search-results"
+            }
+          >
+            {items}
+          </div>
         </div>
       </div>
     ) : (
       <div className="search-container">
         {this.state.showTransition ? (
-          <div className="search-bar-container">
+          <div
+            className={
+              this.props.darkmodeEnabled
+                ? "search-bar-container-darkMode"
+                : "search-bar-container"
+            }
+          >
             <input
               ref={this.textInput}
               id="search-bar"
-              className="search-bar"
+              className={
+                this.props.darkmodeEnabled
+                  ? "search-bar-darkMode"
+                  : "search-bar"
+              }
               type="text"
               value={value}
               onChange={this.handleChange}
             />
-            <div className="icon-search-clicked">
-              <span className="search-icon-clicked">
+            <div
+              className={
+                this.props.darkmodeEnabled
+                  ? "icon-search-clicked-darkMode"
+                  : "icon-search-clicked"
+              }
+            >
+              <span
+                className={
+                  this.props.darkmodeEnabled
+                    ? "search-icon-clicked-darkMode"
+                    : "search-icon-clicked"
+                }
+              >
                 <FontAwesomeIcon icon={faSearch} />
               </span>
             </div>
           </div>
         ) : (
-          <div onClick={this.clickSearchbar} className="search-bar-container">
+          <div
+            onClick={this.clickSearchbar}
+            className={
+              this.props.darkmodeEnabled
+                ? "search-bar-container-darkMode"
+                : "search-bar-container"
+            }
+          >
             <input
               id="search-bar"
-              className="search-bar"
+              className={
+                this.props.darkmodeEnabled
+                  ? "search-bar-darkMode"
+                  : "search-bar"
+              }
               type="text"
               value={value}
               onChange={this.handleChange}
             />
-            <div className="icon-search-title">
+            <div
+              className={
+                this.props.darkmodeEnabled
+                  ? "icon-search-title-darkMode"
+                  : "icon-search-title"
+              }
+            >
               {value === "" ? (
-                <span className="search-title">Search</span>
+                <span
+                  className={
+                    this.props.darkmodeEnabled
+                      ? "search-title-darkMode"
+                      : "search-title"
+                  }
+                >
+                  Search
+                </span>
               ) : (
-                <span className="search-title">{value}</span>
+                <span
+                  className={
+                    this.props.darkmodeEnabled
+                      ? "search-title-darkMode"
+                      : "search-title"
+                  }
+                >
+                  {value}
+                </span>
               )}
-              <span className="search-icon">
+              <span
+                className={
+                  this.props.darkmodeEnabled
+                    ? "search-icon-darkMode"
+                    : "search-icon"
+                }
+              >
                 <FontAwesomeIcon icon={faSearch} />
               </span>
             </div>

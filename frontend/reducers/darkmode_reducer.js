@@ -9,7 +9,6 @@ const darkmodeReducer = (
     case TOGGLE_DARKMODE:
       return true;
     case UNTOGGLE_DARKMODE:
-      debugger;
       return false;
 
     default:

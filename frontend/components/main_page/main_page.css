@@ -10,6 +10,23 @@
   transition: height 0.2s ease-in-out;
   display: flex;
   z-index: 1;
+  transition: background-color 0.25s ease-in;
+}
+
+.insta-navi-container-darkMode {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgba(var(--cdc, 255, 255, 255), 1);
+  border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  height: 54px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: height 0.2s ease-in-out;
+  display: flex;
+  z-index: 1;
+  background-color: #2a303c;
+  transition: background-color 0.25s ease-in;
 }
 
 .insta-navi-items {
@@ -69,6 +86,19 @@
   margin-top: -7px;
   margin-left: 131px;
   color: black;
+}
+
+.insta-navi-name-darkMode {
+  background-repeat: no-repeat;
+  width: 103px;
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  margin-top: -7px;
+  margin-left: 131px;
+  color: white;
 }
 
 .insta-upload-button {
