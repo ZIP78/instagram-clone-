@@ -20,6 +20,14 @@
   padding-left: 20px;
 }
 
+.suggestion-caption-darkMode {
+  padding-bottom: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
 .suggested-user-container {
   padding: 10px 16px;
   height: 32px;
@@ -33,6 +41,17 @@
   font-size: 14px;
   margin-left: 12px;
   font-weight: 600;
+}
+
+.suggested-username-darkMode {
+  position: relative;
+  left: 33px;
+  bottom: -2px;
+  width: fit-content;
+  font-size: 14px;
+  margin-left: 12px;
+  font-weight: 600;
+  color: white;
 }
 
 .suggestions-follow {

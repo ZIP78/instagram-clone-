@@ -142,7 +142,13 @@ class ProfilePage extends React.Component {
                 }
               />
               <div className="light-setting-options"></div>
-              <div className="light-setting-options-box">
+              <div
+                className={
+                  this.props.darkmodeEnabled
+                    ? "light-setting-options-box-darkMode"
+                    : "light-setting-options-box"
+                }
+              >
                 <label className="toggle-container">
                   <input
                     type="checkbox"
@@ -155,6 +161,7 @@ class ProfilePage extends React.Component {
                   />
                   <span className="slider" />
                 </label>
+                <div className="darkmode-label">Dark mode</div>
               </div>
             </div>
           )}

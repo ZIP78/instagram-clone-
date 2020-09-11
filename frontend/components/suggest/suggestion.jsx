@@ -16,6 +16,7 @@ class Suggestion extends React.Component {
       unFollow,
       path,
       unfollowedUsers,
+      darkmodeEnabled,
     } = this.props;
     if (!users || !loggedInUser || unfollowedUsers.length === 0) {
       return null;
@@ -24,7 +25,15 @@ class Suggestion extends React.Component {
     return (
       <div className="whole-container">
         <div className="suggestions-container">
-          <h1 className="suggestion-caption">Suggestions For You</h1>
+          <h1
+            className={
+              this.props.darkmodeEnabled
+                ? "suggestion-caption-darkMode"
+                : "suggestion-caption"
+            }
+          >
+            Suggestions For You
+          </h1>
 
           {unfollowedUsers.map((user) => {
             return (
@@ -34,6 +43,7 @@ class Suggestion extends React.Component {
                 follow={follow}
                 unFollow={unFollow}
                 loggedInUser={loggedInUser}
+                darkmodeEnabled={darkmodeEnabled}
               />
             );
           })}

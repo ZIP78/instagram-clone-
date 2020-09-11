@@ -21,6 +21,13 @@ input {
   top: -2px;
 }
 
+.add-comment-darkMode {
+  height: 14px;
+  position: relative;
+  top: -2px;
+  background: #2a303c;
+}
+
 .post-comment-button {
   border: 0;
   color: #3897f0;
@@ -29,8 +36,19 @@ input {
   padding: 0;
   position: relative;
   right: 1px;
-  top: -1px;
+  top: -2px;
   background: white;
+}
+
+.post-comment-button-darkMode {
+  border: 0;
+  color: rgba(var(--h5f, 56, 151, 240), 1);
+  display: inline;
+  padding: 0;
+  position: relative;
+  right: 1px;
+  top: -2px;
+  background: #2a303c;
 }
 
 textarea.add-comment::placeholder {
@@ -63,6 +81,14 @@ textarea.add-comment::placeholder {
   font-weight: 700;
   max-width: 120px;
   height: 16px;
+}
+
+.post-user-darkMode {
+  display: inline;
+  font-weight: 700;
+  max-width: 120px;
+  height: 16px;
+  color: white;
 }
 
 .post-caption {

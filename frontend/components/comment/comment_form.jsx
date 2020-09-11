@@ -26,18 +26,26 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    const { width, left } = this.props;
+    const { width, left, darkmodeEnabled } = this.props;
     return (
       <form className="comment-form" onSubmit={this.submitComment}>
         <input
-          className="add-comment"
+          className={darkmodeEnabled ? "add-comment-darkMode" : "add-comment"}
           placeholder="Add a comment.."
           value={this.state.body}
           onChange={this.handleInput}
           style={{ width: width, left: left }}
         />
 
-        <button className="post-comment-button">Post</button>
+        <button
+          className={
+            darkmodeEnabled
+              ? "post-comment-button-darkMode"
+              : "post-comment-button"
+          }
+        >
+          Post
+        </button>
       </form>
     );
   }

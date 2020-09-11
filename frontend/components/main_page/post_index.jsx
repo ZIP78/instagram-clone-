@@ -32,6 +32,7 @@ class PostIndex extends React.Component {
       likePost,
       removeLike,
       getComments,
+      darkmodeEnabled,
     } = this.props;
 
     if (Object.keys(users).length === 0 || Object.keys(posts).length === 0)
@@ -41,7 +42,11 @@ class PostIndex extends React.Component {
       <div className="post-container">
         {this.postsByFollowing().map((post) => (
           <div key={post.id} className="individual-post">
-            <div className="post-upper-part">
+            <div
+              className={
+                darkmodeEnabled ? "post-upper-part-darkMode" : "post-upper-part"
+              }
+            >
               <Link
                 to={{
                   pathname: `/users/${users[post.user_id]["username"]}`,
@@ -55,13 +60,20 @@ class PostIndex extends React.Component {
                   />
                 </div>
                 <div
-                  className="post-user"
+                  className={
+                    darkmodeEnabled ? "post-user-darkMode" : "post-user"
+                  }
                   style={{ position: "relative", top: -12 }}
                 >
                   {users[post.user_id]["username"]}
                 </div>
               </Link>
-              <FontAwesomeIcon className="post-ellipsh" icon={faEllipsisH} />
+              <FontAwesomeIcon
+                className={
+                  darkmodeEnabled ? "post-ellipsh-darkMode" : "post-ellipsh"
+                }
+                icon={faEllipsisH}
+              />
             </div>
 
             <div className="post-middle-part">
@@ -71,7 +83,13 @@ class PostIndex extends React.Component {
                 <img className="instagram-post" src={post.photoUrl} />
               )}
             </div>
-            <div className="post-bottom-part">
+            <div
+              className={
+                darkmodeEnabled
+                  ? "post-bottom-part-darkMode"
+                  : "post-bottom-part"
+              }
+            >
               <div style={{ paddingLeft: 20 }}>
                 <LikeComment
                   post={post}

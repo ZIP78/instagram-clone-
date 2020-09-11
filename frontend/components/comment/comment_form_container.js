@@ -2,6 +2,12 @@ import { connect } from "react-redux";
 import CommentForm from "./comment_form";
 import { createComment, deleteComment } from "../../actions/comment";
 
+const mapStateToProps = (state) => {
+  return {
+    darkmodeEnabled: state.entities.darkmode,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     createComment: (comment) => dispatch(createComment(comment)),
@@ -9,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(CommentForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

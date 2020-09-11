@@ -25,6 +25,7 @@ const mapStateToProps = (state, ownProps) => {
     comments: state.entities.comments,
     loggedInUser: state.entities.users[state.session.id],
     path: ownProps.history.location.pathname,
+    darkmodeEnabled: state.entities.darkmode,
   };
 };
 

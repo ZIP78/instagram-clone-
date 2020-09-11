@@ -39,7 +39,15 @@ class SuggestionUser extends React.Component {
           <div style={{ position: "relative" }}>
             <img className="search-profile-icon" src={user.photoUrl} />
           </div>{" "}
-          <div className="suggested-username">{user.username}</div>{" "}
+          <div
+            className={
+              this.props.darkmodeEnabled
+                ? "suggested-username-darkMode"
+                : "suggested-username"
+            }
+          >
+            {user.username}
+          </div>{" "}
         </Link>
         {!following ? (
           <div onClick={this.follow} className="suggestions-follow">

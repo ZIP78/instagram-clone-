@@ -11,7 +11,7 @@ import { ProtectedRoute } from "../utils/route.util";
 import { withRouter } from "react-router";
 
 const App = withRouter(({ location }) => (
-  <section className="holder">
+  <section>
     {location.pathname !== "/login" && location.pathname !== "/signup" && (
       <InstagramNavi />
     )}
