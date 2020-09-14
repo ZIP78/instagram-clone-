@@ -191,83 +191,88 @@ class ProfilePage extends React.Component {
       requestFollows,
       posts,
       follows,
+      darkmodeEnabled,
     } = this.props;
     if (!profileUser || !users) return null;
     return (
       <div
-        className={
-          this.props.darkmodeEnabled
-            ? "profile_page_container_darkMode"
-            : "profile_page_container"
-        }
+        className={darkmodeEnabled ? "profile-page-darkMode" : "profile-page"}
       >
-        <div className="profile_pic_page_container">
-          <ProfilePageUploader
-            user={profileUser}
-            currentUser={loggedInUser}
-            profilePicture={profilePicture}
-            requestFollows={requestFollows}
-          />
-
-          <div
-            className={
-              this.props.darkmodeEnabled
-                ? "profile_page_information_container_darkMode"
-                : "profile_page_information_container"
-            }
-          >
-            {this.followOption()}
-
-            <ProfilePageInfo
-              profileUser={profileUser}
-              loggedInUser={loggedInUser}
-              posts={posts}
+        <div
+          className={
+            this.props.darkmodeEnabled
+              ? "profile_page_container_darkMode"
+              : "profile_page_container"
+          }
+        >
+          <div className="profile_pic_page_container">
+            <ProfilePageUploader
+              user={profileUser}
+              currentUser={loggedInUser}
+              profilePicture={profilePicture}
               requestFollows={requestFollows}
-              follows={follows}
             />
-            {profileUser.username === loggedInUser.username ? (
-              <div className="profile_page_name_other">
-                <div>{profileUser.first_name}</div>
-                <div className="profile-bio">{loggedInUser.bio}</div>
-              </div>
-            ) : (
-              <div className="profile_page_name_other">
-                <div>{profileUser.first_name}</div>
-                <div className="profile-bio">{profileUser.bio}</div>
-              </div>
-            )}
-          </div>
-        </div>
 
-        <div className="profile_page_border"></div>
-        <div className="profile_page_post_container">
-          {this.postByUser().map((post) => (
-            <div>
-              {post.photoUrl.split(".").pop() === "mp4" ? (
-                <Link
-                  to={{
-                    pathname: `/posts/${post.id}`,
-                  }}
-                >
-                  <ReactPlayer
-                    width={293}
-                    height={293}
-                    className="profile_page_vid"
-                    url={[{ src: post.photoUrl }]}
-                    controls={true}
-                  />
-                </Link>
+            <div
+              className={
+                this.props.darkmodeEnabled
+                  ? "profile_page_information_container_darkMode"
+                  : "profile_page_information_container"
+              }
+            >
+              {this.followOption()}
+
+              <ProfilePageInfo
+                profileUser={profileUser}
+                loggedInUser={loggedInUser}
+                posts={posts}
+                requestFollows={requestFollows}
+                follows={follows}
+              />
+              {profileUser.username === loggedInUser.username ? (
+                <div className="profile_page_name_other">
+                  <div>{profileUser.first_name}</div>
+                  <div className="profile-bio">{loggedInUser.bio}</div>
+                </div>
               ) : (
-                <Link
-                  to={{
-                    pathname: `/posts/${post.id}`,
-                  }}
-                >
-                  <img className="profile_page_post" src={post.photoUrl} />
-                </Link>
+                <div className="profile_page_name_other">
+                  <div>{profileUser.first_name}</div>
+                  <div className="profile-bio">{profileUser.bio}</div>
+                </div>
               )}
             </div>
-          ))}
+          </div>
+
+          <div className="profile_page_border"></div>
+          <div className="profile_page_post_container">
+            {this.postByUser().map((post) => (
+              <div>
+                {post.photoUrl.split(".").pop() === "mp4" ? (
+                  <Link
+                    to={{
+                      pathname: `/posts/${post.id}`,
+                    }}
+                  >
+                    <ReactPlayer
+                      width={293}
+                      height={293}
+                      className="profile_page_vid"
+                      url={[{ src: post.photoUrl }]}
+                      controls={true}
+                    />
+                  </Link>
+                ) : (
+                  <Link
+                    to={{
+                      pathname: `/posts/${post.id}`,
+                    }}
+                  >
+                    <img className="profile_page_post" src={post.photoUrl} />
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );

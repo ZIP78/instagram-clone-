@@ -28,6 +28,10 @@ input {
   background: #2a303c;
 }
 
+.add-comment-darkMode::placeholder {
+  color: white;
+}
+
 .post-comment-button {
   border: 0;
   color: #3897f0;

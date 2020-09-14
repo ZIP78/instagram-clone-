@@ -1,3 +1,15 @@
+.profile-page {
+  background: #fafafa;
+  height: 100vh;
+  transition: background-color 0.25s ease-in;
+}
+
+.profile-page-darkMode {
+  background: #11161c;
+  height: 100vh;
+  transition: background-color 0.25s ease-in;
+}
+
 .profile_page_container {
   position: relative;
   top: 55px;

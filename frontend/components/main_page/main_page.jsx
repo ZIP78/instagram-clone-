@@ -36,7 +36,7 @@ class MainPage extends React.Component {
     } = this.props;
 
     return unfollowedUsers.length !== 0 ? (
-      <header>
+      <header style={{ height: "94vh" }}>
         <section
           className={
             this.props.darkmodeEnabled

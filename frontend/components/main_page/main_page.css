@@ -259,6 +259,14 @@ a {
   cursor: pointer;
 }
 
+.heart-icon-darkMode {
+  width: 29px !important;
+  height: 29px;
+  margin-top: 9px;
+  cursor: pointer;
+  fill: white;
+}
+
 .comment-icon {
   margin-top: -10px;
   width: 34px !important;
@@ -268,6 +276,18 @@ a {
   color: black;
   position: relative;
   top: 3px;
+}
+
+.comment-icon-darkMode {
+  margin-top: -10px;
+  width: 34px !important;
+  height: 35px;
+  padding-right: 11px;
+  transform: rotate(360deg) scaleX(-1);
+  color: black;
+  position: relative;
+  top: 3px;
+  fill: white;
 }
 
 .insta-likes-container {
@@ -322,6 +342,15 @@ a {
   position: relative;
   top: 3px;
   margin-top: 14px;
+}
+
+.time-post-darkMode {
+  font-size: 10px;
+  color: #999;
+  position: relative;
+  top: 3px;
+  margin-top: 14px;
+  color: white;
 }
 
 .time-single-post {

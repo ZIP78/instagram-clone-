@@ -96,6 +96,7 @@ class PostIndex extends React.Component {
                   likePost={likePost}
                   removeLike={removeLike}
                   comments={comments}
+                  darkmodeEnabled={darkmodeEnabled}
                 />
               </div>
               <div className="insta-likes-container">
@@ -120,7 +121,7 @@ class PostIndex extends React.Component {
               />
 
               <div className="insta-likes-container-time-test">
-                <Time post={post} />
+                <Time post={post} darkmodeEnabled={darkmodeEnabled} />
               </div>
 
               <div className="insta-likes-container-comment">
