@@ -123,7 +123,6 @@
   -ms-flex-flow: row nowrap;
   width: 100%;
   position: relative;
-  height: 100%;
   background-color: #11161c;
   margin: 0px auto 0 auto;
 }
@@ -303,7 +302,6 @@ a {
 }
 
 .insta-likes-container-time-test {
-  /* width: 568px; */
   height: 18px;
   padding-left: 15px;
   text-transform: uppercase;
@@ -356,4 +354,14 @@ a {
 .time-single-post {
   left: 41px;
   top: 7px;
+}
+
+.time-single-post-darkMode {
+  font-size: 10px;
+  color: #999;
+  position: relative;
+  margin-top: 14px;
+  left: 41px;
+  top: 7px;
+  color: white;
 }

@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     post: state.entities.posts[ownProps.match.params.postId],
     users: state.entities.users,
     comments: state.entities.comments,
+    darkmodeEnabled: state.entities.darkmode,
   };
 };
 

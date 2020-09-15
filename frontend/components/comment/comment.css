@@ -26,6 +26,7 @@ input {
   position: relative;
   top: -2px;
   background: #2a303c;
+  color: white;
 }
 
 .add-comment-darkMode::placeholder {
