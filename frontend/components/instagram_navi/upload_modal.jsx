@@ -8,12 +8,19 @@ class UploadModal extends React.Component {
   }
 
   render() {
+    const { darkmodeEnabled } = this.props;
     return (
       <section>
-        <div className="modal-title-container">
+        <div
+          className={
+            darkmodeEnabled
+              ? "modal-title-container-darkMode"
+              : "modal-title-container"
+          }
+        >
           <div className="modal-title">Upload Here</div>
         </div>
-        <Upload />
+        <Upload darkmodeEnabled={darkmodeEnabled} />
       </section>
     );
   }

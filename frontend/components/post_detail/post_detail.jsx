@@ -50,17 +50,24 @@ class PostDetail extends React.Component {
           >
             <div className="insta-profile-icon"></div>
             <FontAwesomeIcon className="post-show-ellipsh" icon={faEllipsisH} />
-            <div
-              className="post-user"
-              style={{
-                position: "relative",
-                top: 11,
-                marginLeft: 19,
-                left: 15,
+            <Link
+              style={darkmodeEnabled ? { color: "white" } : { color: "black" }}
+              to={{
+                pathname: `/users/${users[post.user_id]["username"]}`,
               }}
             >
-              {users[post.user_id]["username"]}
-            </div>
+              <div
+                className="post-user"
+                style={{
+                  position: "relative",
+                  top: 11,
+                  marginLeft: 19,
+                  left: 15,
+                }}
+              >
+                {users[post.user_id]["username"]}
+              </div>
+            </Link>
             <Link
               to={{ pathname: `/users/${users[post.user_id]["username"]}` }}
             >
@@ -81,23 +88,38 @@ class PostDetail extends React.Component {
             >
               <div className="show-caption-section">
                 <div className="user-caption-container">
-                  <div
-                    className="post-user"
-                    style={{
-                      position: "relative",
-                      top: 0,
-                      marginLeft: 23,
-                      left: -25,
+                  <Link
+                    style={
+                      darkmodeEnabled ? { color: "white" } : { color: "black" }
+                    }
+                    to={{
+                      pathname: `/users/${users[post.user_id]["username"]}`,
                     }}
                   >
-                    {users[post.user_id]["username"]}
-                  </div>
-                  <img
-                    style={{ top: -1, left: -54 }}
-                    className="post-profile-icon"
-                    src={users[post.user_id]["photoUrl"]}
-                    alt="profile-image"
-                  />
+                    <div
+                      className="post-user"
+                      style={{
+                        position: "relative",
+                        top: 0,
+                        marginLeft: 23,
+                        left: -25,
+                      }}
+                    >
+                      {users[post.user_id]["username"]}
+                    </div>
+                  </Link>
+                  <Link
+                    to={{
+                      pathname: `/users/${users[post.user_id]["username"]}`,
+                    }}
+                  >
+                    <img
+                      style={{ top: -1, left: -54 }}
+                      className="post-profile-icon"
+                      src={users[post.user_id]["photoUrl"]}
+                      alt="profile-image"
+                    />
+                  </Link>
 
                   <div className="comment">{post.body}</div>
                 </div>
@@ -119,27 +141,52 @@ class PostDetail extends React.Component {
               <div className="show-post-comments">
                 {this.comments().map((comment) => (
                   <div className="single-page-comments">
-                    <div
-                      className="post-user"
-                      style={{
-                        position: "relative",
-                        top: 0,
-                        marginLeft: 23,
-                        left: -25,
+                    <Link
+                      style={
+                        darkmodeEnabled
+                          ? { color: "white" }
+                          : { color: "black" }
+                      }
+                      to={{
+                        pathname: `/users/${users[post.user_id]["username"]}`,
                       }}
                     >
-                      {users[post.user_id]["username"]}
-                    </div>
+                      <div
+                        className="post-user"
+                        style={{
+                          position: "relative",
+                          top: 0,
+                          marginLeft: 23,
+                          left: -25,
+                        }}
+                      >
+                        {users[post.user_id]["username"]}
+                      </div>
+                    </Link>
 
-                    <img
-                      style={{ top: 11, left: -39 }}
-                      className="post-profile-icon"
-                      src={users[post.user_id]["photoUrl"]}
-                      alt="profile-image"
-                    />
+                    <Link
+                      to={{
+                        pathname: `/users/${users[post.user_id]["username"]}`,
+                      }}
+                    >
+                      <img
+                        style={{ top: 11, left: -39 }}
+                        className="post-profile-icon"
+                        src={users[post.user_id]["photoUrl"]}
+                        alt="profile-image"
+                      />
+                    </Link>
 
                     <div className="comment">{comment.body}</div>
-                    <Moment fromNow ago className="time-single-comment">
+                    <Moment
+                      fromNow
+                      ago
+                      className={
+                        darkmodeEnabled
+                          ? "time-single-comment-darkMode"
+                          : "time-single-comment"
+                      }
+                    >
                       {comment.created_at}
                     </Moment>
                   </div>

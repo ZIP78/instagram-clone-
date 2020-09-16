@@ -99,13 +99,16 @@ class ProfilePage extends React.Component {
             </button>
 
             <Modal
-              className="Modal"
+              className={
+                this.props.darkmodeEnabled ? "Modal-darkMode" : "Modal"
+              }
               overlayClassName="Overlay"
               isOpen={this.state.show}
               onRequestClose={this.closeEdit}
               ariaHideApp={false}
             >
               <EditProfilePage
+                darkmodeEnabled={this.props.darkmodeEnabled}
                 loggedInUser={loggedInUser}
                 editProfile={editProfile}
               />

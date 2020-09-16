@@ -68,12 +68,14 @@ class InstagramNavi extends React.Component {
             />
 
             <Modal
-              className="Modal"
+              className={
+                this.props.darkmodeEnabled ? "Modal-darkMode" : "Modal"
+              }
               overlayClassName="Overlay"
               isOpen={this.state.show}
               onRequestClose={this.outsideClick}
             >
-              <UploadModal />
+              <UploadModal darkmodeEnabled={this.props.darkmodeEnabled} />
             </Modal>
 
             <IosLogOut

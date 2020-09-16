@@ -199,6 +199,12 @@
   height: 240px;
 }
 
+.edit-page-form-darkMode {
+  width: auto;
+  height: 240px;
+  color: white;
+}
+
 .edit-firstName-container,
 .edit-lastName-container,
 .edit-username-container,
@@ -249,7 +255,21 @@
   border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
 }
 
+.edit-input-darkMode {
+  width: 355px;
+  height: 32px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  background: #2a303c;
+  color: white;
+}
+
 .edit-input:focus {
+  border: 2px solid #005fcd;
+}
+
+.edit-input-darkMode:focus {
   border: 2px solid #005fcd;
 }
 
@@ -274,6 +294,24 @@
 
 .Modal {
   background-color: white;
+}
+
+.Modal-darkMode {
+  background-color: #2a303c;
+  position: absolute;
+  top: -44px;
+  left: 50px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid #cccccc;
+  overflow: 1px;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  width: 600px;
+  height: 300px;
+  margin: auto;
 }
 
 .light-setting-options {

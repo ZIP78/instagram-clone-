@@ -55,20 +55,33 @@ class EditProfilePage extends React.Component {
   }
 
   render() {
-    const { loggedInUser } = this.props;
+    const { loggedInUser, darkmodeEnabled } = this.props;
 
     return (
       <section>
-        <div className="modal-title-container">
+        <div
+          className={
+            darkmodeEnabled
+              ? "modal-title-container-darkMode"
+              : "modal-title-container"
+          }
+        >
           <div className="modal-title">Edit Profile</div>
         </div>
-        <form onSubmit={this.handleUpdates} className="edit-page-form">
+        <form
+          onSubmit={this.handleUpdates}
+          className={
+            darkmodeEnabled ? "edit-page-form-darkMode" : "edit-page-form"
+          }
+        >
           <div className="edit-firstName-container">
             <div className="edit-firstName-label">First Name</div>
             <div className="edit-input-container">
               <input
                 id="edit-input"
-                className="edit-input"
+                className={
+                  darkmodeEnabled ? "edit-input-darkMode " : "edit-input"
+                }
                 type="text"
                 value={this.state.firstName}
                 onChange={this.handleFirstName}
@@ -82,7 +95,9 @@ class EditProfilePage extends React.Component {
             <div className="edit-input-container">
               <input
                 id="edit-input"
-                className="edit-input"
+                className={
+                  darkmodeEnabled ? "edit-input-darkMode " : "edit-input"
+                }
                 type="text"
                 value={this.state.lastName}
                 onChange={this.handleLastName}
@@ -96,7 +111,9 @@ class EditProfilePage extends React.Component {
             <div className="edit-input-container">
               <input
                 id="edit-input"
-                className="edit-input"
+                className={
+                  darkmodeEnabled ? "edit-input-darkMode " : "edit-input"
+                }
                 type="text"
                 value={this.state.userName}
                 onChange={this.handleUsername}
@@ -110,7 +127,9 @@ class EditProfilePage extends React.Component {
             <div className="edit-input-container">
               <input
                 id="edit-input"
-                className="edit-input"
+                className={
+                  darkmodeEnabled ? "edit-input-darkMode " : "edit-input"
+                }
                 type="text"
                 value={this.state.bio}
                 onChange={this.handleBio}

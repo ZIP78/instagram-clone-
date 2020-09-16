@@ -45,6 +45,7 @@ class Upload extends React.Component {
   }
 
   render() {
+    const { darkmodeEnabled } = this.props;
     let display;
     const preview = this.state.photoUrl;
     if (preview && this.state.photoFile.name.split(".").pop() === "mp4") {
@@ -61,6 +62,7 @@ class Upload extends React.Component {
     } else {
       display = (
         <input
+          className={darkmodeEnabled ? "upload-darkMode" : ""}
           type="file"
           style={{ width: "256", height: "22px", marginTop: "8px" }}
           onChange={this.handleFile}
@@ -70,17 +72,30 @@ class Upload extends React.Component {
     }
 
     return (
-      <form className="upload-form" onSubmit={this.handleSubmit}>
+      <form
+        className={darkmodeEnabled ? "upload-form-darkMode" : "upload-form"}
+        onSubmit={this.handleSubmit}
+      >
         {display}
         <input
-          className="write-caption"
+          className={
+            darkmodeEnabled ? "write-caption-darkMode" : "write-caption"
+          }
           placeholder="Write a caption..."
           type="text"
           onChange={this.handleInput}
           value={this.state.body}
         />
 
-        <button className="create-post-button">Share</button>
+        <button
+          className={
+            darkmodeEnabled
+              ? "create-post-button-darkMode"
+              : "create-post-button"
+          }
+        >
+          Share
+        </button>
       </form>
     );
   }
