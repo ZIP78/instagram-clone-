@@ -50,7 +50,14 @@ body,
 .main1 {
   background-color: #fafafa;
   display: flex;
-  max-height: 896px;
+  max-height: 1000px;
+  flex-grow: 1;
+}
+
+.main1-darkMode {
+  background-color: #11161c;
+  display: flex;
+  max-height: 1000px;
   flex-grow: 1;
 }
 
@@ -58,6 +65,18 @@ body,
   min-height: 91.73%;
   flex-direction: row;
   background-color: #fafafa;
+  flex-grow: 1;
+  justify-content: center;
+  margin: 30px auto 0;
+  max-width: 935px;
+  padding-bottom: 44px;
+  width: 100%;
+}
+
+.main2-darkMode {
+  min-height: 91.73%;
+  flex-direction: row;
+  background-color: #11161c;
   flex-grow: 1;
   justify-content: center;
   margin: 30px auto 0;
@@ -146,6 +165,19 @@ body,
   align-items: stretch;
 }
 
+.loginBox-darkMode {
+  background-color: #2a303c;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  width: 348px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: stretch;
+}
+
 .name {
   background-repeat: no-repeat;
   background-position: -98px 0;
@@ -159,14 +191,23 @@ body,
   font-size: 32px;
 }
 
-.form-section {
-  /* margin-bottom: 10px;
-    width: 348px;
-    height: 214px; */
+.name-darkMode {
+  background-repeat: no-repeat;
+  background-position: -98px 0;
+  height: 51px;
+  width: 175px;
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+  margin: 22px auto 12px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 32px;
+  color: white;
+}
 
+.form-section {
   margin-bottom: 10px;
   width: 348px;
-  /* height: 236px; */
   display: flex;
 }
 
@@ -283,6 +324,26 @@ body,
   background-color: #fafafa;
 }
 
+.password-darkMode,
+.username-darkMode,
+.email-darkMode,
+.fname-darkMode,
+.lname-darkMode {
+  border: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  margin: 0;
+  outline: 0;
+  overflow: hidden;
+  padding: 9px 0 7px 8px;
+  text-overflow: ellipsis;
+  width: 250px;
+  height: 20px;
+  background-color: #2a303c;
+}
+
 .username:not(:placeholder-shown) {
   padding: 14px 0px 2px 8px;
 }
@@ -389,6 +450,14 @@ input.username::placeholder {
   color: #003569;
 }
 
+.tooBad-darkMode {
+  display: inherit;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #3897f0;
+}
+
 a,
 a:visited {
   text-decoration: none;
@@ -396,6 +465,17 @@ a:visited {
 
 .signup-container {
   background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  width: 348px;
+  height: 41px;
+  padding: 10px 0;
+  display: flex;
+}
+
+.signup-container-darkMode {
+  background-color: #2a303c;
   border: 1px solid #e6e6e6;
   border-radius: 1px;
   margin: 0 0 10px;
@@ -413,12 +493,29 @@ a:visited {
   margin: -3px 0 -4px;
 }
 
+.signup-darkMode {
+  background-color: #2a303c;
+  width: 348px;
+  height: 48px;
+  font-size: 14px;
+  line-height: 18px;
+  margin: -3px 0 -4px;
+}
+
 .dont-have {
   color: #262626;
   font-size: 14px;
   margin: 15px;
   text-align: center;
   font-weight: 300;
+}
+
+.dont-have-darkMode {
+  font-size: 14px;
+  margin: 15px;
+  text-align: center;
+  font-weight: 300;
+  color: white;
 }
 
 #link {

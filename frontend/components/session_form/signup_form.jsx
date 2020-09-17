@@ -65,6 +65,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    const { signupDarkMode } = this.props;
     return (
       <main className="main1">
         <article className="signup-main">
@@ -95,7 +96,9 @@ class SignupForm extends React.Component {
                     <div className="email-container">
                       <div className="email-box">
                         <input
-                          className="email"
+                          className={
+                            signupDarkMode ? "email-darkMode" : "email"
+                          }
                           placeholder="Email"
                           type="email"
                           value={this.state.email}
@@ -109,7 +112,9 @@ class SignupForm extends React.Component {
                     <div className="fname-container">
                       <div className="fname-box">
                         <input
-                          className="fname"
+                          className={
+                            signupDarkMode ? "fname-darkMode" : "fname"
+                          }
                           placeholder="First Name"
                           type="text"
                           value={this.state.first_name}
@@ -123,7 +128,9 @@ class SignupForm extends React.Component {
                     <div className="lname-container">
                       <div className="lname-box">
                         <input
-                          className="lname"
+                          className={
+                            signupDarkMode ? "lname-darkMode" : "lname"
+                          }
                           placeholder="Last Name"
                           type="text"
                           value={this.state.last_name}
