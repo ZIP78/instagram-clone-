@@ -67,16 +67,26 @@ class SignupForm extends React.Component {
   render() {
     const { signupDarkMode } = this.props;
     return (
-      <main className="main1">
+      <main className={signupDarkMode ? "main1-darkMode" : "main1"}>
         <article className="signup-main">
           <div className="form-container-signup">
             <div className="signinBox">
-              <div className="signup-section">
+              <div
+                className={
+                  signupDarkMode ? "signup-section-darkMode" : "signup-section"
+                }
+              >
                 <h1 className="name">Whoopiegram</h1>
 
                 <div className="form-section-signup">
                   <form className="form" onSubmit={this.handle}>
-                    <h2 className="signup-descript">
+                    <h2
+                      className={
+                        signupDarkMode
+                          ? "signup-descript-darkMode"
+                          : "signup-descript"
+                      }
+                    >
                       Sign up to see funny clips to release good vibes.
                     </h2>
                     <div className="signup-to-login-container">
@@ -144,7 +154,9 @@ class SignupForm extends React.Component {
                     <div className="user-container">
                       <div className="user-box">
                         <input
-                          className="username"
+                          className={
+                            signupDarkMode ? "username-darkMode" : "username"
+                          }
                           placeholder="Username"
                           type="text"
                           value={this.state.username}
@@ -158,7 +170,11 @@ class SignupForm extends React.Component {
                     <div className="pw-container">
                       <div className="pw-box">
                         <input
-                          className="password focus-visible"
+                          className={
+                            signupDarkMode
+                              ? "password-darkMode focus-visible"
+                              : "password focus-visible"
+                          }
                           placeholder="Password"
                           type="password"
                           value={this.state.password}
@@ -176,7 +192,11 @@ class SignupForm extends React.Component {
                       </button>
                     </div>
 
-                    <p className="agreement">
+                    <p
+                      className={
+                        signupDarkMode ? "agreement-darkMode" : "agreement"
+                      }
+                    >
                       By signing up you agree to be in a better mood after usage
                       of this service.
                     </p>

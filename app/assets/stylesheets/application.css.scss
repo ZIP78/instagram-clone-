@@ -59,6 +59,7 @@ body,
   display: flex;
   max-height: 1000px;
   flex-grow: 1;
+  height: 100vh;
 }
 
 .main2 {
@@ -142,7 +143,6 @@ body,
 .form-container {
   position: relative;
   left: 493px;
-  /* top: -742px; */
   top: -724px;
   max-width: 350px;
   justify-content: center;
@@ -345,40 +345,40 @@ body,
   color: white;
 }
 
-.username-darkMode:not(:placeholder-shown) {
+.username:not(:placeholder-shown) {
   padding: 14px 0px 2px 8px;
 }
-.username-darkMode:not(:placeholder-shown) + label {
+.username:not(:placeholder-shown) + label {
   transform: translateY(-28px);
   opacity: 1;
 }
 
-.username-darkMode:focus {
+.username.logout-button {
   border: 1px solid #fafafa;
   outline: 0;
   outline-offset: -2px;
 }
 
-.password-darkMode:not(:placeholder-shown) {
+.password:not(:placeholder-shown) {
   padding: 14px 0px 2px 8px;
 }
-.password-darkMode:not(:placeholder-shown) + label {
+.password:not(:placeholder-shown) + label {
   transform: translateY(-28px);
   opacity: 1;
 }
 
-.password-darkMode:focus {
+.password:focus {
   border: 1px solid #fafafa;
   outline: 0;
   outline-offset: -2px;
 }
 
-input.password-darkMode::placeholder {
-  color: #fafafa;
+input.password::placeholder {
+  color: #999;
 }
 
-input.username-darkMode::placeholder {
-  color: #fafafa;
+input.username::placeholder {
+  color: #999;
 }
 
 .username-darkMode:not(:placeholder-shown) {
@@ -567,9 +567,7 @@ a:visited {
 
 .signup-main {
   min-height: 91.73%;
-  background-color: #fafafa;
   flex-grow: 1;
-  min-height: 100%;
   overflow: hidden;
   width: 1118px;
   padding-bottom: 44px;
@@ -609,6 +607,18 @@ a:visited {
   flex-direction: column;
 }
 
+.signup-section-darkMode {
+  background-color: #2a303c;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  -webkit-box-orient: vertical;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
 .form-section-signup {
   width: 348px;
   margin-bottom: 20px;
@@ -620,6 +630,14 @@ a:visited {
   font-size: 17px;
   margin: 0px 71px 10px;
   color: #999;
+}
+
+.signup-descript-darkMode {
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 17px;
+  margin: 0px 71px 10px;
+  color: white;
 }
 
 .signup-to-login-container {
@@ -693,8 +711,73 @@ input.lname::placeholder {
   color: #999;
 }
 
+// darkmode
+
+.email-darkMode:not(:placeholder-shown) {
+  padding: 14px 0px 2px 8px;
+}
+.email-darkMode:not(:placeholder-shown) + label {
+  transform: translateY(-28px);
+  opacity: 1;
+  color: white;
+}
+
+.email-darkMode:focus {
+  border: 1px solid #b2b2b2;
+  outline: 0;
+  outline-offset: -2px;
+}
+
+.fname-darkMode:not(:placeholder-shown) {
+  padding: 14px 0px 2px 8px;
+}
+.fname-darkMode:not(:placeholder-shown) + label {
+  transform: translateY(-28px);
+  opacity: 1;
+  color: white;
+}
+
+.fname-darkMode:focus {
+  border: 1px solid #b2b2b2;
+  outline: 0;
+  outline-offset: -2px;
+}
+
+.lname-darkMode:not(:placeholder-shown) {
+  padding: 14px 0px 2px 8px;
+}
+.lname-darkMode:not(:placeholder-shown) + label {
+  transform: translateY(-28px);
+  opacity: 1;
+  color: white;
+}
+
+.lname-darkMode:focus {
+  border: 1px solid #b2b2b2;
+  outline: 0;
+  outline-offset: -2px;
+}
+
+input.email-darkMode::placeholder {
+  color: white;
+}
+
+input.fname-darkMode::placeholder {
+  color: white;
+}
+
+input.lname-darkMode::placeholder {
+  color: white;
+}
+
 .agreement {
   color: #999;
+  margin: 10px 60px;
+  height: 54px;
+}
+
+.agreement-darkMode {
+  color: white;
   margin: 10px 60px;
   height: 54px;
 }
