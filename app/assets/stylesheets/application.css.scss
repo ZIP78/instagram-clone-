@@ -342,42 +342,81 @@ body,
   width: 250px;
   height: 20px;
   background-color: #2a303c;
+  color: white;
 }
 
-.username:not(:placeholder-shown) {
+.username-darkMode:not(:placeholder-shown) {
   padding: 14px 0px 2px 8px;
 }
-.username:not(:placeholder-shown) + label {
+.username-darkMode:not(:placeholder-shown) + label {
   transform: translateY(-28px);
   opacity: 1;
 }
 
-.username:focus {
-  border: 1px solid #b2b2b2;
+.username-darkMode:focus {
+  border: 1px solid #fafafa;
   outline: 0;
   outline-offset: -2px;
 }
 
-.password:not(:placeholder-shown) {
+.password-darkMode:not(:placeholder-shown) {
   padding: 14px 0px 2px 8px;
 }
-.password:not(:placeholder-shown) + label {
+.password-darkMode:not(:placeholder-shown) + label {
   transform: translateY(-28px);
   opacity: 1;
 }
 
-.password:focus {
-  border: 1px solid #b2b2b2;
+.password-darkMode:focus {
+  border: 1px solid #fafafa;
   outline: 0;
   outline-offset: -2px;
 }
 
-input.password::placeholder {
-  color: #999;
+input.password-darkMode::placeholder {
+  color: #fafafa;
 }
 
-input.username::placeholder {
-  color: #999;
+input.username-darkMode::placeholder {
+  color: #fafafa;
+}
+
+.username-darkMode:not(:placeholder-shown) {
+  padding: 14px 0px 2px 8px;
+}
+.username-darkMode:not(:placeholder-shown) + label {
+  transform: translateY(-28px);
+  opacity: 1;
+  color: white;
+}
+
+.username-darkMode:focus {
+  border: 1px solid #fafafa;
+  outline: 0;
+  outline-offset: -2px;
+}
+
+.password-darkMode:not(:placeholder-shown) {
+  padding: 14px 0px 2px 8px;
+}
+.password-darkMode:not(:placeholder-shown) + label {
+  transform: translateY(-28px);
+  opacity: 1;
+  color: white;
+}
+
+.password-darkMode:focus {
+  border: 1px solid #fafafa;
+  outline: 0;
+  outline-offset: -2px;
+}
+
+input.password-darkMode::placeholder {
+  color: #fafafa;
+}
+
+input.username-darkMode::placeholder {
+  color: #fafafa;
 }
 
 .login {
