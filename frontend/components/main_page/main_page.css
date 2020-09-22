@@ -320,15 +320,15 @@ a {
 }
 
 .post-ellipsh {
-  position: relative;
-  left: 479px;
-  top: -11px;
+  position: absolute;
+  margin-top: 10px;
+  left: 581px;
 }
 
 .post-ellipsh-darkMode {
-  position: relative;
-  left: 479px;
-  top: -11px;
+  position: absolute;
+  margin-top: 10px;
+  left: 581px;
   color: white;
 }
 
