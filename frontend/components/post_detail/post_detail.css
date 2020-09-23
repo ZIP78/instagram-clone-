@@ -121,8 +121,8 @@
   padding-left: 16px;
   padding-right: 16px;
   position: absolute;
-  top: 368px;
-  left: -1px;
+  top: 439px;
+  left: -2px;
   border-right: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-left: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
@@ -183,7 +183,6 @@
 .user-caption-container {
   position: relative;
   top: 2px;
-  /* width: 570px; */
   height: 21px;
   bottom: 14px;
   font-size: 14px;
