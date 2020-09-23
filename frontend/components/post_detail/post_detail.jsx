@@ -192,40 +192,39 @@ class PostDetail extends React.Component {
                   </div>
                 ))}
               </div>
+            </div>
+            <div
+              className={
+                darkmodeEnabled
+                  ? "show-interactive-icons-darkMode"
+                  : "show-interactive-icons"
+              }
+            >
+              <LikeComment
+                post={post}
+                likePost={likePost}
+                removeLike={removeLike}
+                darkmodeEnabled={darkmodeEnabled}
+              />
+              <div className="insta-show-likes-container">
+                <h1>{post.likes} likes</h1>
+              </div>
 
-              <div
-                className={
-                  darkmodeEnabled
-                    ? "show-interactive-icons-darkMode"
-                    : "show-interactive-icons"
-                }
-              >
-                <LikeComment
-                  post={post}
-                  likePost={likePost}
-                  removeLike={removeLike}
-                  darkmodeEnabled={darkmodeEnabled}
-                />
-                <div className="insta-show-likes-container">
-                  <h1>{post.likes} likes</h1>
-                </div>
-
-                <div className="insta-show-time-container">
-                  <Moment
-                    className={
-                      darkmodeEnabled
-                        ? "post-show-bottom-time-darkMode"
-                        : "post-show-bottom-time"
-                    }
-                    format="MMM D YYYY"
-                    withTitle
-                  >
-                    {post.created_at.toUpperCase()}
-                  </Moment>
-                </div>
-                <div className="insta-post-container-comment">
-                  <CommentForm post={post} width={308} />
-                </div>
+              <div className="insta-show-time-container">
+                <Moment
+                  className={
+                    darkmodeEnabled
+                      ? "post-show-bottom-time-darkMode"
+                      : "post-show-bottom-time"
+                  }
+                  format="MMM D YYYY"
+                  withTitle
+                >
+                  {post.created_at.toUpperCase()}
+                </Moment>
+              </div>
+              <div className="insta-post-container-comment">
+                <CommentForm post={post} width={308} />
               </div>
             </div>
           </div>

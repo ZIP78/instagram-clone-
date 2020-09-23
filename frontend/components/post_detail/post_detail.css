@@ -89,12 +89,16 @@
   top: 38px;
   position: relative;
   left: -18px;
+  overflow-y: scroll;
+}
+
+.show-post-comments-container::-webkit-scrollbar {
+  display: none;
 }
 
 .show-post-comments-container-darkMode {
   width: 337px;
   height: 343px;
-  background-color: #ffffff;
   border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-top: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-left: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
@@ -104,6 +108,11 @@
   position: relative;
   left: -18px;
   background: #2a303c;
+  overflow-y: scroll;
+}
+
+.show-post-comments-container-darkMode::-webkit-scrollbar {
+  display: none;
 }
 
 .show-interactive-icons {
@@ -126,8 +135,8 @@
   padding-left: 16px;
   padding-right: 16px;
   position: absolute;
-  top: 368px;
-  left: -1px;
+  top: 439px;
+  left: -2px;
   border-right: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-left: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
@@ -153,6 +162,7 @@
 
 .show-caption-section {
   margin-left: -12px;
+  margin-bottom: 10px;
   margin-right: 0;
   padding: 12px 16px;
   width: 317px;
