@@ -276,6 +276,7 @@
 .profile-bio {
   position: absolute;
   bottom: -28px;
+  width: 400px;
 }
 
 .profile-edit-button {
