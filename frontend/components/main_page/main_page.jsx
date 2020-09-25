@@ -36,10 +36,16 @@ class MainPage extends React.Component {
     } = this.props;
 
     return unfollowedUsers.length !== 0 ? (
-      <header style={{ height: "94vh" }}>
+      <header
+        className={
+          darkmodeEnabled
+            ? "header-with-suggestions-darkMode"
+            : "header-with-suggestions"
+        }
+      >
         <section
           className={
-            this.props.darkmodeEnabled
+            darkmodeEnabled
               ? "main-page-container-darkMode"
               : "main-page-container"
           }
@@ -70,9 +76,21 @@ class MainPage extends React.Component {
         </section>
       </header>
     ) : (
-      <header>
-        <section style={{ maxWidth: 630 }} className="main-page-container">
+      <header
+        className={
+          darkmodeEnabled ? "main-page-header-darkMode" : "main-page-header"
+        }
+      >
+        <section
+          style={{ maxWidth: 630 }}
+          className={
+            darkmodeEnabled
+              ? "main-page-container-darkMode"
+              : "main-page-container"
+          }
+        >
           <Suggestion
+            darkmodeEnabled={darkmodeEnabled}
             unfollowedUsers={unfollowedUsers}
             users={users}
             loggedInUser={loggedInUser}
@@ -82,6 +100,7 @@ class MainPage extends React.Component {
           />
           <div className="insta-post-container">
             <PostIndex
+              darkmodeEnabled={darkmodeEnabled}
               posts={posts}
               users={users}
               comments={comments}

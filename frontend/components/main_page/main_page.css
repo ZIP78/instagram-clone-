@@ -106,6 +106,24 @@
   position: fixed;
 }
 
+.header-with-suggestions-darkMode {
+  height: 100vh;
+  background: #11161c;
+}
+
+.header-with-suggestions {
+  height: 100vh;
+  background: #fafafa;
+}
+
+.main-page-header {
+  background-color: #fafafa;
+}
+
+.main-page-header-darkMode {
+  background-color: #11161c;
+}
+
 .main-page-container {
   padding-top: 60px;
   display: -ms-flexbox;
