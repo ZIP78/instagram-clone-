@@ -74,12 +74,27 @@ Whoopiegram is a react / rails clone of instagram. This app should allow the use
 ![Imgur Image](https://i.imgur.com/hAsmW1h.png)
 
   
-## Features
-* Log in/ Log out
-* Sign up
-* upload pictures/videos
-* like and comment on posts
-* follow other users 
+## Feature Highlights 
+ ### Page Detail
+![](https://media.giphy.com/media/SlWgB2u4EJufBmFSsR/giphy.gif)
+
+If you click on the comment icon it will take you to the detail page of the post.
+
+ ### Upload pictures or Videos  
+ ![](https://media.giphy.com/media/rHUwjMDR1JZvsCfeSm/giphy.gif)
+ 
+ Click on the upload icon to post a picture or video MUST have a caption along with the post.
+ 
+  ### Darkmode
+  ![](https://media.giphy.com/media/egYqFYzarEPsMJ5JOw/giphy.gif)
+  
+  In the profile page in the settings you can change the tone of the website 
+  
+ ## More info about the developer 
+ 
+  [Linkedin](https://www.linkedin.com/in/paulkim963/)
+ 
+
 
 
   
